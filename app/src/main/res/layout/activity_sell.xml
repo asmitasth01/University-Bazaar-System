@@ -124,7 +124,7 @@
         android:text="Select Image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/button5"
+        android:id="@+id/edit"
         android:background="@color/colorAccent"
         android:textColor="@color/colorPrimaryDark"
         android:textStyle="normal|bold"
@@ -143,8 +143,8 @@
         android:textColor="@color/colorPrimary"
         android:textSize="18sp"
         android:fontFamily="casual"
-        android:layout_alignBaseline="@+id/button5"
-        android:layout_alignBottom="@+id/button5"
+        android:layout_alignBaseline="@+id/edit"
+        android:layout_alignBottom="@+id/edit"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 

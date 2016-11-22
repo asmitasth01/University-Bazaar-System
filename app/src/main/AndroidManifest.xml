@@ -36,6 +36,27 @@
         </activity>
 
         <activity android:name=".FormClubActivity" />
+        <activity android:name=".BankInfoActivity" />
+        <activity android:name=".BankInfoAddedSuccessActivity" />
+        <activity android:name=".BorrowActivity" />
+        <activity android:name=".BuyActivity" />
+        <activity android:name=".Cash" />
+        <activity android:name=".Communication" />
+        <activity android:name=".CreateEventActivity" />
+        <activity android:name=".Credit" />
+        <activity android:name=".Event_Functionality" />
+        <activity android:name=".ExchangeBuyerSideActivity" />
+        <activity android:name=".ExchangeOfferSubmittedActivity" />
+        <activity android:name=".ExchangeSellerSideActivity" />
+        <activity android:name=".ExchangeSellerConformation" />
+        <activity android:name=".InviteConformationDialogueActivity" />
+        <activity android:name=".Memberinfo" />
+        <activity android:name=".PasswordResetLinkSentConformationActivity" />
+        <activity android:name=".PasswordRetrivalActivity" />
+        <activity android:name=".PaymentMainActivity" />
+        <activity android:name=".sellActivity" />
+        <activity android:name=".TradeTypeSelectionActivity" />
+        <activity android:name=".setting" />
         <activity android:name=".SendGroupInvitationActivity"></activity>
 
     </application>

@@ -55,7 +55,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="Write mesage here"
+        android:text="Write your message here:"
         android:ems="10"
         android:layout_alignTop="@+id/editText3"
         android:layout_alignParentLeft="true"
@@ -73,12 +73,12 @@
         android:id="@+id/editText5"
         android:layout_marginLeft="43dp"
         android:layout_marginStart="43dp"
-        android:background="@color/colorPrimaryDark"
+        android:background="@android:color/background_light"
         android:textColor="@color/colorPrimaryDark"
         android:hint="email/username"
         android:layout_alignBottom="@+id/textView4"
         android:layout_toRightOf="@+id/textView4"
         android:layout_toEndOf="@+id/textView4"
-        android:textColorHint="@color/colorAccent" />
+        android:textColorHint="@color/colorPrimaryDark" />
 
 </RelativeLayout>

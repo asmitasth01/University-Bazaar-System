@@ -14,46 +14,49 @@
     <Button
         android:text="Sell"
         android:layout_height="150dp"
-        android:id="@+id/button11"
+        android:id="@+id/sell_button"
         android:background="@color/colorPrimary"
         android:textStyle="normal|bold"
         android:fontFamily="sans-serif-condensed"
         android:textColor="@color/colorPrimaryDark"
         android:layout_marginLeft="17dp"
         android:layout_marginStart="17dp"
-        android:layout_alignBottom="@+id/button10"
-        android:layout_toRightOf="@+id/button10"
-        android:layout_toEndOf="@+id/button10"
-        android:layout_alignTop="@+id/button10"
-        android:layout_width="150dp" />
+        android:layout_alignBottom="@+id/buy_button"
+        android:layout_toRightOf="@+id/buy_button"
+        android:layout_toEndOf="@+id/buy_button"
+        android:layout_alignTop="@+id/buy_button"
+        android:layout_width="150dp"
+        android:onClick="selectTrade"/>
 
     <Button
         android:text="Borrow"
         android:layout_height="150dp"
-        android:id="@+id/button12"
+        android:id="@+id/borrow_button"
         android:background="@color/colorPrimary"
         android:textStyle="normal|bold"
         android:fontFamily="sans-serif-condensed"
         android:textColor="@color/colorPrimaryDark"
-        android:layout_alignBottom="@+id/button13"
-        android:layout_alignLeft="@+id/button10"
-        android:layout_alignStart="@+id/button10"
-        android:layout_alignTop="@+id/button13"
-        android:layout_width="150dp" />
+        android:layout_alignBottom="@+id/exchange_button"
+        android:layout_alignLeft="@+id/buy_button"
+        android:layout_alignStart="@+id/buy_button"
+        android:layout_alignTop="@+id/exchange_button"
+        android:layout_width="150dp"
+        android:onClick="selectTrade"/>
 
     <Button
         android:text="Exchange"
         android:layout_height="150dp"
-        android:id="@+id/button13"
+        android:id="@+id/exchange_button"
         android:background="@color/colorPrimary"
         android:textStyle="normal|bold"
         android:fontFamily="sans-serif-condensed"
         android:textColor="@color/colorPrimaryDark"
         android:layout_marginTop="23dp"
-        android:layout_below="@+id/button11"
-        android:layout_alignLeft="@+id/button11"
-        android:layout_alignStart="@+id/button11"
-        android:layout_width="150dp" />
+        android:layout_below="@+id/sell_button"
+        android:layout_alignLeft="@+id/sell_button"
+        android:layout_alignStart="@+id/sell_button"
+        android:layout_width="150dp"
+        android:onClick="selectTrade"/>
 
     <TextView
         android:text="Please select Trade Type:"
@@ -71,7 +74,7 @@
     <Button
         android:text="Buy"
         android:layout_height="150dp"
-        android:id="@+id/button10"
+        android:id="@+id/buy_button"
         android:background="@color/colorPrimary"
         android:textStyle="normal|bold"
         android:fontFamily="sans-serif-condensed"
@@ -82,5 +85,6 @@
         android:layout_marginStart="30dp"
         android:layout_below="@+id/textView27"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:onClick="selectTrade"/>
 </RelativeLayout>

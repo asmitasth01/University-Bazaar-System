@@ -1,5 +1,6 @@
 package example.com.bazaar;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -79,17 +80,23 @@ public class Home extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
+        Intent intent;
 
         if (id == R.id.club) {
-            // Handle the camera action
+            intent = new Intent(this, FormClubActivity.class);
+            startActivity(intent);
         } else if (id == R.id.trade) {
-
+            intent = new Intent(this, TradeTypeSelectionActivity.class);
+            startActivity(intent);
         } else if (id == R.id.communication) {
-
+            intent = new Intent(this, Communication.class);
+            startActivity(intent);
         } else if (id == R.id.profile) {
-
+            intent = new Intent(this, Memberinfo.class);
+            startActivity(intent);
         } else if (id == R.id.logout) {
-
+            intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
