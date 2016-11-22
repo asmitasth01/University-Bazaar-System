@@ -5,7 +5,8 @@
         <item
             android:id="@+id/club"
             android:title="@string/form_club"
-            android:icon="@drawable/club" />
+            android:icon="@drawable/club"
+            android:onClick="goClub"/>
         <item
             android:id="@+id/communication"
             android:title="@string/communication"

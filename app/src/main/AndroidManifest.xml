@@ -26,7 +26,7 @@
         <activity android:name=".RegisterActivity" />
         <activity android:name=".SignInActivity"></activity>
         <activity
-<<<<<<< HEAD
+
             android:name=".Home"
             android:label="Home"
             android:theme="@style/AppTheme" >
@@ -34,13 +34,10 @@
                 <action android:name="android.intent.action.Main"/>
             </intent-filter>
         </activity>
-=======
-            android:name=".RegistrationActivity"
-            android:label="@string/title_activity_registration"
-            android:theme="@style/AppTheme" />
+
         <activity android:name=".FormClubActivity" />
         <activity android:name=".SendGroupInvitationActivity"></activity>
->>>>>>> c8f7b7c672d97d7d7244fa72e676350273689aad
+
     </application>
 
 </manifest>

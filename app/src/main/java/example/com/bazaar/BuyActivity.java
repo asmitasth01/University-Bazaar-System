@@ -1,4 +1,4 @@
-package com.shrey.ubs_trade_final;
+package example.com.bazaar;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
