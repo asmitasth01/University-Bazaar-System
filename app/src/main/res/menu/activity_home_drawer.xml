@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/club"
+            android:title="@string/form_club"
+            android:icon="@drawable/club" />
+        <item
+            android:id="@+id/communication"
+            android:title="@string/communication"
+            android:icon="@android:drawable/ic_dialog_email" />
+        <item
+            android:id="@+id/trade"
+            android:title="@string/trade"
+            android:icon="@drawable/trade" />
+        <item
+            android:id="@+id/profile"
+            android:title="@string/profile"
+            android:icon="@drawable/profile" />
+        <item
+            android:id="@+id/logout"
+            android:title="@string/logout"
+            android:icon="@android:drawable/ic_lock_power_off" />
+    </group>
+
+</menu>
