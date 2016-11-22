@@ -22,7 +22,8 @@
         android:id="@+id/button2"
         android:textColor="@color/colorPrimaryDark"
         android:background="@color/colorAccent"
-        android:onClick="openGetBankInformation"/>
+        android:onClick="openGetBankInformation"
+        android:textStyle="bold" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -67,19 +68,6 @@
         android:layout_marginLeft="46dp"
         android:layout_marginStart="46dp"
         android:popupBackground="@color/colorPrimary" />
-
-    <TextView
-        android:text="Item Description:"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView10"
-        android:textColor="@color/colorPrimary"
-        android:textSize="18sp"
-        android:fontFamily="casual"
-        android:layout_alignBottom="@+id/editText7"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="31dp" />
 
     <TextView
         android:text="Item Quantity:"
@@ -127,7 +115,7 @@
         android:id="@+id/edit"
         android:background="@color/colorAccent"
         android:textColor="@color/colorPrimaryDark"
-        android:textStyle="normal|bold"
+        android:textStyle="bold"
         android:fontFamily="sans-serif-condensed"
         android:onClick="loadImagefromGallery"
         android:layout_below="@+id/textView12"
@@ -154,5 +142,15 @@
         android:id="@+id/imgView2"
         android:layout_above="@+id/button2"
         android:layout_height="180dp" />
+
+    <TextView
+        android:text="Item Description:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView10"
+        android:textColor="@color/colorPrimary"
+        android:textSize="18sp"
+        android:fontFamily="casual"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>

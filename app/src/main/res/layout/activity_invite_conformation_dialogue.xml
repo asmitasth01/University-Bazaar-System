@@ -23,7 +23,8 @@
         android:background="@color/colorPrimary"
         android:fontFamily="sans-serif-condensed"
         android:onClick="openSendInvite"
-        android:textStyle="normal|bold" />
+        android:textStyle="normal|bold"
+        android:textSize="14sp" />
 
     <TextView
         android:text="Invitation has been Sent"
@@ -46,5 +47,6 @@
         android:background="@color/colorPrimary"
         android:layout_alignParentBottom="true"
         android:fontFamily="sans-serif-condensed"
-        android:textStyle="normal|bold" />
+        android:textStyle="normal|bold"
+        android:textSize="14sp" />
 </RelativeLayout>

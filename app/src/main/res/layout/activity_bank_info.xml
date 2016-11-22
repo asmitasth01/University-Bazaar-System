@@ -84,6 +84,7 @@
         android:layout_alignParentStart="true"
         android:background="@color/colorPrimary"
         android:textColor="@color/colorPrimaryDark"
-        android:onClick="openBankInfoSuccess"/>
+        android:onClick="openBankInfoSuccess"
+        android:textStyle="normal|bold" />
 
 </RelativeLayout>

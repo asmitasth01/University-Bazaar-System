@@ -37,6 +37,6 @@
         android:background="@color/colorPrimary"
         android:fontFamily="sans-serif-condensed"
         android:textColor="@color/colorPrimaryDark"
-        android:textSize="18sp"
+        android:textSize="14sp"
         android:textStyle="normal|bold" />
 </RelativeLayout>

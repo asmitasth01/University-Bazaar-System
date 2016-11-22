@@ -27,10 +27,12 @@
         android:layout_alignParentTop="true"
         android:id="@+id/textView6"
         android:textSize="24sp"
-        android:background="@color/colorAccent"
-        android:textColor="@color/colorPrimaryDark"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@color/colorPrimary"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:fontFamily="casual"
+        android:textAlignment="center" />
 
     <EditText
         android:layout_width="match_parent"
@@ -44,16 +46,17 @@
         android:background="@color/colorPrimaryDark" />
 
     <Button
-        android:text="Create Event"
+        android:text="Upload Picture"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/edit"
+        android:id="@+id/button6"
         android:background="@color/colorAccent"
-        android:textSize="18sp"
-        android:layout_below="@+id/editText7"
-        android:layout_alignParentLeft="true"
+        android:textSize="14sp"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="29dp" />
+        android:layout_marginBottom="73dp"
+        android:textStyle="normal|bold"
+        android:textColor="@color/colorPrimaryDark" />
 
     <Button
         android:text="Invite"
@@ -61,21 +64,23 @@
         android:layout_height="wrap_content"
         android:id="@+id/button7"
         android:background="@color/colorAccent"
-        android:textSize="18sp"
-        android:layout_below="@+id/edit"
-        android:layout_alignParentLeft="true"
+        android:textSize="14sp"
+        android:layout_above="@+id/button6"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="17dp" />
+        android:layout_marginBottom="53dp"
+        android:textStyle="normal|bold"
+        android:textColor="@color/colorPrimaryDark" />
 
     <Button
-        android:text="Upload Picture"
+        android:text="Create Event"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/button6"
+        android:id="@+id/edit"
         android:background="@color/colorAccent"
-        android:layout_marginTop="20dp"
-        android:textSize="18sp"
-        android:layout_below="@+id/button7"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:textSize="14sp"
+        android:layout_above="@+id/button7"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="46dp"
+        android:textStyle="normal|bold"
+        android:textColor="@color/colorPrimaryDark" />
 </RelativeLayout>
