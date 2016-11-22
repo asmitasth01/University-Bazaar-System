@@ -8,7 +8,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="example.com.bazaar.SendGroupInvitationActivity">
+    tools:context="example.com.bazaar.SendGroupInvitationActivity"
+    android:background="@color/colorPrimaryDark">
 
     <TextView
         android:text="Send Invitation"
@@ -17,7 +18,12 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="35dp"
-        android:id="@+id/textView12" />
+        android:id="@+id/textView12"
+        android:textColor="@color/colorPrimary"
+        android:textSize="24sp"
+        android:textAllCaps="true"
+        android:fontFamily="sans-serif-condensed"
+        android:textStyle="normal|bold" />
 
     <TextView
         android:text="Email:"
@@ -27,35 +33,48 @@
         android:layout_alignParentStart="true"
         android:layout_marginStart="12dp"
         android:layout_marginTop="64dp"
-        android:id="@+id/textView13" />
+        android:id="@+id/textView13"
+        android:textColor="@color/colorPrimary"
+        android:textSize="18sp"
+        android:textStyle="normal|bold|italic"
+        android:fontFamily="casual" />
+
+    <Button
+        android:text="Done"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/button3"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:background="@color/colorPrimary"
+        android:textColor="@color/colorPrimaryDark"
+        android:fontFamily="sans-serif-condensed"
+        android:textStyle="normal|bold" />
+
+    <Button
+        android:text="  Send Invite  "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="132dp"
+        android:id="@+id/button2"
+        android:layout_above="@+id/button3"
+        android:layout_centerHorizontal="true"
+        android:background="@color/colorAccent"
+        android:textColor="@color/colorPrimaryDark"
+        android:textStyle="normal|bold"
+        android:fontFamily="sans-serif-condensed"
+        android:onClick="openInviteConformationDialogue"/>
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textEmailAddress"
         android:ems="10"
-        android:layout_below="@+id/textView12"
-        android:layout_alignStart="@+id/textView12"
-        android:layout_marginTop="51dp"
-        android:id="@+id/editText3"
-        android:text="Email" />
-
-    <Button
-        android:text="Send Invite"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/editText3"
-        android:layout_marginBottom="142dp"
-        android:id="@+id/button2" />
-
-    <Button
-        android:text="Done"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="39dp"
-        android:id="@+id/button3"
-        android:layout_alignEnd="@+id/button2"
-        android:layout_alignStart="@+id/button2" />
+        android:layout_alignTop="@+id/textView13"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="23dp"
+        android:layout_marginEnd="23dp"
+        android:id="@+id/editText" />
 </RelativeLayout>
