@@ -50,7 +50,8 @@
         android:background="@color/colorPrimary"
         android:textColor="@color/colorPrimaryDark"
         android:fontFamily="sans-serif-condensed"
-        android:textStyle="normal|bold" />
+        android:textStyle="normal|bold"
+        android:onClick="goHome" />
 
     <Button
         android:text="  Send Invite  "

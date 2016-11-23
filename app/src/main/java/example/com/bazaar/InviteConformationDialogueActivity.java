@@ -17,4 +17,9 @@ public class InviteConformationDialogueActivity extends AppCompatActivity {
         Intent intent = new Intent(this, SendGroupInvitationActivity.class);
         startActivity(intent);
     }
+    protected void goHome(View view)
+    {
+        Intent intent = new Intent(this, Home.class);
+        startActivity(intent);
+    }
 }

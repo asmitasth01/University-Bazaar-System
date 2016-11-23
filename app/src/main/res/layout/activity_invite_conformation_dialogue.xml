@@ -48,5 +48,6 @@
         android:layout_alignParentBottom="true"
         android:fontFamily="sans-serif-condensed"
         android:textStyle="normal|bold"
-        android:textSize="14sp" />
+        android:textSize="14sp"
+        android:onClick="goHome" />
 </RelativeLayout>

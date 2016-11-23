@@ -37,5 +37,6 @@
         android:background="@color/colorPrimary"
         android:fontFamily="sans-serif-condensed"
         android:textColor="@color/colorPrimaryDark"
-        android:textStyle="normal|bold" />
+        android:textStyle="normal|bold"
+        android:onClick="goHome" />
 </RelativeLayout>

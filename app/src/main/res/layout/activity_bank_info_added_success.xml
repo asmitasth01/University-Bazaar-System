@@ -38,5 +38,6 @@
         android:fontFamily="sans-serif-condensed"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="14sp"
-        android:textStyle="normal|bold" />
+        android:textStyle="normal|bold"
+        android:onClick="goHome" />
 </RelativeLayout>
