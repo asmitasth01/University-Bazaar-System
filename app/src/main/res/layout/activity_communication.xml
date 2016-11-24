@@ -22,50 +22,44 @@
         android:textSize="18sp"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:fontFamily="serif" />
 
     <Button
         android:text="SEND"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
         android:id="@+id/create_club_button"
         android:textColor="@color/colorPrimaryDark"
+=======
+        android:id="@+id/button"
+        android:textColor="@android:color/background_light"
+>>>>>>> 1554d0b6af96ba40a6bc7a0cf30c1625ea0fe630
         android:background="@color/colorAccent"
         android:layout_marginBottom="14dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:textSize="14sp"
-        android:textStyle="normal|bold" />
+        android:textStyle="normal|bold"
+        android:fontFamily="serif" />
 
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="100sp"
         android:inputType="textMultiLine"
         android:ems="10"
         android:id="@+id/editText3"
-        android:background="@android:color/background_light"
+        android:background="@color/colorAccent"
         android:layout_marginTop="43dp"
         android:layout_below="@+id/textView4"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textSize="18sp"
-        android:textColor="?attr/colorPrimaryDark" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="Write your message here:"
-        android:ems="10"
-        android:layout_alignTop="@+id/editText3"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:id="@+id/editText6"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:background="@color/colorAccent" />
+        android:textColor="@android:color/background_light"
+        android:textColorHint="@color/colorPrimaryDark"
+        android:layout_height="170sp" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -75,12 +69,26 @@
         android:id="@+id/editText5"
         android:layout_marginLeft="43dp"
         android:layout_marginStart="43dp"
-        android:background="@android:color/background_light"
-        android:textColor="@color/colorPrimaryDark"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@color/colorAccent"
         android:hint="email/username"
         android:layout_alignBottom="@+id/textView4"
         android:layout_toRightOf="@+id/textView4"
         android:layout_toEndOf="@+id/textView4"
-        android:textColorHint="@color/colorPrimaryDark" />
+        android:textColorHint="@color/colorAccent"
+        android:fontFamily="serif"
+        android:textSize="14sp" />
+
+    <TextView
+        android:text="Write your message here"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/editText3"
+        android:layout_alignParentStart="true"
+        android:id="@+id/textView31"
+        android:hint="Write your message here:"
+        android:textColor="@android:color/background_light"
+        android:background="@color/colorAccent"
+        android:fontFamily="serif" />
 
 </RelativeLayout>

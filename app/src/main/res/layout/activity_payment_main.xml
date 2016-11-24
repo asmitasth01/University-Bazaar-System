@@ -19,8 +19,8 @@
         android:textSize="14sp"
         android:background="?attr/colorAccent"
         android:textStyle="normal|bold"
-        android:fontFamily="sans-serif-condensed"
-        android:textColor="@color/colorPrimaryDark"
+        android:fontFamily="serif"
+        android:textColor="@android:color/background_light"
         android:onClick="goCredit"
         android:layout_marginBottom="11dp"
         android:layout_alignParentBottom="true"
@@ -34,8 +34,8 @@
         android:id="@+id/button2"
         android:textSize="14sp"
         android:background="?attr/colorAccent"
-        android:fontFamily="sans-serif-condensed"
-        android:textColor="@color/colorPrimaryDark"
+        android:fontFamily="serif"
+        android:textColor="@android:color/background_light"
         android:onClick="goCash"
         android:layout_marginBottom="23dp"
         android:textStyle="normal|bold"
@@ -50,9 +50,9 @@
         android:layout_height="wrap_content"
         android:id="@+id/textView"
         android:layout_marginTop="31dp"
-        android:textColor="?attr/colorAccent"
+        android:textColor="@color/colorAccent"
         android:textStyle="normal|bold"
-        android:fontFamily="sans-serif-condensed"
+        android:fontFamily="serif"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
@@ -61,12 +61,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView2"
-        android:textSize="18sp"
-        android:textColor="?attr/colorAccent"
         android:layout_marginTop="84dp"
-        android:fontFamily="casual"
         android:layout_below="@+id/textView"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:textAppearance="@android:style/TextAppearance.Material.Small"
+        android:fontFamily="serif"
+        android:textColor="@color/colorAccent" />
 
     <TextView
         android:text="TextView"
@@ -76,6 +76,9 @@
         android:layout_marginEnd="7dp"
         android:layout_alignBaseline="@+id/textView2"
         android:layout_alignBottom="@+id/textView2"
-        android:layout_alignEnd="@+id/textView" />
+        android:layout_alignEnd="@+id/textView"
+        android:textSize="14sp"
+        android:textColor="@color/colorAccent"
+        android:fontFamily="serif" />
 
 </RelativeLayout>

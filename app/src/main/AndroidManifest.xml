@@ -25,17 +25,15 @@
             android:name=".LoginActivity"
             android:label="@string/title_activity_login" />
         <activity android:name=".RegisterActivity" />
-        <activity android:name=".SignInActivity"></activity>
+        <activity android:name=".SignInActivity" />
         <activity
-
             android:name=".Home"
             android:label="Home"
-            android:theme="@style/AppTheme" >
+            android:theme="@style/AppTheme">
             <intent-filter>
-                <action android:name="android.intent.action.Main"/>
+                <action android:name="android.intent.action.Main" />
             </intent-filter>
         </activity>
-
         <activity android:name=".FormClubActivity" />
         <activity android:name=".BankInfoActivity" />
         <activity android:name=".BankInfoAddedSuccessActivity" />
@@ -58,8 +56,8 @@
         <activity android:name=".sellActivity" />
         <activity android:name=".TradeTypeSelectionActivity" />
         <activity android:name=".setting" />
-        <activity android:name=".SendGroupInvitationActivity"></activity>
-
+        <activity android:name=".SendGroupInvitationActivity" />
+        <activity android:name=".recipient_communication"></activity>
     </application>
 
 </manifest>

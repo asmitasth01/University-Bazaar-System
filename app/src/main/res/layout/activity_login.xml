@@ -73,8 +73,9 @@
                 android:text="@string/action_sign_in"
                 android:textStyle="bold"
                 android:background="@color/colorAccent"
-                android:fontFamily="sans-serif-condensed"
-                android:textColor="@color/colorPrimaryDark" />
+                android:fontFamily="serif"
+                android:textColor="@android:color/background_light"
+                android:textSize="14sp" />
 
         </LinearLayout>
     </ScrollView>
