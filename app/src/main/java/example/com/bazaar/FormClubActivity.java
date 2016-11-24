@@ -16,7 +16,13 @@ public class FormClubActivity extends AppCompatActivity {
 
     protected void openSendInvite(View view)
     {
-        Intent intent = new Intent(this, SendGroupInvitationActivity.class);
-        startActivity(intent);
+        Intent intent;
+
+        switch(view.getId()){
+            case R.id.create_club_button:
+                intent = new Intent(this, SendGroupInvitationActivity.class);
+                startActivity(intent);
+        }
+
     }
 }
