@@ -21,17 +21,17 @@
         android:layout_marginStart="64dp"
         android:id="@+id/textView22"
         android:layout_alignTop="@+id/textView20"
-        android:textColor="@color/colorAccent" />
+        android:textColor="@color/colorAccent"
+        android:fontFamily="serif"
+        android:textSize="14sp" />
 
     <TextView
-        android:text="TextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/textView21"
         android:layout_alignLeft="@+id/textView22"
         android:layout_alignStart="@+id/textView22"
-        android:id="@+id/textView23"
-        android:textColor="@color/colorAccent" />
+        android:id="@+id/textView23" />
 
     <TextView
         android:text="Offered Item Description"
@@ -40,8 +40,8 @@
         android:id="@+id/textView20"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:fontFamily="casual"
-        android:textColor="@color/colorPrimary"
+        android:fontFamily="serif"
+        android:textColor="@color/colorAccent"
         android:textSize="14sp" />
 
     <TextView
@@ -53,7 +53,7 @@
         android:layout_below="@+id/textView20"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:fontFamily="casual"
+        android:fontFamily="serif"
         android:textColor="@color/colorPrimary"
         android:textSize="14sp" />
 
@@ -76,7 +76,7 @@
         android:layout_below="@+id/textView21"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:fontFamily="casual"
+        android:fontFamily="serif"
         android:textColor="@color/colorPrimary"
         android:textSize="14sp" />
 
@@ -89,19 +89,19 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginBottom="14dp"
-        android:background="@color/colorPrimary"
+        android:background="@color/colorAccent"
         android:onClick="openExchangeSellerConformation"
         android:textStyle="normal|bold"
         android:textSize="14sp"
-        android:textColor="@color/colorPrimaryDark"
-        android:fontFamily="sans-serif-condensed" />
+        android:textColor="@android:color/background_light"
+        android:fontFamily="serif" />
 
     <Button
         android:text="Accept Offer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/button7"
-        android:background="@color/colorPrimary"
+        android:background="@color/colorAccent"
         android:layout_above="@+id/button8"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
@@ -109,6 +109,16 @@
         android:onClick="openExchangeSellerConformation"
         android:textStyle="normal|bold"
         android:textSize="14sp"
-        android:textColor="@color/colorPrimaryDark"
-        android:fontFamily="sans-serif-condensed" />
+        android:textColor="@android:color/background_light"
+        android:fontFamily="serif" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView21"
+        android:layout_toEndOf="@+id/textView20"
+        android:id="@+id/textView30"
+        android:fontFamily="serif"
+        android:textColor="@color/colorAccent" />
 </RelativeLayout>

@@ -11,21 +11,6 @@
     tools:context="example.com.bazaar.BankInfoAddedSuccessActivity"
     android:background="@color/colorPrimaryDark">
 
-    <TextView
-        android:text="Bank Information has been added."
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="160dp"
-        android:id="@+id/textView9"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:textColor="@color/colorPrimary"
-        android:textSize="24sp"
-        android:fontFamily="casual"
-        android:textStyle="normal|italic"
-        android:textAlignment="center" />
-
     <Button
         android:text="Done"
         android:layout_width="match_parent"
@@ -34,10 +19,23 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="7dp"
         android:id="@+id/settings"
-        android:background="@color/colorPrimary"
-        android:fontFamily="sans-serif-condensed"
-        android:textColor="@color/colorPrimaryDark"
+        android:background="@color/colorAccent"
+        android:textColor="@android:color/background_light"
         android:textSize="14sp"
+        android:onClick="goHome"
         android:textStyle="normal|bold"
-        android:onClick="goHome" />
+        android:fontFamily="serif" />
+
+    <TextView
+        android:text="Bank Information has been added."
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="160dp"
+        android:id="@+id/textView9"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:fontFamily="serif"
+        android:textSize="18sp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/colorAccent" />
 </RelativeLayout>

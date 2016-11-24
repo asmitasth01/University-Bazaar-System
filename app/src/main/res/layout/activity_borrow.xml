@@ -32,10 +32,10 @@
         android:layout_below="@+id/textView2"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:fontFamily="casual"
-        android:textColor="@color/colorPrimary"
-        android:textStyle="normal|bold"
-        android:text="Street Address" />
+        android:text="Street Address"
+        android:textAppearance="@android:style/TextAppearance.Material.Small"
+        android:fontFamily="serif"
+        android:textColor="@color/colorAccent" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -45,45 +45,32 @@
         android:layout_below="@+id/textView3"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:fontFamily="casual"
-        android:textColor="@color/colorPrimary"
+        android:fontFamily="serif"
+        android:textColor="@color/colorAccent"
         android:textStyle="normal|bold"
         android:text="City" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView4"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="36dp"
-        android:id="@+id/textView5"
-        android:fontFamily="casual"
-        android:textColor="@color/colorPrimary"
-        android:textStyle="normal|bold"
-        android:text="State" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_marginTop="53dp"
         android:id="@+id/textView2"
-        android:fontFamily="sans-serif-condensed"
-        android:textColor="@color/colorPrimary"
+        android:fontFamily="serif"
+        android:textColor="@color/colorAccent"
         android:layout_below="@+id/imageView"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:textStyle="normal|bold"
         android:text="Shipping Information"
-        android:textSize="24sp" />
+        android:textSize="18sp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="34dp"
         android:id="@+id/textView6"
-        android:fontFamily="casual"
-        android:textColor="@color/colorPrimary"
+        android:fontFamily="serif"
+        android:textColor="@color/colorAccent"
         android:textStyle="normal|bold"
         android:text="Zip Code"
         android:layout_below="@+id/textView5"
@@ -144,21 +131,23 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/button"
-        android:background="@color/colorPrimary"
-        android:textColor="@color/colorPrimaryDark"
+        android:background="@color/colorAccent"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
+        android:onClick="openPayment"
+        android:fontFamily="serif"
+        android:textColor="@android:color/background_light"
         android:textStyle="normal|bold"
-        android:onClick="openPayment"/>
+        android:textSize="14sp" />
 
     <Spinner
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/spin"
         android:entries="@array/borrowTimeLength"
-        android:background="@color/colorPrimary"
-        android:popupBackground = "@color/colorPrimary"
+        android:background="@color/colorAccent"
+        android:popupBackground = "@color/colorAccent"
         android:layout_above="@+id/textView2"
         android:layout_alignRight="@+id/textView14"
         android:layout_alignEnd="@+id/textView14"
@@ -185,7 +174,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/textView14"
         android:fontFamily="sans-serif-condensed"
-        android:textColor="@color/colorPrimary"
+        android:textColor="@color/colorAccent"
         android:textStyle="normal|bold"
         android:textSize="18sp"
         android:layout_alignBottom="@+id/spin"
@@ -198,11 +187,23 @@
         android:layout_height="wrap_content"
         android:id="@+id/spin2"
         android:entries="@array/itemQuantity"
-        android:background="@color/colorPrimary"
+        android:background="@color/colorAccent"
         android:popupBackground = "@color/colorPrimary"
         android:layout_below="@+id/textView"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true">
     </Spinner>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:id="@+id/textView5"
+        android:fontFamily="serif"
+        android:textColor="@color/colorAccent"
+        android:textStyle="normal|bold"
+        android:text="State"
+        android:layout_below="@+id/editText4"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>

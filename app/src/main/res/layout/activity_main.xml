@@ -26,11 +26,12 @@
         android:id="@+id/enter_register"
         android:visibility="visible"
         android:background="@color/colorPrimaryDark"
-        android:typeface="sans"
+        android:typeface="normal"
         android:textColor="@color/colorPrimary"
-        android:fontFamily="sans-serif"
+        android:fontFamily="serif"
         android:onClick="goRegister"
-        android:textStyle="normal|bold" />
+        android:textStyle="normal|bold"
+        android:textSize="14sp" />
 
     <Button
         android:text="Login with UBS"
@@ -39,14 +40,14 @@
         android:layout_above="@+id/enter_register"
         android:layout_alignStart="@+id/enter_register"
         android:id="@+id/enter_login"
-        android:fontFamily="sans-serif"
-        android:typeface="sans"
-        android:textColor="@color/colorPrimaryDark"
         android:background="@color/colorAccent"
         android:visibility="visible"
         android:elevation="0dp"
         android:onClick="goLogin"
-        android:textStyle="normal|bold" />
+        android:fontFamily="serif"
+        android:textColor="@android:color/background_light"
+        android:textStyle="normal|bold"
+        android:textSize="14sp" />
 
     <ImageView
         android:layout_width="wrap_content"

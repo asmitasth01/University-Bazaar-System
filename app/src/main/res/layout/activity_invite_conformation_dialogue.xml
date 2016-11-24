@@ -20,7 +20,7 @@
         android:layout_marginTop="105dp"
         android:id="@+id/edit"
         android:textColor="@color/colorPrimaryDark"
-        android:background="@color/colorPrimary"
+        android:background="@color/colorAccent"
         android:fontFamily="sans-serif-condensed"
         android:onClick="openSendInvite"
         android:textStyle="normal|bold"
@@ -34,20 +34,21 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="162dp"
         android:id="@+id/textView"
-        android:textColor="@color/colorPrimary"
-        android:textSize="24sp"
-        android:fontFamily="casual" />
+        android:textAppearance="@android:style/TextAppearance.Material.Small"
+        android:fontFamily="serif"
+        android:textSize="18sp"
+        android:textColor="@color/colorAccent" />
 
     <Button
         android:text="DONE"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/settings"
-        android:textColor="@color/colorPrimaryDark"
-        android:background="@color/colorPrimary"
+        android:background="@color/colorAccent"
         android:layout_alignParentBottom="true"
-        android:fontFamily="sans-serif-condensed"
-        android:textStyle="normal|bold"
+        android:onClick="goHome"
         android:textSize="14sp"
-        android:onClick="goHome" />
+        android:fontFamily="serif"
+        android:textColor="@android:color/background_light"
+        android:textStyle="normal|bold" />
 </RelativeLayout>

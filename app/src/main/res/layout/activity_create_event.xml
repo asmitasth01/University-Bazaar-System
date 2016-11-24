@@ -18,17 +18,17 @@
         android:layout_height="wrap_content"
         android:id="@+id/button"
         android:onClick="openSendInvite"
-        android:background="@color/colorPrimary"
-        android:textSize="14sp"
-        android:textColor="@color/colorPrimaryDark"
+        android:background="@color/colorAccent"
         android:layout_marginBottom="7dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:fontFamily="sans-serif-condensed"
-        android:textStyle="normal|bold" />
+        android:textSize="14sp"
+        android:textStyle="normal|bold"
+        android:fontFamily="serif"
+        android:textColor="@android:color/background_light" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -60,43 +60,42 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView2"
-        android:textColor="@color/colorPrimary"
-        android:textSize="18sp"
-        android:fontFamily="casual"
-        android:textStyle="normal|bold|italic"
         android:layout_marginLeft="13dp"
         android:layout_marginStart="13dp"
         android:layout_marginTop="56dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:textAppearance="@android:style/TextAppearance.Material.Small"
+        android:fontFamily="serif"
+        android:textSize="14sp"
+        android:textColor="@color/colorAccent" />
 
     <TextView
         android:text="Description:"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView6"
-        android:textColor="@color/colorPrimary"
-        android:textStyle="normal|bold|italic"
-        android:textSize="18sp"
-        android:fontFamily="casual"
         android:layout_marginTop="20dp"
         android:layout_below="@+id/editText10"
         android:layout_alignLeft="@+id/textView2"
-        android:layout_alignStart="@+id/textView2" />
+        android:layout_alignStart="@+id/textView2"
+        android:textAppearance="@android:style/TextAppearance.Material.Small"
+        android:fontFamily="serif"
+        android:textColor="@color/colorAccent" />
 
     <TextView
         android:text="Upload Image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView15"
-        android:textColor="@color/colorPrimary"
-        android:textSize="18sp"
-        android:fontFamily="casual"
         android:layout_below="@+id/editText12"
         android:layout_alignLeft="@+id/textView6"
         android:layout_alignStart="@+id/textView6"
-        android:layout_marginTop="126dp" />
+        android:layout_marginTop="126dp"
+        android:textAppearance="@android:style/TextAppearance.Material.Small"
+        android:fontFamily="serif"
+        android:textColor="@color/colorAccent" />
 
     <ImageView
         android:layout_width="match_parent"
@@ -109,16 +108,16 @@
         android:layout_height="130dp" />
 
     <Button
-        android:text="Select Image"
+        android:text="Select"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginStart="20dp"
         android:id="@+id/edit"
         android:background="@color/colorAccent"
-        android:textColor="@color/colorPrimaryDark"
+        android:textColor="@android:color/background_light"
         android:textStyle="normal|bold"
-        android:fontFamily="sans-serif-condensed"
+        android:fontFamily="serif"
         android:layout_alignBaseline="@+id/textView15"
         android:layout_alignBottom="@+id/textView15"
         android:layout_alignLeft="@+id/editText12"
