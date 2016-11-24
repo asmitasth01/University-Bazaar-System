@@ -130,14 +130,8 @@
         android:text=" Make Payment "
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-<<<<<<< HEAD
-        android:id="@+id/create_club_button"
-        android:background="@color/colorPrimary"
-        android:textColor="@color/colorPrimaryDark"
-=======
         android:id="@+id/button"
         android:background="@color/colorAccent"
->>>>>>> 1554d0b6af96ba40a6bc7a0cf30c1625ea0fe630
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"

@@ -29,13 +29,8 @@
         android:text="SEND"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-<<<<<<< HEAD
-        android:id="@+id/create_club_button"
-        android:textColor="@color/colorPrimaryDark"
-=======
         android:id="@+id/button"
         android:textColor="@android:color/background_light"
->>>>>>> 1554d0b6af96ba40a6bc7a0cf30c1625ea0fe630
         android:background="@color/colorAccent"
         android:layout_marginBottom="14dp"
         android:layout_alignParentBottom="true"
