@@ -13,7 +13,7 @@ public class PasswordRetrivalActivity extends AppCompatActivity {
         setContentView(R.layout.activity_password_retrival);
     }
 
-    protected void openPasswordResetConformation(View view)
+    public void openPasswordResetConformation(View view)
     {
         Intent intent = new Intent(this, PasswordResetLinkSentConformationActivity.class);
         startActivity(intent);

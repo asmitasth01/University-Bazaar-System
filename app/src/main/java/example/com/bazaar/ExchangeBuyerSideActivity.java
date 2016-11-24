@@ -22,13 +22,13 @@ public class ExchangeBuyerSideActivity extends AppCompatActivity {
         setContentView(R.layout.activity_exchange_buyer_side);
     }
 
-    protected void openExchangeOfferSubmitted(View view)
+    public void openExchangeOfferSubmitted(View view)
     {
         Intent intent = new Intent(this, ExchangeOfferSubmittedActivity.class);
         startActivity(intent);
     }
 
-    protected void openGetBankInformation(View view)
+    public void openGetBankInformation(View view)
     {
         Intent intent = new Intent(this, BankInfoActivity.class);
         startActivity(intent);

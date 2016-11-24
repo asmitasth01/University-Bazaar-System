@@ -13,12 +13,13 @@ public class SendGroupInvitationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_send_group_invitation);
     }
 
-    protected void openInviteConformationDialogue(View view)
+    public void openInviteConformationDialogue(View view)
     {
         Intent intent = new Intent(this, InviteConformationDialogueActivity.class);
         startActivity(intent);
     }
-    protected void goHome(View view)
+
+    public void goHome(View view)
     {
         Intent intent = new Intent(this, Home.class);
         startActivity(intent);

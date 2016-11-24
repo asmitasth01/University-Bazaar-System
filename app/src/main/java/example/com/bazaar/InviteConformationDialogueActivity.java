@@ -12,12 +12,14 @@ public class InviteConformationDialogueActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_invite_conformation_dialogue);
     }
-    protected void openSendInvite(View view)
+
+    public void openSendInvite(View view)
     {
         Intent intent = new Intent(this, SendGroupInvitationActivity.class);
         startActivity(intent);
     }
-    protected void goHome(View view)
+
+    public void goHome(View view)
     {
         Intent intent = new Intent(this, Home.class);
         startActivity(intent);

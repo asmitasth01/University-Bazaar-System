@@ -13,7 +13,7 @@ public class BuyActivity extends AppCompatActivity {
         setContentView(R.layout.activity_buy);
     }
 
-    protected void openPayment(View view)
+    public void openPayment(View view)
     {
         Intent intent = new Intent(this,PaymentMainActivity.class);
         startActivity(intent);

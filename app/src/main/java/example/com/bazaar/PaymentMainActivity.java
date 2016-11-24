@@ -17,9 +17,10 @@ public class PaymentMainActivity extends AppCompatActivity {
         Intent cash = new Intent(this, Cash.class);
         startActivity(cash);
     }
-   public void goCredit(View view)
+
+    public void goCredit(View view)
     {
-    Intent credit =new Intent(this,Credit.class);
+        Intent credit =new Intent(this,Credit.class);
         startActivity(credit);
     }
 

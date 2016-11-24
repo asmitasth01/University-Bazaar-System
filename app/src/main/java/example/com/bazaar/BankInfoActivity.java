@@ -13,7 +13,7 @@ public class BankInfoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_bank_info);
     }
 
-    protected void openBankInfoSuccess(View view)
+    public void openBankInfoSuccess(View view)
     {
         Intent intent = new Intent(this, BankInfoAddedSuccessActivity.class);
         startActivity(intent);

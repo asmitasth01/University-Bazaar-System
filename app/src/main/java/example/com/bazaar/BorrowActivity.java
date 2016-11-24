@@ -12,7 +12,8 @@ public class BorrowActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_borrow);
     }
-    protected void openPayment(View view)
+
+    public void openPayment(View view)
     {
         Intent intent = new Intent(this,PaymentMainActivity.class);
         startActivity(intent);

@@ -28,4 +28,10 @@ public class SignInActivity extends AppCompatActivity {
 //            startActivity(loggedIn);
 //        }
     }
+
+    public void retrievePassword(View view)
+    {
+        Intent intent = new Intent(this, PasswordRetrivalActivity.class);
+        startActivity(intent);
+    }
 }

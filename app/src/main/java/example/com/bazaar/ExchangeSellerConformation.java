@@ -12,7 +12,8 @@ public class ExchangeSellerConformation extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exchange_seller_conformation);
     }
-    protected void goHome(View view)
+
+    public void goHome(View view)
     {
         Intent intent = new Intent(this, Home.class);
         startActivity(intent);

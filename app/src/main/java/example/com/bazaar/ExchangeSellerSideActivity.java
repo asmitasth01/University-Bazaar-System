@@ -13,10 +13,9 @@ public class ExchangeSellerSideActivity extends AppCompatActivity {
         setContentView(R.layout.activity_exchange_seller_side);
     }
 
-    protected void openExchangeSellerConformation(View view)
+    public void openExchangeSellerConformation(View view)
     {
-        Intent intent = new Intent(this, ExchangeSellerConformation.class
-        );
+        Intent intent = new Intent(this, ExchangeSellerConformation.class);
         startActivity(intent);
     }
 }
