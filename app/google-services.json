@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "921100782471",
+    "firebase_url": "https://bazaar-7ee62.firebaseio.com",
+    "project_id": "bazaar-7ee62",
+    "storage_bucket": "bazaar-7ee62.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:921100782471:android:0a7d4e580b619c81",
+        "android_client_info": {
+          "package_name": "example.com.bazaar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "921100782471-cof69d24qbbcui572tukgr7lqhncvpiq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA5TUNbRGWtcTdDNNVT-RpOR_67QyknWOs"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
