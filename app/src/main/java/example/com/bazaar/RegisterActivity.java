@@ -64,6 +64,8 @@ public class RegisterActivity extends AppCompatActivity {
 
         user = username.getText().toString();
         pass = password.getText().toString();
+
+        System.out.println("password is: "+pass);
         DatabaseReference usersData = bazaar.child("User");
 
         UserInfo temp = new UserInfo();

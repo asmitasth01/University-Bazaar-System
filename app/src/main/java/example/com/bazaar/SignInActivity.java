@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -20,9 +21,18 @@ import example.com.bazaar.bean.UserInfo;
 public class SignInActivity extends AppCompatActivity {
 
     DatabaseReference bazaar;
+    EditText user;
+    EditText pass;
+    TextView error;
     String username;
     String password;
     ArrayList<UserInfo> userList;
+    Intent intent;
+    DataSnapshot dataSnapshot;
+
+    public SignInActivity(){
+        userList = new ArrayList<>();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,14 +40,11 @@ public class SignInActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sign_in);
         bazaar = FirebaseDatabase.getInstance().getReference("Bazaar");
 
-        EditText user = (EditText)findViewById(R.id.username);
-        username = user.getText().toString();
-        EditText pass = (EditText)findViewById(R.id.password);
-        password = pass.getText().toString();
-    }
+        user = (EditText)findViewById(R.id.username);
+        pass = (EditText)findViewById(R.id.password);
+        error = (TextView)findViewById(R.id.error_login);
 
-    public void attemptLogin(View view){
-
+        System.out.println(password);
         bazaar.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -62,10 +69,23 @@ public class SignInActivity extends AppCompatActivity {
             }
         });
 
-        for (int i = 0; i<userList.size(); i++){
-            if(userList.get(i).getUserName().contains(username)){
-                if(userList.get(i).getPassword().compareTo(password)==1){
+    }
 
+    public void attemptLogin(View view){
+        username = user.getText().toString();
+        password = pass.getText().toString();
+
+        System.out.println("password is: "+password);
+        for (int i = 0; i<userList.size(); i++){
+
+            if(userList.get(i).getUserName().contains(username)){
+                System.out.println("username is: "+userList.get(i).getUserName());
+                if(userList.get(i).getPassword().compareTo(password)==0){
+                    System.out.println(userList.get(i).getPassword());
+                    intent = new Intent(this, Home.class);
+                    startActivity(intent);
+                }else{
+                    error.setText("Username or Password Invalid!!");
                 }
             }
         }

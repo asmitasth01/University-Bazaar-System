@@ -51,7 +51,7 @@
         android:text="Sign In"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/create_club_button"
+        android:id="@+id/createAccount"
         android:background="@color/colorAccent"
         android:fontFamily="sans-serif-condensed"
         android:textStyle="normal|bold"
@@ -60,4 +60,13 @@
         android:textColor="@color/colorPrimaryDark"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/error_login"
+        android:layout_below="@+id/password"
+        android:textAlignment="center"
+        android:textColor="@android:color/holo_red_dark" />
 </RelativeLayout>
