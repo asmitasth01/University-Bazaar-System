@@ -37,6 +37,7 @@ import java.util.Iterator;
 
 import example.com.bazaar.bean.UserInfo;
 
+
 public class RegisterActivity extends AppCompatActivity {
 
     public android.content.Context context;
@@ -202,28 +203,20 @@ public class RegisterActivity extends AppCompatActivity {
                 && null != data) {
             // Get the Image from Camera
 
-            //
-            Bundle extras = data.getExtras();
-            Bitmap bitmap = (Bitmap) data.getExtras().get("data");
-            ByteArrayOutputStream baos = new ByteArrayOutputStream();
-            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
-            byte[] dataBAOS = baos.toByteArray();
+            Uri cameraImage = data.getData();
 
             //Set the image into imageView
-            myImageView.setImageBitmap(bitmap);
+            myImageView.setImageURI(cameraImage);
 
-            //Upload the pic to firebase
 
-           // Uri CameraImage = data.getData();
 
             StorageReference filePathCamera = userProfilePicture.child("ProfilePic_" + user);
 
-//                String[] filePathColumn = {MediaStore.Images.Media.DATA};
-            UploadTask uploadTask = filePathCamera.putBytes(dataBAOS);
-
-            uploadTask.addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+            filePathCamera.putFile(cameraImage).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                    Uri downloadUri = taskSnapshot.getDownloadUrl();
+                    Picasso.with(RegisterActivity.this).load(downloadUri).fit().centerCrop().into(myImageView);
                     Toast.makeText(RegisterActivity.this, "Upload Done.", Toast.LENGTH_SHORT).show();
                 }
             }).addOnFailureListener(new OnFailureListener() {
