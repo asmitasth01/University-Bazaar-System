@@ -172,8 +172,5 @@
             android:textSize="16dip"
             android:onClick="attemptLogin"/>
 
-
-
-
     </LinearLayout>
 </ScrollView>

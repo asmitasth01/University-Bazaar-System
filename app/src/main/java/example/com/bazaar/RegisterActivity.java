@@ -138,7 +138,6 @@ public class RegisterActivity extends AppCompatActivity {
 
     }
 
-
     public void registerUser(View view) {
 
         user = username.getText().toString();
