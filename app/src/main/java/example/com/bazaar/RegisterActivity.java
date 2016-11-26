@@ -28,6 +28,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.squareup.picasso.Picasso;
 
 import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
@@ -178,11 +179,14 @@ public class RegisterActivity extends AppCompatActivity {
 
             //Set the image into imageView
             myImageView.setImageURI(selectedImage);
-            StorageReference filePath = userProfilePicture.child("filename" + user);
+            StorageReference filePath = userProfilePicture.child("ProfilePic_" + user);
 //                String[] filePathColumn = {MediaStore.Images.Media.DATA};
             filePath.putFile(selectedImage).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+
+                    Uri downloadUri = taskSnapshot.getDownloadUrl();
+                    Picasso.with(RegisterActivity.this).load(downloadUri).fit().centerCrop().into(myImageView);
                     Toast.makeText(RegisterActivity.this, "Upload Done.", Toast.LENGTH_SHORT).show();
                 }
             }).addOnFailureListener(new OnFailureListener() {
@@ -213,7 +217,7 @@ public class RegisterActivity extends AppCompatActivity {
 
            // Uri CameraImage = data.getData();
 
-            StorageReference filePathCamera = userProfilePicture.child("filename" + user);
+            StorageReference filePathCamera = userProfilePicture.child("ProfilePic_" + user);
 
 //                String[] filePathColumn = {MediaStore.Images.Media.DATA};
             UploadTask uploadTask = filePathCamera.putBytes(dataBAOS);
