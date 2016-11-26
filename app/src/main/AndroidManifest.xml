@@ -13,6 +13,10 @@
 
     <uses-sdk android:minSdkVersion="14" android:targetSdkVersion="19" />
 
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -39,13 +43,19 @@
                 <action android:name="android.intent.action.Main" />
             </intent-filter>
         </activity>
-        <activity android:name=".FormClubActivity" />
+        <activity android:name=".FormClubActivity"
+            android:label="Form Club"
+            android:theme="@style/AppTheme">
+        </activity>
         <activity android:name=".BankInfoActivity" />
         <activity android:name=".BankInfoAddedSuccessActivity" />
         <activity android:name=".BorrowActivity" />
         <activity android:name=".BuyActivity" />
         <activity android:name=".Cash" />
-        <activity android:name=".Communication" />
+        <activity android:name=".Communication"
+            android:label="Communication"
+            android:theme="@style/AppTheme">
+        </activity>
         <activity android:name=".CreateEventActivity" />
         <activity android:name=".Credit" />
         <activity android:name=".Event_Functionality" />
@@ -54,7 +64,10 @@
         <activity android:name=".ExchangeSellerSideActivity" />
         <activity android:name=".ExchangeSellerConformation" />
         <activity android:name=".InviteConformationDialogueActivity" />
-        <activity android:name=".Memberinfo" />
+        <activity android:name=".Memberinfo"
+            android:label="Your Profile"
+            android:theme="@style/AppTheme">
+        </activity>
         <activity android:name=".PasswordResetLinkSentConformationActivity" />
         <activity android:name=".PasswordRetrivalActivity" />
         <activity android:name=".PaymentMainActivity" />
@@ -62,7 +75,10 @@
         <activity android:name=".TradeTypeSelectionActivity" />
         <activity android:name=".setting" />
         <activity android:name=".SendGroupInvitationActivity" />
-        <activity android:name=".recipient_communication"></activity>
+        <activity android:name=".recipient_communication" />
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/title_activity_settings"></activity>
     </application>
 
 </manifest>
