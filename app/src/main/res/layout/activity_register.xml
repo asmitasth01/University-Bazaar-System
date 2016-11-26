@@ -140,8 +140,8 @@
             android:background="@color/colorAccent"
             android:textColor="@android:color/background_light"
             android:textStyle="bold"
-            android:layout_marginTop="50dp"
-            android:layout_marginBottom="100dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"
             android:layout_weight="0.02" />
 
         <ImageView
