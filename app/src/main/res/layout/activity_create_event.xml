@@ -35,7 +35,7 @@
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:ems="10"
-        android:id="@+id/editText10"
+        android:id="@+id/input_club_name"
         android:visibility="visible"
         android:layout_alignTop="@+id/textView2"
         android:layout_toRightOf="@+id/textView15"
@@ -48,12 +48,12 @@
         android:layout_height="wrap_content"
         android:inputType="textMultiLine"
         android:ems="10"
-        android:id="@+id/editText12"
+        android:id="@+id/input_club_description"
         android:singleLine="false"
         android:textColorLink="@android:color/white"
         android:layout_alignTop="@+id/textView6"
-        android:layout_alignLeft="@+id/editText10"
-        android:layout_alignStart="@+id/editText10" />
+        android:layout_alignLeft="@+id/input_club_name"
+        android:layout_alignStart="@+id/input_club_name" />
 
     <TextView
         android:text="Event Name:"
@@ -77,7 +77,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/textView6"
         android:layout_marginTop="20dp"
-        android:layout_below="@+id/editText10"
+        android:layout_below="@+id/input_club_name"
         android:layout_alignLeft="@+id/textView2"
         android:layout_alignStart="@+id/textView2"
         android:textAppearance="@android:style/TextAppearance.Material.Small"
@@ -89,7 +89,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView15"
-        android:layout_below="@+id/editText12"
+        android:layout_below="@+id/input_club_description"
         android:layout_alignLeft="@+id/textView6"
         android:layout_alignStart="@+id/textView6"
         android:layout_marginTop="126dp"
@@ -120,8 +120,8 @@
         android:fontFamily="serif"
         android:layout_alignBaseline="@+id/textView15"
         android:layout_alignBottom="@+id/textView15"
-        android:layout_alignLeft="@+id/editText12"
-        android:layout_alignStart="@+id/editText12"
+        android:layout_alignLeft="@+id/input_club_description"
+        android:layout_alignStart="@+id/input_club_description"
         android:onClick="loadImagefromGallery"
         android:textSize="14sp" />
 

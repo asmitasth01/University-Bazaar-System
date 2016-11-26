@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -24,7 +25,7 @@ public class SignInActivity extends AppCompatActivity {
     EditText user;
     EditText pass;
     TextView error;
-    String username;
+    private static String username;
     String password;
     ArrayList<UserInfo> userList;
     Intent intent;
@@ -72,23 +73,31 @@ public class SignInActivity extends AppCompatActivity {
     }
 
     public void attemptLogin(View view){
-        username = user.getText().toString();
+        setUsername(user.getText().toString());
         password = pass.getText().toString();
 
-        System.out.println("password is: "+password);
-        for (int i = 0; i<userList.size(); i++){
+        if(username.isEmpty() || password.isEmpty()){
+            error.setText("Input fields cannot be empty.");
+        }else{
+            System.out.println("password is: "+password);
+            for (int i = 0; i<userList.size(); i++){
 
-            if(userList.get(i).getUserName().contains(username)){
-                System.out.println("username is: "+userList.get(i).getUserName());
-                if(userList.get(i).getPassword().compareTo(password)==0){
-                    System.out.println(userList.get(i).getPassword());
-                    intent = new Intent(this, Home.class);
-                    startActivity(intent);
-                }else{
-                    error.setText("Username or Password Invalid!!");
+                if(userList.get(i).getUserName().contains(username)){
+                    System.out.println("username is: "+userList.get(i).getUserName());
+                    if(userList.get(i).getPassword().compareTo(password)==0){
+                        System.out.println(userList.get(i).getPassword());
+                        Toast.makeText(getApplicationContext(), "Logging in...",
+                                Toast.LENGTH_SHORT).show();
+                        intent = new Intent(this, Home.class);
+                        startActivity(intent);
+                    }else{
+                        error.setText("Username or Password Invalid!!");
+                    }
                 }
             }
         }
+
+
 
 //        bazaar.addChildEventListener(new ChildEventListener() {
 //            @Override
@@ -123,5 +132,13 @@ public class SignInActivity extends AppCompatActivity {
     {
         Intent intent = new Intent(this, PasswordRetrivalActivity.class);
         startActivity(intent);
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 }
