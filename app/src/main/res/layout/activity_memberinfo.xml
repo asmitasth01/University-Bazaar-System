@@ -178,7 +178,9 @@
         android:id="@+id/btn_save"
         android:text="Save"
         android:background="@color/colorAccent"
-        android:textStyle="normal|bold" />
+        android:textStyle="normal|bold"
+        android:visibility="invisible"
+        android:onClick="onSave"/>
 
 
 </RelativeLayout>

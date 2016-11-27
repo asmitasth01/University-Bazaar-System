@@ -2,17 +2,18 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="example.com.bazaar">
 
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="19" />
+
     <!-- To auto-complete the email text field in the login form with the user's emails -->
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CAMERA" />
-
-    <uses-sdk android:minSdkVersion="14" android:targetSdkVersion="19" />
-
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -43,19 +44,19 @@
                 <action android:name="android.intent.action.Main" />
             </intent-filter>
         </activity>
-        <activity android:name=".FormClubActivity"
+        <activity
+            android:name=".FormClubActivity"
             android:label="Form Club"
-            android:theme="@style/AppTheme">
-        </activity>
+            android:theme="@style/AppTheme" />
         <activity android:name=".BankInfoActivity" />
         <activity android:name=".BankInfoAddedSuccessActivity" />
         <activity android:name=".BorrowActivity" />
         <activity android:name=".BuyActivity" />
         <activity android:name=".Cash" />
-        <activity android:name=".Communication"
+        <activity
+            android:name=".Communication"
             android:label="Communication"
-            android:theme="@style/AppTheme">
-        </activity>
+            android:theme="@style/AppTheme" />
         <activity android:name=".CreateEventActivity" />
         <activity android:name=".Credit" />
         <activity android:name=".Event_Functionality" />
@@ -64,10 +65,10 @@
         <activity android:name=".ExchangeSellerSideActivity" />
         <activity android:name=".ExchangeSellerConformation" />
         <activity android:name=".InviteConformationDialogueActivity" />
-        <activity android:name=".Memberinfo"
+        <activity
+            android:name=".Memberinfo"
             android:label="Your Profile"
-            android:theme="@style/AppTheme">
-        </activity>
+            android:theme="@style/AppTheme" />
         <activity android:name=".PasswordResetLinkSentConformationActivity" />
         <activity android:name=".PasswordRetrivalActivity" />
         <activity android:name=".PaymentMainActivity" />
@@ -78,7 +79,20 @@
         <activity android:name=".recipient_communication" />
         <activity
             android:name=".SettingsActivity"
-            android:label="@string/title_activity_settings"></activity>
+            android:label="@string/title_activity_settings" />
+        <activity
+            android:name=".SearchActivity"
+            android:label="Search UBS">
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
+
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".SearchResultsMember"
+            android:label="Member"></activity>
     </application>
 
 </manifest>

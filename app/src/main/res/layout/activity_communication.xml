@@ -9,8 +9,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="example.com.bazaar.Communication"
-    android:background="@color/colorPrimaryDark"
-    android:elevation="17dp">
+    android:background="@color/colorPrimaryDark">
 
     <TextView
         android:text="Recipient: "
