@@ -23,6 +23,11 @@
             android:icon="@drawable/profile"
             android:onClick="onNavigationItemSelected"/>
         <item
+            android:id="@+id/search"
+            android:title="@string/search_hint"
+            android:icon="@drawable/ic_search_black_24dp"
+            android:onClick="onNavigationItemSelected"/>
+        <item
             android:id="@+id/logout"
             android:title="@string/logout"
             android:icon="@android:drawable/ic_lock_power_off"

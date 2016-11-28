@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 
-public class Communication extends Home {
+public class Communication extends Home{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

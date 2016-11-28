@@ -105,6 +105,9 @@ public class Home extends AppCompatActivity
         } else if (id == R.id.profile) {
             intent = new Intent(this, Memberinfo.class);
             startActivity(intent);
+        }else if (id == R.id.search) {
+            intent = new Intent(this, SearchActivity.class);
+            startActivity(intent);
         } else if (id == R.id.logout) {
             intent = new Intent(this, MainActivity.class);
             startActivity(intent);
