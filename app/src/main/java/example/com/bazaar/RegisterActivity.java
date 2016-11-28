@@ -9,6 +9,8 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -57,8 +59,8 @@ public class RegisterActivity extends AppCompatActivity {
    // private StorageReference mCamStorage;
     private ImageView myImageView;
 
-    String user;
-    String pass;
+    private static String user;
+    private static String pass;
 
 
     private static final int GALLERY_INTENT = 2;
@@ -72,6 +74,7 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+
 
         bazaar = FirebaseDatabase.getInstance().getReference("Bazaar");
         mStorage = FirebaseStorage.getInstance().getReference("Profile Pictures");
@@ -97,6 +100,21 @@ public class RegisterActivity extends AppCompatActivity {
         username = (EditText) findViewById(R.id.input_username);
         password = (EditText) findViewById(R.id.input_password);
 
+        //Reading Edittext while user is typing
+        username.addTextChangedListener(new TextWatcher()
+        {
+            @Override
+            public void afterTextChanged(Editable mEdit)
+            {
+                user = mEdit.toString();
+            }
+
+            public void beforeTextChanged(CharSequence s, int start, int count, int after){}
+
+            public void onTextChanged(CharSequence s, int start, int before, int count){}
+        });
+
+        System.out.println(user+"This is the user\n\n\n");
 
         //For profile Picture upload to the firebase from gallery
 
@@ -141,8 +159,11 @@ public class RegisterActivity extends AppCompatActivity {
 
     public void registerUser(View view) {
 
+
         user = username.getText().toString();
         pass = password.getText().toString();
+
+
         DatabaseReference usersData = bazaar.child("User");
 
         UserInfo temp = new UserInfo();
@@ -168,7 +189,8 @@ public class RegisterActivity extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        StorageReference userProfilePicture = mStorage.child("User Photo");
+        StorageReference userPicture = mStorage.child(user);
+        StorageReference userProfilePicture = userPicture.child("Profile Picture");
         super.onActivityResult(requestCode, resultCode, data);
         // When an Image is picked from Gallery
         if (requestCode == GALLERY_INTENT && resultCode == RESULT_OK
@@ -179,6 +201,8 @@ public class RegisterActivity extends AppCompatActivity {
 
             //Set the image into imageView
             myImageView.setImageURI(selectedImage);
+
+            //UPLOAD IMAGE TO FIREBASE
             StorageReference filePath = userProfilePicture.child("ProfilePic_" + user);
 //                String[] filePathColumn = {MediaStore.Images.Media.DATA};
             filePath.putFile(selectedImage).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
@@ -209,7 +233,7 @@ public class RegisterActivity extends AppCompatActivity {
             myImageView.setImageURI(cameraImage);
 
 
-
+            //UPLOAD IMAGE TO FIREBASE
             StorageReference filePathCamera = userProfilePicture.child("ProfilePic_" + user);
 
             filePathCamera.putFile(cameraImage).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
@@ -228,6 +252,7 @@ public class RegisterActivity extends AppCompatActivity {
             });
 
         }
+
     }
 
     }

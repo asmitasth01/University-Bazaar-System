@@ -57,7 +57,7 @@ public class SignInActivity extends AppCompatActivity {
                     GenericTypeIndicator<ArrayList<UserInfo>> t = new GenericTypeIndicator<ArrayList<UserInfo>>() {};
                     userList = iterator.next().getValue(t);
                     for (int i=0;i<userList.size();i++){
-                        System.out.println(userList.get(i).getUserName());
+                       // System.out.println(userList.get(i).getUserName());
                     }
 
                 }
