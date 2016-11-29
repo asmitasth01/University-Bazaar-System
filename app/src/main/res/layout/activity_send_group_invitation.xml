@@ -58,7 +58,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="132dp"
-        android:id="@+id/button2"
+        android:id="@+id/SellButton"
         android:layout_above="@+id/button3"
         android:layout_centerHorizontal="true"
         android:background="@color/colorAccent"

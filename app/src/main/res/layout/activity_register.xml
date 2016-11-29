@@ -147,7 +147,7 @@
         <ImageView
             android:layout_width="300dp"
             android:id="@+id/profilePicImageView"
-            android:layout_above="@+id/button2"
+            android:layout_above="@+id/SellButton"
             android:layout_weight="0.05"
             android:layout_height="300dp"
             android:rotation="90"/>

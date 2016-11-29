@@ -91,8 +91,10 @@
                 <action android:name="android.intent.action.SEARCH" />
             </intent-filter>
         </activity>
-        <activity android:name=".SearchResultsMember"
-            android:label="Member"></activity>
+        <activity
+            android:name=".SearchResultsMember"
+            android:label="Member" />
+        <activity android:name=".NotNecessary"></activity>
     </application>
 
 </manifest>

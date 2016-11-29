@@ -12,60 +12,16 @@
     tools:context=".sellActivity"
     android:background="@color/colorPrimaryDark">
 
-    <Button
-        android:text="Proceed to Bank Information"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="17dp"
-        android:id="@+id/button2"
-        android:textColor="@android:color/background_light"
-        android:background="@color/colorAccent"
-        android:onClick="openGetBankInformation"
-        android:textStyle="bold"
-        android:fontFamily="serif" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textMultiLine"
-        android:ems="10"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="58dp"
-        android:id="@+id/editText7" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:layout_alignTop="@+id/textView11"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:id="@+id/editText8" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="10"
-        android:layout_alignTop="@+id/textView12"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:id="@+id/editText9" />
 
     <Spinner
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/spinner"
+        android:id="@+id/TradeType"
         android:entries="@array/sellType"
         android:background="@color/colorAccent"
         android:layout_alignBottom="@+id/textView13"
-        android:layout_alignLeft="@+id/editText9"
-        android:layout_alignStart="@+id/editText9"
+        android:layout_alignLeft="@+id/itemPrice"
+        android:layout_alignStart="@+id/itemPrice"
         android:layout_marginLeft="46dp"
         android:layout_marginStart="46dp"
         android:popupBackground="@color/colorPrimary" />
@@ -97,32 +53,44 @@
         android:layout_marginTop="20dp" />
 
     <TextView
-        android:text="Select Trade Option:"
+        android:text="Item Name:"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/textView13"
-        android:textColor="@color/colorPrimary"
-        android:textSize="14sp"
-        android:fontFamily="serif"
-        android:layout_marginTop="14dp"
-        android:layout_below="@+id/editText9"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:id="@+id/textView10"
+        android:layout_alignParentStart="true"
+        android:textColor="@color/colorAccent" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:ems="10"
+        android:id="@+id/itemDescription"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true" />
+
+    <ImageView
+        android:layout_width="150dp"
+        app:srcCompat="@mipmap/ic_launcher"
+        android:id="@+id/SellItemImage"
+        android:layout_height="150dp"
+        android:layout_above="@+id/SellButton"
+        android:layout_toEndOf="@+id/textView10"
+        android:layout_marginBottom="12dp" />
 
     <Button
-        android:text="Select Image"
+        android:text="Gallery"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/edit"
+        android:id="@+id/SelectSellItemFromGallery"
         android:background="@color/colorAccent"
         android:textColor="@android:color/background_light"
         android:textStyle="bold"
         android:fontFamily="sans-serif-condensed"
-        android:onClick="loadImagefromGallery"
-        android:layout_below="@+id/textView12"
-        android:layout_alignLeft="@+id/spinner"
-        android:layout_alignStart="@+id/spinner"
-        android:layout_marginTop="109dp" />
+
+        android:layout_alignBaseline="@+id/textView15"
+        android:layout_alignBottom="@+id/textView15"
+        android:layout_toEndOf="@+id/textView13" />
 
     <TextView
         android:text="Upload Image"
@@ -132,24 +100,68 @@
         android:textColor="@color/colorAccent"
         android:textSize="14sp"
         android:fontFamily="serif"
-        android:layout_alignBaseline="@+id/edit"
-        android:layout_alignBottom="@+id/edit"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <ImageView
-        android:layout_width="match_parent"
-        app:srcCompat="@mipmap/ic_launcher"
-        android:id="@+id/imgView2"
-        android:layout_above="@+id/button2"
-        android:layout_height="180dp" />
+        android:layout_alignBaseline="@+id/SelectSellItemFromCamera"
+        android:layout_alignBottom="@+id/SelectSellItemFromCamera"
+        android:layout_alignEnd="@+id/textView11" />
 
     <TextView
-        android:text="Item Description:"
+        android:text="Select Trade Option:"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/textView10"
-        android:layout_alignParentStart="true"
-        android:textColor="@color/colorAccent" />
+        android:id="@+id/textView13"
+        android:textColor="@color/colorPrimary"
+        android:textSize="14sp"
+        android:fontFamily="serif"
+        android:layout_marginTop="25dp"
+        android:layout_below="@+id/itemPrice"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:text="Camera"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/SelectSellItemFromCamera"
+        android:background="@color/colorAccent"
+        android:textColor="@android:color/background_light"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-condensed"
+
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="19dp"
+        android:layout_below="@+id/TradeType"
+        android:layout_toEndOf="@+id/SelectSellItemFromGallery" />
+
+
+    <Button
+        android:text="Proceed to Bank Information"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="17dp"
+        android:id="@+id/SellButton"
+        android:textColor="@android:color/background_light"
+        android:background="@color/colorAccent"
+        android:textStyle="bold"
+        android:fontFamily="serif"
+        android:onClick="UploadSellItems" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/itemPrice"
+        android:layout_alignBottom="@+id/textView12"
+        android:layout_alignParentEnd="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:ems="10"
+        android:id="@+id/itemQuantity"
+        android:layout_alignTop="@+id/textView12"
+        android:layout_toEndOf="@+id/textView10" />
 
 </RelativeLayout>

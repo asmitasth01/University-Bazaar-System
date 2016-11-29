@@ -18,7 +18,7 @@
         android:layout_below="@+id/textView"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="105dp"
-        android:id="@+id/edit"
+        android:id="@+id/SelectSellItemFromCamera"
         android:textColor="@color/colorPrimaryDark"
         android:background="@color/colorAccent"
         android:fontFamily="sans-serif-condensed"

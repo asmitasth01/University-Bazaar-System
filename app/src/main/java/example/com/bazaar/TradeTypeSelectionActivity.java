@@ -23,6 +23,7 @@ public class TradeTypeSelectionActivity extends AppCompatActivity {
      */
     public void selectTrade(View view)
     {
+        System.out.println("Come here");
         Intent intent;
 
         switch (view.getId())
