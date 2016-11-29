@@ -44,7 +44,7 @@
                     android:layout_height="wrap_content"
                     android:inputType="textPersonName"
                     android:textAlignment="viewStart"
-                    android:id="@+id/input_club_name"
+                    android:id="@+id/displayItemName"
                     android:textSize="14sp" />
             </TableRow>
 

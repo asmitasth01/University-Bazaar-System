@@ -11,8 +11,17 @@
     tools:context="example.com.bazaar.Borrow_items">
 
     <GridView
+        android:id="@+id/gridView"
+        android:layout_marginTop="70dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
+        android:gravity="center"
+        android:columnWidth="100dp"
+        android:numColumns="auto_fit"
+        android:verticalSpacing="10dp"
+        android:horizontalSpacing="10dp"
+        android:stretchMode="spacingWidthUniform"
+
+
+        android:backgroundTint="@color/colorPrimaryDark" />
 </RelativeLayout>

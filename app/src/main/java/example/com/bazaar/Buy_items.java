@@ -1,17 +1,13 @@
 package example.com.bazaar;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.media.Image;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
-import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -22,11 +18,13 @@ import android.widget.Toast;
 public class Buy_items extends AppCompatActivity {
 
     public static Integer[] images ={
-            R.drawable.club_icon,
-            R.drawable.club,
-            R.drawable.dollar_icon,
-            R.drawable.exchange,
-            R.drawable.ic_menu_camera
+            R.drawable.r1,
+            R.drawable.r2,
+            R.drawable.r3,
+            R.drawable.r4,
+            R.drawable.r5,
+            R.drawable.r6,
+
     };
 
     @Override
@@ -34,7 +32,7 @@ public class Buy_items extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_buy_items);
 
-        GridView gridView = (GridView) findViewById(R.id.gridview);
+        GridView gridView = (GridView) findViewById(R.id.gridView);
         gridView.setAdapter(new ImageAdapter(this));
 
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener()
@@ -47,7 +45,6 @@ public class Buy_items extends AppCompatActivity {
                         Toast.LENGTH_SHORT).show();
                 Intent i = new Intent(getApplicationContext(), Buy_item_details.class);
                 i.putExtra("id",position);
-                Log.d("id", position+"");
                 startActivity(i);
             }
         });
@@ -82,9 +79,9 @@ public class Buy_items extends AppCompatActivity {
             ImageView imageView;
             if (convertView == null) {
                 imageView = new ImageView(context);
-                imageView.setLayoutParams(new GridView.LayoutParams(185, 185));
+                imageView.setLayoutParams(new GridView.LayoutParams(400, 400));
                 imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-                imageView.setPadding(5, 5, 5, 5);
+                imageView.setPadding(10, 10, 10, 10);
             } else {
                 imageView = (ImageView) convertView;
             }

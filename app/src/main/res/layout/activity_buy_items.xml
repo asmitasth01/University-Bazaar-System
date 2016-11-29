@@ -11,13 +11,14 @@
     tools:context="example.com.bazaar.Buy_items">
 
     <GridView
-        android:id="@+id/gridview"
+        android:id="@+id/gridView"
+        android:layout_marginTop="70dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
         android:columnWidth="100dp"
         android:numColumns="auto_fit"
-        android:verticalSpacing="24dp"
+        android:verticalSpacing="10dp"
         android:horizontalSpacing="10dp"
         android:stretchMode="spacingWidthUniform"
 
