@@ -6,7 +6,8 @@ package example.com.bazaar;
 
 public class Config {
     public static final String FIREBASE_URL = "https://bazaar-7ee62.firebaseio.com/";
-
+    public static final String EMAIL ="universitybazaar1@gmail.com";
+    public static final String PASSWORD ="Asmita01";
 
 }
 
