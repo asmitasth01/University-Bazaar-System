@@ -11,4 +11,92 @@
     tools:context=".setting"
     android:background="@color/colorPrimaryDark">
 
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Current Password"
+        android:ems="10"
+        android:layout_marginTop="93dp"
+        android:id="@+id/editText18"
+        android:layout_marginEnd="59dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignEnd="@+id/editText19"
+        android:textColor="@color/colorAccent"
+        android:textSize="14sp"
+        android:fontFamily="casual" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:layout_alignTop="@+id/editText18"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/editText20"
+        android:layout_toEndOf="@+id/editText18" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/editText21"
+        android:layout_alignBaseline="@+id/editText19"
+        android:layout_alignBottom="@+id/editText19"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/editText18" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/editText23"
+        android:layout_alignBaseline="@+id/editText22"
+        android:layout_alignBottom="@+id/editText22"
+        android:layout_toEndOf="@+id/editText22" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="New Password"
+        android:ems="10"
+        android:layout_marginTop="21dp"
+        android:id="@+id/editText19"
+        android:textColor="@color/colorAccent"
+        android:textSize="14sp"
+        android:fontFamily="casual"
+        android:layout_below="@+id/editText18"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="124dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Confirm Password"
+        android:ems="10"
+        android:id="@+id/editText22"
+        android:textColor="?attr/colorAccent"
+        android:textSize="14sp"
+        android:fontFamily="casual"
+        android:layout_marginTop="21dp"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:layout_below="@+id/editText19"
+        android:layout_alignEnd="@+id/editText19" />
+
+    <Button
+        android:text="OK"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button10"
+        android:textSize="14sp"
+        android:fontFamily="sans-serif-condensed"
+        android:background="@color/colorAccent"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
 </RelativeLayout>

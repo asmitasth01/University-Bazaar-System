@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 
 public class TradeTypeSelectionActivity extends AppCompatActivity {
 
@@ -29,7 +28,7 @@ public class TradeTypeSelectionActivity extends AppCompatActivity {
         switch (view.getId())
         {
             case R.id.buy_button:
-                intent = new Intent(this, BuyActivity.class);
+                intent = new Intent(this, Buy_items.class);
                 startActivity(intent);
                 break;
             case R.id.sell_button:
@@ -37,11 +36,11 @@ public class TradeTypeSelectionActivity extends AppCompatActivity {
                 startActivity(intent);
                 break;
             case R.id.borrow_button:
-                intent = new Intent(this, BorrowActivity.class);
+                intent = new Intent(this, Borrow_items.class);
                 startActivity(intent);
                 break;
             case R.id.exchange_button:
-                intent = new Intent(this, ExchangeBuyerSideActivity.class);
+                intent = new Intent(this, Exchange_items.class);
                 startActivity(intent);
                 break;
         }
