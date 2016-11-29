@@ -84,16 +84,16 @@
             <meta-data
                 android:name="android.app.searchable"
                 android:resource="@xml/searchable" />
-            android:name=".Buy_item_details" />
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Buy_item_details" />
         <activity android:name=".Borrow_item_details" />
         <activity android:name=".Exchange_item_details" />
         <activity android:name=".Buy_items" />
         <activity android:name=".Exchange_items" />
         <activity android:name=".Borrow_items"></activity>
-            <intent-filter>
-                <action android:name="android.intent.action.SEARCH" />
-            </intent-filter>
-        </activity>
         <activity
             android:name=".SearchResultsMember"
             android:label="Member" />

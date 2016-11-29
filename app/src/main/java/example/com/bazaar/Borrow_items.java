@@ -94,23 +94,6 @@ public class Borrow_items extends AppCompatActivity {
     }
 
 
-//    protected void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_buy_items);
-//        GridView gridView = (GridView)findViewById(R.id.gridview);
-//        gridView.setAdapter(new Image_Adapter((this)));
-//        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-//                Intent i = new Intent(getApplicationContext(), Buy_item_details.class);
-//                i.putExtra("id",position);
-//                Log.d("id", position+"");
-//                startActivity(i);
-//            }
-//        });
-//
-//    }
-
 }
 
 
