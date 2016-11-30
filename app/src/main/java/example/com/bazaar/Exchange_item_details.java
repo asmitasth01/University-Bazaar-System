@@ -1,12 +1,15 @@
 package example.com.bazaar;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
 import com.squareup.picasso.Picasso;
+
+import static example.com.bazaar.Buy_items.itemList;
 
 public class Exchange_item_details extends AppCompatActivity {
 
@@ -21,7 +24,10 @@ public class Exchange_item_details extends AppCompatActivity {
 
 
         //imageView.setImageResource(Buy_items.images[position]);
-        Picasso.with(getApplicationContext()).load(Buy_items.images[position]).into(imageView);
+        String imageUrl =   itemList.get(position).getSellItem_imageURL();
+        Uri myImageUri = Uri.parse(imageUrl);
+
+        Picasso.with(Exchange_item_details.this).load(myImageUri).fit().centerCrop().into(imageView);
 
     }
     protected void openExchangeActivity(View view)

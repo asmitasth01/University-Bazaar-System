@@ -244,19 +244,19 @@ public class sellActivity extends AppCompatActivity {
         Firebase mRefChild = mFire.child(iDescription);
         mRefChild.push();
 
-        Firebase newChild = mRefChild.child("Item Description");
+        Firebase newChild = mRefChild.child("itemDescription");
         newChild.push();
         newChild.setValue(iDescription);
-        newChild = mRefChild.child("Item Price");
+        newChild = mRefChild.child("itemQuantity");
         newChild.setValue(iPrice);
-        newChild = mRefChild.child("Item Quantity");
+        newChild = mRefChild.child("itemPrice");
         newChild.setValue(iQuantity);
-        newChild = mRefChild.child("Sell Type");
+        newChild = mRefChild.child("sellType");
         newChild.setValue(sType);
         newChild = mRefChild.child("sellItem_imageURL");
         newChild.setValue(imagePath);
-        newChild = mRefChild.child("User Name");
-        newChild.setValue(uName);
+//        newChild = mRefChild.child("UserName");
+//        newChild.setValue(uName);
 
 
 
@@ -327,6 +327,7 @@ public class sellActivity extends AppCompatActivity {
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
 
                     downloadUri = taskSnapshot.getDownloadUrl();
+                    ItemInfo item = new ItemInfo(iDescription, iQuantity, iPrice, sType,imagePath);
                     Picasso.with(sellActivity.this).load(downloadUri).fit().centerCrop().into(myImageView);
                     Toast.makeText(sellActivity.this, "Upload Done.", Toast.LENGTH_SHORT).show();
                 }
@@ -357,6 +358,7 @@ public class sellActivity extends AppCompatActivity {
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                     downloadUri = taskSnapshot.getDownloadUrl();
+                    ItemInfo item = new ItemInfo(iDescription, iQuantity, iPrice, sType,imagePath);
                     Picasso.with(sellActivity.this).load(downloadUri).fit().centerCrop().into(myImageView);
                     Toast.makeText(sellActivity.this, "Upload Done.", Toast.LENGTH_SHORT).show();
                 }

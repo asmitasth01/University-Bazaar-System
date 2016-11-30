@@ -12,7 +12,18 @@ public class ItemInfo {
     private String sellItem_imageURL;
 
 
+    public ItemInfo(String itemDescription, String itemQuantity, String itemPrice, String sellType, String sellItem_imageURL) {
+        this.itemDescription = itemDescription;
+        this.itemQuantity = itemQuantity;
+        this.itemPrice = itemPrice;
+        this.sellType = sellType;
+        this.sellItem_imageURL = sellItem_imageURL;
+    }
 
+    public  ItemInfo()
+    {
+
+    }
 
     public String getSellItem_imageURL() {
         return sellItem_imageURL;
