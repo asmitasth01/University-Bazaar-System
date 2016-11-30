@@ -16,10 +16,9 @@
         android:text="  Create Event  "
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/create_club_button"
-        android:onClick="openSendInvite"
+        android:id="@+id/create_event_button"
         android:background="@color/colorAccent"
-        android:layout_marginBottom="7dp"
+        android:layout_marginBottom="0dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
@@ -30,99 +29,189 @@
         android:fontFamily="serif"
         android:textColor="@android:color/background_light" />
 
-    <EditText
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/displayItemName"
-        android:visibility="visible"
-        android:layout_alignTop="@+id/textView2"
-        android:layout_toRightOf="@+id/textView15"
-        android:layout_toEndOf="@+id/textView15"
-        android:layout_marginLeft="22dp"
-        android:layout_marginStart="22dp" />
+        android:orientation="vertical"
+        android:layout_marginTop="30dp"
+        android:id="@+id/desc_layout">
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textMultiLine"
-        android:ems="10"
-        android:id="@+id/input_club_description"
-        android:singleLine="false"
-        android:textColorLink="@android:color/white"
-        android:layout_alignTop="@+id/textView6"
-        android:layout_alignLeft="@+id/displayItemName"
-        android:layout_alignStart="@+id/displayItemName" />
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="4dp" >
 
-    <TextView
-        android:text="Event Name:"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView2"
-        android:layout_marginLeft="13dp"
-        android:layout_marginStart="13dp"
-        android:layout_marginTop="56dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:textAppearance="@android:style/TextAppearance.Material.Small"
-        android:fontFamily="serif"
-        android:textSize="14sp"
-        android:textColor="@color/colorAccent" />
+            <TableRow
+                android:layout_marginTop="15dp"
+                android:gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:weightSum="1"
+                android:layout_marginBottom="0dp">
 
-    <TextView
-        android:text="Description:"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView6"
-        android:layout_marginTop="20dp"
-        android:layout_below="@+id/displayItemName"
-        android:layout_alignLeft="@+id/textView2"
-        android:layout_alignStart="@+id/textView2"
-        android:textAppearance="@android:style/TextAppearance.Material.Small"
-        android:fontFamily="serif"
-        android:textColor="@color/colorAccent" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:text="Event Name:"
+                    android:layout_height="wrap_content"
+                    android:textStyle="normal|bold"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorAccent" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:textAlignment="viewStart"
+                    android:id="@+id/input_event_name"
+                    android:textSize="14sp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_marginTop="0dp"
+                android:gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:weightSum="1"
+                android:layout_marginBottom="0dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:text="Event Date:"
+                    android:layout_height="wrap_content"
+                    android:textStyle="normal|bold"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorAccent" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:textAlignment="viewStart"
+                    android:id="@+id/input_event_date"
+                    android:textSize="14sp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_marginTop="0dp"
+                android:gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:weightSum="1"
+                android:layout_marginBottom="0dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:text="Event Time:"
+                    android:layout_height="wrap_content"
+                    android:textStyle="normal|bold"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorAccent" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:textAlignment="viewStart"
+                    android:id="@+id/input_event_time"
+                    android:textSize="14sp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_marginTop="0dp"
+                android:gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:weightSum="1"
+                android:layout_marginBottom="0dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:text="Event Location:"
+                    android:layout_height="wrap_content"
+                    android:textStyle="normal|bold"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorAccent" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:textAlignment="viewStart"
+                    android:id="@+id/input_location"
+                    android:textSize="14sp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_marginTop="0dp"
+                android:gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:weightSum="1"
+                android:layout_marginBottom="0dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:text="Description:"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="70dp"
+                    android:textStyle="normal|bold"
+                    android:textColor="@color/colorAccent" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="viewStart"
+                    android:id="@+id/input_event_description"
+                    android:inputType="textMultiLine"
+                    android:textSize="14sp"/>
+            </TableRow>
+
+        </TableLayout>
+    </LinearLayout>
+
 
     <TextView
         android:text="Upload Image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView15"
-        android:layout_below="@+id/input_club_description"
+        android:layout_below="@+id/desc_layout"
         android:layout_alignLeft="@+id/textView6"
         android:layout_alignStart="@+id/textView6"
         android:layout_marginTop="126dp"
         android:textAppearance="@android:style/TextAppearance.Material.Small"
         android:fontFamily="serif"
-        android:textColor="@color/colorAccent" />
+        android:textColor="@color/colorAccent"
+        android:textStyle="normal|bold" />
 
     <ImageView
         android:layout_width="match_parent"
         app:srcCompat="@mipmap/ic_launcher"
-        android:layout_marginBottom="16dp"
         android:id="@+id/imgView"
-        android:layout_above="@+id/create_club_button"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_height="130dp" />
+        android:layout_height="130dp"
+        android:layout_above="@+id/create_event_button"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:text="Select"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
-        android:layout_marginStart="20dp"
-        android:id="@+id/SelectSellItemFromCamera"
+        android:id="@+id/buttonSelectImage"
         android:background="@color/colorAccent"
         android:textColor="@android:color/background_light"
         android:textStyle="normal|bold"
         android:fontFamily="serif"
+        android:onClick="loadImagefromGallery"
+        android:textSize="14sp"
+        android:layout_marginStart="47dp"
         android:layout_alignBaseline="@+id/textView15"
         android:layout_alignBottom="@+id/textView15"
-        android:layout_alignLeft="@+id/input_club_description"
-        android:layout_alignStart="@+id/input_club_description"
-        android:onClick="loadImagefromGallery"
-        android:textSize="14sp" />
+        android:layout_toEndOf="@+id/textView15" />
 
 </RelativeLayout>

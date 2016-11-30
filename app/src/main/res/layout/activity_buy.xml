@@ -132,7 +132,7 @@
         android:text=" Make Payment "
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/create_club_button"
+        android:id="@+id/create_event_button"
         android:background="@color/colorPrimary"
         android:textColor="@color/colorPrimaryDark"
         android:layout_alignParentBottom="true"

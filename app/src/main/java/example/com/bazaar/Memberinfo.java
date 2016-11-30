@@ -30,7 +30,7 @@ public class Memberinfo extends Home {
     DatabaseReference bazaar;
     ArrayList<UserInfo> users;
     final SignInActivity login;
-    
+
     private UserInfo user;
 
     public Memberinfo(){

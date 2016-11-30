@@ -3,6 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
+        android:id="@+id/addButton"
+        android:orderInCategory="100"
+        android:title="@string/addPost"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_add_white_24dp" />
+
+    <item
         android:id="@+id/action_settings"
         android:orderInCategory="100"
         android:title="@string/action_settings"

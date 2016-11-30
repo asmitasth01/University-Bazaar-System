@@ -59,6 +59,34 @@
 
                 <TextView
                     android:layout_width="match_parent"
+                    android:text="Club Category:"
+                    android:layout_height="wrap_content"
+                    android:textStyle="normal|bold"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorAccent" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:textAlignment="viewStart"
+                    android:id="@+id/input_club_category"
+                    android:textSize="14sp" />
+            </TableRow>
+
+
+
+            <TableRow
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:weightSum="1"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    android:layout_width="match_parent"
                     android:text="Description:"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="70dp"
@@ -82,7 +110,7 @@
         android:text="  Create Club  "
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/create_club_button"
+        android:id="@+id/create_event_button"
         android:onClick="openSendInvite"
         android:background="@color/colorAccent"
         android:textSize="14sp"

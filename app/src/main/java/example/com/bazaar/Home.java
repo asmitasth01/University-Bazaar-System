@@ -20,6 +20,7 @@ public class Home extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     protected DrawerLayout drawer;
+    protected FloatingActionButton fab;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,14 +29,7 @@ public class Home extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        fab = (FloatingActionButton) findViewById(R.id.fab);
 
         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -110,6 +104,9 @@ public class Home extends AppCompatActivity
             startActivity(intent);
         } else if (id == R.id.logout) {
             intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+        }else if (id == R.id.home_page) {
+            intent = new Intent(this, EventPage.class);
             startActivity(intent);
         }
 

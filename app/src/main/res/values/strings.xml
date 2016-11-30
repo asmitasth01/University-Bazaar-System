@@ -216,6 +216,8 @@
 
     <string name="pref_title_vibrate">Vibrate</string>
     <string name="search_hint">Search</string>
+    <string name="homePage">Home</string>
+    <string name="addPost">Create Post</string>
 
     <string-array name="array_names">
         <item>Suman</item>

@@ -3,6 +3,11 @@
 
     <group android:checkableBehavior="single">
         <item
+            android:id="@+id/home_page"
+            android:title="@string/homePage"
+            android:icon="@drawable/ic_action_name"
+            android:onClick="onNavigationItemSelected"/>
+        <item
             android:id="@+id/club"
             android:title="@string/form_club"
             android:icon="@drawable/club"
