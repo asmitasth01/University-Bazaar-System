@@ -33,7 +33,7 @@ public class Borrow_items extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_buy_items);
+        setContentView(R.layout.activity_borrow_items);
 
         GridView gridView = (GridView) findViewById(R.id.gridView);
         gridView.setAdapter(new ImageAdapter(this));
@@ -46,7 +46,7 @@ public class Borrow_items extends AppCompatActivity {
                 Toast.makeText(getBaseContext(),
                         "pic" + (position + 1) + " selected",
                         Toast.LENGTH_SHORT).show();
-                Intent i = new Intent(getApplicationContext(), Buy_item_details.class);
+                Intent i = new Intent(getApplicationContext(), Borrow_item_details.class);
                 i.putExtra("id",position);
                 startActivity(i);
             }

@@ -41,7 +41,7 @@ public class Buy_items extends AppCompatActivity {
                                     View v, int position, long id)
             {
                 Toast.makeText(getBaseContext(),
-                        "pic" + (position + 1) + " selected",
+                        "Grid" + (position + 1) + " selected",
                         Toast.LENGTH_SHORT).show();
                 Intent i = new Intent(getApplicationContext(), Buy_item_details.class);
                 i.putExtra("id",position);
@@ -91,22 +91,6 @@ public class Buy_items extends AppCompatActivity {
     }
 
 
-//    protected void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_buy_items);
-//        GridView gridView = (GridView)findViewById(R.id.gridview);
-//        gridView.setAdapter(new Image_Adapter((this)));
-//        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-//                Intent i = new Intent(getApplicationContext(), Buy_item_details.class);
-//                i.putExtra("id",position);
-//                Log.d("id", position+"");
-//                startActivity(i);
-//            }
-//        });
-//
-//    }
 
 }
 
