@@ -9,6 +9,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:layout_marginTop="70dp"
     tools:context="example.com.bazaar.BuyActivity"
     android:background="@color/colorPrimaryDark"
     android:scrollbarSize="5dp"
@@ -42,19 +43,6 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:id="@+id/textView3"
-        android:layout_below="@+id/textView2"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:fontFamily="casual"
-        android:textColor="@color/colorPrimary"
-        android:textStyle="normal|bold"
-        android:text="Street Address" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/textView4"
         android:layout_marginTop="30dp"
         android:layout_below="@+id/textView3"
@@ -77,20 +65,6 @@
         android:textColor="@color/colorPrimary"
         android:textStyle="normal|bold"
         android:text="State" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="53dp"
-        android:id="@+id/textView2"
-        android:fontFamily="sans-serif-condensed"
-        android:textColor="@color/colorPrimary"
-        android:layout_below="@+id/image_View"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:textStyle="normal|bold"
-        android:text="Shipping Information"
-        android:textSize="24sp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -182,5 +156,29 @@
         android:layout_alignParentEnd="true"
         android:layout_marginRight="31dp"
         android:layout_marginEnd="31dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView2"
+        android:fontFamily="sans-serif-condensed"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="normal|bold"
+        android:text="Shipping Information"
+        android:textSize="24sp"
+        android:layout_below="@+id/image_View"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:id="@+id/textView3"
+        android:fontFamily="casual"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="normal|bold"
+        android:text="Street Address"
+        android:layout_below="@+id/textView2"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>

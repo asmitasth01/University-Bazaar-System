@@ -6,7 +6,7 @@ android {
     buildToolsVersion "25.0.0"
     defaultConfig {
         applicationId "example.com.bazaar"
-        minSdkVersion 23
+        minSdkVersion 19
         targetSdkVersion 25
         multiDexEnabled true
         versionCode 1

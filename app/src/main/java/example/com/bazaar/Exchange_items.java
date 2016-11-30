@@ -42,7 +42,7 @@ public class Exchange_items extends AppCompatActivity {
         setContentView(R.layout.activity_exchange_items);
 
 
-        mRef = new Firebase("https://bazaar-7ee62.firebaseio.com/Bazaar/Sell_Items");
+        mRef = new Firebase("https://bazaar-7ee62.firebaseio.com/Bazaar/Exchange_Items");
 
         mRef.addChildEventListener(new ChildEventListener() {
             @Override
@@ -82,9 +82,9 @@ public class Exchange_items extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent,
                                     View v, int position, long id)
             {
-                Toast.makeText(getBaseContext(),
-                        "Grid" + (position + 1) + " selected",
-                        Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getBaseContext(),
+//                        "Grid" + (position + 1) + " selected",
+//                        Toast.LENGTH_SHORT).show();
                 Intent i = new Intent(getApplicationContext(), Exchange_item_details.class);
                 i.putExtra("id",position);
                 startActivity(i);
@@ -128,7 +128,7 @@ public class Exchange_items extends AppCompatActivity {
             Uri myImageUri = Uri.parse(imageUrl);
 
 
-            if (myImageUri != null) {
+            if (myImageUri != null ) {
 
                 Picasso.with(Exchange_items.this).load(myImageUri).fit().centerCrop().into(imageView);
 

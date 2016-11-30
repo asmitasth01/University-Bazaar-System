@@ -9,20 +9,11 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:layout_marginTop="70dp"
     tools:context="example.com.bazaar.BuyActivity"
     android:background="@color/colorPrimaryDark"
     android:scrollbarSize="5dp"
     android:scrollbarStyle="outsideOverlay">
-
-    <ImageView
-        app:srcCompat="@mipmap/ic_launcher"
-        android:layout_marginTop="11dp"
-        android:id="@+id/image_View"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_width="150dp"
-        android:layout_height="150dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -49,20 +40,6 @@
         android:textColor="@color/colorAccent"
         android:textStyle="normal|bold"
         android:text="City" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="53dp"
-        android:id="@+id/textView2"
-        android:fontFamily="serif"
-        android:textColor="@color/colorAccent"
-        android:layout_below="@+id/image_View"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:textStyle="normal|bold"
-        android:text="Shipping Information"
-        android:textSize="18sp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -204,6 +181,27 @@
         android:textStyle="normal|bold"
         android:text="State"
         android:layout_below="@+id/editText4"
+        android:layout_alignParentStart="true" />
+
+    <ImageView
+        app:srcCompat="@mipmap/ic_launcher"
+        android:id="@+id/image_View"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView2"
+        android:fontFamily="serif"
+        android:textColor="@color/colorAccent"
+        android:textStyle="normal|bold"
+        android:text="Shipping Information"
+        android:textSize="18sp"
+        android:layout_marginTop="17dp"
+        android:layout_below="@+id/image_View"
         android:layout_alignParentStart="true" />
 
 </RelativeLayout>

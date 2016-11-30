@@ -9,6 +9,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:layout_marginTop="70dp"
     tools:context=".ExchangeSellerSideActivity"
     android:background="@color/colorPrimaryDark">
 
@@ -43,29 +44,6 @@
         android:fontFamily="serif"
         android:textColor="@color/colorAccent"
         android:textSize="14sp" />
-
-    <TextView
-        android:text="Item Quantity"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="132dp"
-        android:id="@+id/textView21"
-        android:layout_below="@+id/textView20"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:fontFamily="serif"
-        android:textColor="@color/colorPrimary"
-        android:textSize="14sp" />
-
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="180dp"
-        app:srcCompat="@mipmap/ic_launcher"
-        android:id="@+id/profile_pic"
-        android:layout_below="@+id/textView24"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="11dp" />
 
     <TextView
         android:text="Item Image"
@@ -113,12 +91,32 @@
         android:fontFamily="serif" />
 
     <TextView
+        android:text="Item Quantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:id="@+id/textView21"
+        android:fontFamily="serif"
+        android:textColor="@color/colorPrimary"
+        android:textSize="14sp"
+        android:layout_below="@+id/textView20"
+        android:layout_alignParentStart="true" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        app:srcCompat="@mipmap/ic_launcher"
+        android:id="@+id/profile_pic"
+        android:layout_below="@+id/textView24"
+        android:layout_alignParentStart="true" />
+
+    <TextView
         android:text="TextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/textView21"
-        android:layout_toEndOf="@+id/textView20"
         android:id="@+id/textView30"
         android:fontFamily="serif"
-        android:textColor="@color/colorAccent" />
+        android:textColor="@color/colorAccent"
+        android:layout_alignTop="@+id/textView23"
+        android:layout_alignStart="@+id/textView23" />
 </RelativeLayout>

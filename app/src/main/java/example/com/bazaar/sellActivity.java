@@ -43,6 +43,7 @@ public class sellActivity extends AppCompatActivity {
     private EditText itemDescription;
     private EditText itemQuantity;
     private EditText itemPrice;
+    private EditText itemDes;
     private Spinner sellType;
 
     private Firebase mFire;
@@ -57,9 +58,9 @@ public class sellActivity extends AppCompatActivity {
 
     private String userName;
 
-    Uri downloadUri;
+    private Uri downloadUri;
 
-    String imagePath;
+    private String imagePath;
 
     //For Image retrival from database (For sell items)
     private Button myUploadbutton;
@@ -67,6 +68,7 @@ public class sellActivity extends AppCompatActivity {
     private ImageView myImageView;
 
     public static String iDescription;
+    public static String iDes;
     private static String iQuantity;
     public static String iPrice;
     private static String sType;
@@ -77,6 +79,7 @@ public class sellActivity extends AppCompatActivity {
     private static final int CAMERA_REQUEST_CODE = 1;
 
     public sellActivity() {
+
         sellItems = new ArrayList<>();
     }
 
@@ -87,6 +90,8 @@ public class sellActivity extends AppCompatActivity {
         Firebase.setAndroidContext(this);
 
         itemDescription = (EditText)findViewById(R.id.itemDescription);
+
+        itemDes = (EditText) findViewById(R.id.itemDes);
 
 
         itemPrice = (EditText) findViewById(R.id.itemPrice);
@@ -111,6 +116,18 @@ public class sellActivity extends AppCompatActivity {
             public void onTextChanged(CharSequence s, int start, int before, int count){}
         });
 
+        itemDes.addTextChangedListener(new TextWatcher()
+        {
+            @Override
+            public void afterTextChanged(Editable mEdit)
+            {
+                iDes = mEdit.toString();
+            }
+
+            public void beforeTextChanged(CharSequence s, int start, int count, int after){}
+
+            public void onTextChanged(CharSequence s, int start, int before, int count){}
+        });
         itemPrice.addTextChangedListener(new TextWatcher()
         {
             @Override
@@ -137,55 +154,12 @@ public class sellActivity extends AppCompatActivity {
             public void onTextChanged(CharSequence s, int start, int before, int count){}
         });
 
-        mFire = new Firebase("https://bazaar-7ee62.firebaseio.com/Bazaar/Sell_Items");
+        mFire = new Firebase("https://bazaar-7ee62.firebaseio.com/Bazaar");
 
         mButton = (Button)findViewById(R.id.SellButton);
 
 
 
-
-//        bazaar = FirebaseDatabase.getInstance().getReference("Bazaar");
-//        bazaar.addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(DataSnapshot dataSnapshot) {
-//                Iterable<DataSnapshot> snapshotIterator = dataSnapshot.getChildren();
-//                Iterator<DataSnapshot> iterator = snapshotIterator.iterator();
-//                System.out.println(dataSnapshot.getChildren().getClass().toString());
-//                while (iterator.hasNext()) {
-//                    GenericTypeIndicator<ArrayList<ItemInfo>> t = new GenericTypeIndicator<ArrayList<ItemInfo>>() {
-//                    };
-//                    sellItems = iterator.next().getValue(t);
-//                }
-//            }
-//
-//            @Override
-//            public void onCancelled(DatabaseError databaseError) {
-//
-//            }
-//        });
-//
-
-
-
-
-
-//        //Reading Edittext while user is typing
-//        username.addTextChangedListener(new TextWatcher()
-//        {
-//            @Override
-//            public void afterTextChanged(Editable mEdit)
-//            {
-//                user = mEdit.toString();
-//            }
-//
-//            public void beforeTextChanged(CharSequence s, int start, int count, int after){}
-//
-//            public void onTextChanged(CharSequence s, int start, int before, int count){}
-//        });
-
-    //    System.out.println(user+"This is the user\n\n\n");
-
-        //For profile Picture upload to the firebase from gallery
 
         mStorage = FirebaseStorage.getInstance().getReference();
 
@@ -228,18 +202,34 @@ public class sellActivity extends AppCompatActivity {
 
     public void UploadSellItems(View view) {
 
-        String uName = new SignInActivity().getUsername();
 
+      //  System.out.println("This is the downolad URL"+ downloadUri.toString());
+       // if (downloadUri!= null) {
 
-        imagePath = downloadUri.toString();
-
+     //   }
         iDescription = itemDescription.getText().toString();
+        iDes = itemDes.getText().toString();
         iPrice = itemPrice.getText().toString();
         iQuantity = itemQuantity.getText().toString();
         sType = sellType.getSelectedItem().toString();
 
 
+        imagePath = downloadUri.toString();
 
+        if (sType.compareTo("Sell")==0)
+        {
+            mFire = mFire.child("Buy_Items");
+
+        }
+        else if (sType.compareTo("Exchange")==0)
+        {
+            mFire = mFire.child("Exchange_Items");
+        }
+        else
+        {
+            mFire = mFire.child("Borrow_Items");
+
+        }
 
         Firebase mRefChild = mFire.child(iDescription);
         mRefChild.push();
@@ -248,15 +238,15 @@ public class sellActivity extends AppCompatActivity {
         newChild.push();
         newChild.setValue(iDescription);
         newChild = mRefChild.child("itemQuantity");
-        newChild.setValue(iPrice);
-        newChild = mRefChild.child("itemPrice");
         newChild.setValue(iQuantity);
+        newChild = mRefChild.child("itemPrice");
+        newChild.setValue(iPrice);
         newChild = mRefChild.child("sellType");
         newChild.setValue(sType);
         newChild = mRefChild.child("sellItem_imageURL");
         newChild.setValue(imagePath);
-//        newChild = mRefChild.child("UserName");
-//        newChild.setValue(uName);
+        newChild = mRefChild.child("itemDes");
+        newChild.setValue(iDes);
 
 
 
@@ -327,7 +317,7 @@ public class sellActivity extends AppCompatActivity {
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
 
                     downloadUri = taskSnapshot.getDownloadUrl();
-                    ItemInfo item = new ItemInfo(iDescription, iQuantity, iPrice, sType,imagePath);
+                    ItemInfo item = new ItemInfo(iDescription,iDes, iQuantity, iPrice, sType,imagePath);
                     Picasso.with(sellActivity.this).load(downloadUri).fit().centerCrop().into(myImageView);
                     Toast.makeText(sellActivity.this, "Upload Done.", Toast.LENGTH_SHORT).show();
                 }
@@ -358,7 +348,7 @@ public class sellActivity extends AppCompatActivity {
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                     downloadUri = taskSnapshot.getDownloadUrl();
-                    ItemInfo item = new ItemInfo(iDescription, iQuantity, iPrice, sType,imagePath);
+                    ItemInfo item = new ItemInfo(iDescription,iDes, iQuantity, iPrice, sType,imagePath);
                     Picasso.with(sellActivity.this).load(downloadUri).fit().centerCrop().into(myImageView);
                     Toast.makeText(sellActivity.this, "Upload Done.", Toast.LENGTH_SHORT).show();
                 }

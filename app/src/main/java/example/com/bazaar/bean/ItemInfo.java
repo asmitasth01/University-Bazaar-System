@@ -6,21 +6,32 @@ package example.com.bazaar.bean;
 
 public class ItemInfo {
     private String itemDescription;
+    private String itemDes;
     private String itemQuantity;
     private String itemPrice;
     private String sellType;
     private String sellItem_imageURL;
 
 
-    public ItemInfo(String itemDescription, String itemQuantity, String itemPrice, String sellType, String sellItem_imageURL) {
+    public ItemInfo(String itemDescription, String itemQuantity, String itemDes, String itemPrice, String sellType, String sellItem_imageURL) {
         this.itemDescription = itemDescription;
+        this.itemDes = itemDes;
         this.itemQuantity = itemQuantity;
         this.itemPrice = itemPrice;
         this.sellType = sellType;
         this.sellItem_imageURL = sellItem_imageURL;
     }
 
+    public String getItemDes() {
+        return itemDes;
+    }
+
+    public void setItemDes(String itemDes) {
+        this.itemDes = itemDes;
+    }
+
     public  ItemInfo()
+
     {
 
     }

@@ -40,7 +40,7 @@ public class Borrow_items extends AppCompatActivity {
         setContentView(R.layout.activity_borrow_items);
 
 
-        mRef = new Firebase("https://bazaar-7ee62.firebaseio.com/Bazaar/Sell_Items");
+        mRef = new Firebase("https://bazaar-7ee62.firebaseio.com/Bazaar/Borrow_Items");
 
         mRef.addChildEventListener(new ChildEventListener() {
             @Override
@@ -83,9 +83,9 @@ public class Borrow_items extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent,
                                     View v, int position, long id)
             {
-                Toast.makeText(getBaseContext(),
-                        "pic" + (position + 1) + " selected",
-                        Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getBaseContext(),
+//                        "pic" + (position + 1) + " selected",
+//                        Toast.LENGTH_SHORT).show();
                 Intent i = new Intent(getApplicationContext(), Borrow_item_details.class);
                 i.putExtra("id",position);
                 startActivity(i);
@@ -133,7 +133,7 @@ public class Borrow_items extends AppCompatActivity {
             Uri myImageUri = Uri.parse(imageUrl);
 
 
-            if (myImageUri != null) {
+            if (myImageUri != null ) {
 
                 Picasso.with(Borrow_items.this).load(myImageUri).fit().centerCrop().into(imageView);
 

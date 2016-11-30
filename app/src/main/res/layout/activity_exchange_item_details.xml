@@ -9,6 +9,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:layout_marginTop="70dp"
     tools:context="example.com.bazaar.Exchange_item_details">
 
 
@@ -31,85 +32,6 @@
         android:layout_below="@+id/full_image"
         android:orientation="vertical" >
 
-        <TableLayout
-            android:layout_width="398dp"
-            android:layout_height="287dp"
-            android:padding="4dp" >
-
-            <TableRow
-                android:layout_marginTop="30dp"
-                android:gravity="center_vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:weightSum="10"
-                android:layout_marginBottom="20dp">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:text="Name:"
-                    android:layout_height="wrap_content"
-                    android:textStyle="normal|bold"
-                    android:textAllCaps="false"
-                    android:textColor="@color/colorAccent"
-                    tools:text="Name:" />
-
-                <TextView
-                    android:text="TextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/textView36" />
-
-            </TableRow>
-
-            <TableRow
-                android:layout_marginTop="1dp"
-                android:gravity="center_vertical"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:weightSum="10"
-                android:layout_marginBottom="20dp">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:text="Price:"
-                    android:layout_height="wrap_content"
-                    android:textStyle="normal|bold"
-                    android:textAllCaps="false"
-                    android:textColor="@color/colorAccent" />
-
-                <TextView
-                    android:text="TextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/textView35" />
-
-            </TableRow>
-
-            <TableRow
-                android:layout_marginTop="1dp"
-                android:gravity="center_vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:weightSum="10"
-                android:layout_marginBottom="20dp">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:text="Description:"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="70dp"
-                    android:textStyle="normal|bold"
-                    android:textColor="@color/colorAccent" />
-
-                <TextView
-                    android:text="TextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/textView31" />
-
-            </TableRow>
-
-        </TableLayout>
     </LinearLayout>
 
 
@@ -122,5 +44,89 @@
         android:layout_marginTop="10dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true" />
+
+    <TableLayout
+        android:layout_width="398dp"
+        android:layout_height="287dp"
+        android:padding="4dp"
+        android:layout_marginTop="183dp"
+        android:layout_alignTop="@+id/full_image"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="16dp">
+
+        <TableRow
+            android:layout_marginTop="30dp"
+            android:gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:weightSum="10"
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:text="Name:"
+                android:layout_height="wrap_content"
+                android:textStyle="normal|bold"
+                android:textAllCaps="false"
+                android:textColor="@color/colorAccent"
+                tools:text="Name:" />
+
+            <TextView
+                android:text="TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView36" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_marginTop="1dp"
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:weightSum="10"
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:text="Price:"
+                android:layout_height="wrap_content"
+                android:textStyle="normal|bold"
+                android:textAllCaps="false"
+                android:textColor="@color/colorAccent" />
+
+            <TextView
+                android:text="TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView35" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_marginTop="1dp"
+            android:gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:weightSum="10"
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:text="Description:"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="70dp"
+                android:textStyle="normal|bold"
+                android:textColor="@color/colorAccent" />
+
+            <TextView
+                android:text="TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView31" />
+
+        </TableRow>
+
+    </TableLayout>
 
 </RelativeLayout>

@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
@@ -18,6 +19,9 @@ public class Exchange_item_details extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exchange_item_details);
 
+        TextView desc = (TextView) findViewById(R.id.desTextView);
+        TextView price = (TextView) findViewById(R.id.priceTextView);
+        TextView name = (TextView) findViewById(R.id.nameTextView);
 
         int position = getIntent().getExtras().getInt("id");
         ImageView imageView = (ImageView) findViewById(R.id.full_image);
@@ -28,6 +32,12 @@ public class Exchange_item_details extends AppCompatActivity {
         Uri myImageUri = Uri.parse(imageUrl);
 
         Picasso.with(Exchange_item_details.this).load(myImageUri).fit().centerCrop().into(imageView);
+
+        desc.setText(itemList.get(position).getItemDes());
+
+        price.setText(itemList.get(position).getItemPrice());
+        name.setText(itemList.get(position).getItemDescription());
+
 
     }
     protected void openExchangeActivity(View view)

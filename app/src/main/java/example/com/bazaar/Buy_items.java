@@ -44,7 +44,7 @@ public class Buy_items extends AppCompatActivity {
         setContentView(R.layout.activity_buy_items);
 
 
-         mRef = new Firebase("https://bazaar-7ee62.firebaseio.com/Bazaar/Sell_Items");
+         mRef = new Firebase("https://bazaar-7ee62.firebaseio.com/Bazaar/Buy_Items");
 
          mRef.addChildEventListener(new ChildEventListener() {
              @Override
@@ -85,9 +85,9 @@ public class Buy_items extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent,
                                     View v, int position, long id)
             {
-                Toast.makeText(getBaseContext(),
-                        "Grid" + (position + 1) + " selected",
-                        Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getBaseContext(),
+//                        "Grid" + (position + 1) + " selected",
+//                        Toast.LENGTH_SHORT).show();
                 Intent i = new Intent(getApplicationContext(), Buy_item_details.class);
                 i.putExtra("id",position);
                 startActivity(i);

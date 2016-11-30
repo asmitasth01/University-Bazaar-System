@@ -8,6 +8,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:layout_marginTop="70dp"
     tools:context=".TradeTypeSelectionActivity"
     android:background="@color/colorPrimaryDark">
 
@@ -82,13 +83,12 @@
         android:textStyle="normal|bold"
         android:fontFamily="serif"
         android:textColor="@android:color/background_light"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="24dp"
         android:layout_width="150dp"
         android:layout_marginLeft="30dp"
-        android:layout_marginStart="30dp"
-        android:layout_below="@+id/textView27"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
         android:onClick="selectTrade"
-        android:textSize="14sp" />
+        android:textSize="14sp"
+        android:layout_marginStart="12dp"
+        android:layout_below="@+id/textView27"
+        android:layout_alignParentStart="true" />
 </RelativeLayout>
