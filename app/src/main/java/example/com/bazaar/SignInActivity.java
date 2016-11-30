@@ -162,7 +162,7 @@ public class SignInActivity extends AppCompatActivity {
                         System.out.println(userList.get(i).getPassword());
                         Toast.makeText(getApplicationContext(), "Logging in...",
                                 Toast.LENGTH_SHORT).show();
-                        intent = new Intent(this, Home.class);
+                        intent = new Intent(this, EventPage.class);
                         startActivity(intent);
                     }else{
                         error.setText("Username or Password Invalid!!");
