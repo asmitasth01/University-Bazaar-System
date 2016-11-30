@@ -42,8 +42,8 @@
         android:orientation="vertical" >
 
         <TableLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="398dp"
+            android:layout_height="287dp"
             android:padding="4dp" >
 
             <TableRow
@@ -51,8 +51,8 @@
                 android:gravity="center_vertical"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:weightSum="1"
-                android:layout_marginBottom="1dp">
+                android:weightSum="10"
+                android:layout_marginBottom="20dp">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -63,23 +63,21 @@
                     android:textColor="@color/colorAccent"
                     tools:text="Name:" />
 
-                <EditText
+                <TextView
+                    android:text="TextView"
                     android:layout_width="wrap_content"
-                    android:layout_weight="1"
                     android:layout_height="wrap_content"
-                    android:inputType="textPersonName"
-                    android:textAlignment="viewStart"
-                    android:id="@+id/displayItemName"
-                    android:textSize="14sp" />
+                    android:id="@+id/textView36" />
+
             </TableRow>
 
             <TableRow
                 android:layout_marginTop="1dp"
                 android:gravity="center_vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:weightSum="1"
-                android:layout_marginBottom="1dp">
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:weightSum="10"
+                android:layout_marginBottom="20dp">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -89,14 +87,12 @@
                     android:textAllCaps="false"
                     android:textColor="@color/colorAccent" />
 
-                <EditText
+                <TextView
+                    android:text="TextView"
                     android:layout_width="wrap_content"
-                    android:layout_weight="1"
                     android:layout_height="wrap_content"
-                    android:inputType="textPersonName"
-                    android:textAlignment="viewStart"
-                    android:id="@+id/displayItemPrice"
-                    android:textSize="14sp" />
+                    android:id="@+id/textView35" />
+
             </TableRow>
 
             <TableRow
@@ -104,8 +100,8 @@
                 android:gravity="center_vertical"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:weightSum="1"
-                android:layout_marginBottom="1dp">
+                android:weightSum="10"
+                android:layout_marginBottom="20dp">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -115,14 +111,12 @@
                     android:textStyle="normal|bold"
                     android:textColor="@color/colorAccent" />
 
-                <EditText
+                <TextView
+                    android:text="TextView"
                     android:layout_width="wrap_content"
-                    android:layout_weight="1"
                     android:layout_height="wrap_content"
-                    android:textAlignment="viewStart"
-                    android:id="@+id/displayItemDescription"
-                    android:inputType="textMultiLine"
-                    android:textSize="14sp"/>
+                    android:id="@+id/textView31" />
+
             </TableRow>
 
         </TableLayout>
