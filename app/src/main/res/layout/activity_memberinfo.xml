@@ -49,7 +49,8 @@
                     android:layout_height="wrap_content"
                     android:textStyle="normal|bold"
                     android:textAllCaps="false"
-                    android:textColor="@color/colorAccent" />
+                    android:textColor="@color/colorAccent"
+                    android:fontFamily="serif" />
 
                 <EditText
                     android:background="@null"
@@ -63,7 +64,8 @@
                     android:textSize="14sp"
                     android:focusable="false"
                     android:focusableInTouchMode="false"
-                    android:onClick="onClickName"/>
+                    android:onClick="onClickName"
+                    android:fontFamily="serif" />
             </TableRow>
 
             <View android:layout_height="1dip" android:background="#FF909090" />
@@ -82,7 +84,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="70dp"
                     android:textStyle="normal|bold"
-                    android:textColor="@color/colorAccent" />
+                    android:textColor="@color/colorAccent"
+                    android:fontFamily="serif" />
 
                 <EditText
                     android:background="@null"
@@ -96,7 +99,8 @@
                     android:id="@+id/display_email"
                     android:inputType="textEmailAddress"
                     android:textSize="14sp"
-                    android:onClick="onClickEmail"/>
+                    android:onClick="onClickEmail"
+                    android:fontFamily="serif" />
             </TableRow>
 
             <View android:layout_height="1dip" android:background="#FF909090" />
@@ -115,7 +119,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="70dp"
                     android:textStyle="normal|bold"
-                    android:textColor="@color/colorAccent" />
+                    android:textColor="@color/colorAccent"
+                    android:fontFamily="serif" />
 
                 <EditText
                     android:background="@null"
@@ -129,7 +134,8 @@
                     android:id="@+id/display_address"
                     android:inputType="text"
                     android:textSize="14sp"
-                    android:onClick="onClickAddress"/>
+                    android:onClick="onClickAddress"
+                    android:fontFamily="serif" />
             </TableRow>
 
             <View android:layout_height="1dip" android:background="#FF909090" />
@@ -148,7 +154,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="70dp"
                     android:textStyle="normal|bold"
-                    android:textColor="@color/colorAccent" />
+                    android:textColor="@color/colorAccent"
+                    android:fontFamily="serif" />
 
                 <EditText
                     android:background="@null"
@@ -162,7 +169,8 @@
                     android:id="@+id/display_phone"
                     android:inputType="textEmailAddress"
                     android:textSize="14sp"
-                    android:onClick="onClickPhone"/>
+                    android:onClick="onClickPhone"
+                    android:fontFamily="serif" />
             </TableRow>
 
             <View android:layout_height="1dip" android:background="#FF909090" />

@@ -20,7 +20,8 @@
         android:layout_marginTop="52dp"
         android:id="@+id/createClub"
         android:background="@color/colorAccent"
-        android:textStyle="normal|bold" />
+        android:textStyle="normal|bold"
+        android:fontFamily="serif" />
 
     <ListView
         android:layout_width="match_parent"
@@ -40,6 +41,7 @@
         android:layout_alignBottom="@+id/createClub"
         android:layout_alignParentEnd="true"
         android:background="@color/colorAccent"
-        android:textStyle="normal|bold" />
+        android:textStyle="normal|bold"
+        android:fontFamily="serif" />
 
 </RelativeLayout>

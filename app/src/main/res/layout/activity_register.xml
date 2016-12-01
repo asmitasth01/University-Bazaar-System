@@ -25,7 +25,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
-                android:hint="Name" />
+                android:hint="Name"
+                android:fontFamily="serif" />
         </android.support.design.widget.TextInputLayout>
 
         <!-- Address Label -->
@@ -38,7 +39,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPostalAddress"
-                android:hint="Address" />
+                android:hint="Address"
+                android:fontFamily="serif" />
         </android.support.design.widget.TextInputLayout>
 
 
@@ -53,7 +55,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textEmailAddress"
-                android:hint="Email" />
+                android:hint="Email"
+                android:fontFamily="serif" />
         </android.support.design.widget.TextInputLayout>
 
 
@@ -67,7 +70,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number"
-                android:hint="Mobile Number" />
+                android:hint="Mobile Number"
+                android:fontFamily="serif" />
         </android.support.design.widget.TextInputLayout>
 
         <!-- Username Label -->
@@ -80,7 +84,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
-                android:hint="Username" />
+                android:hint="Username"
+                android:fontFamily="serif" />
         </android.support.design.widget.TextInputLayout>
 
         <!-- Password Label -->
@@ -93,7 +98,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
-                android:hint="Password"/>
+                android:hint="Password"
+                android:fontFamily="serif" />
         </android.support.design.widget.TextInputLayout>
 
         <!-- Password Re-enter Label -->
@@ -106,7 +112,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
-                android:hint="Re-enter Password"/>
+                android:hint="Re-enter Password"
+                android:fontFamily="serif" />
         </android.support.design.widget.TextInputLayout>
 
         <TextView
@@ -130,7 +137,8 @@
             android:textStyle="bold"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="0dp"
-            android:layout_weight="0.02" />
+            android:layout_weight="0.02"
+            android:fontFamily="serif" />
 
         <Button
             android:text="  Upload from Camera  "
@@ -142,7 +150,8 @@
             android:textStyle="bold"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="10dp"
-            android:layout_weight="0.02" />
+            android:layout_weight="0.02"
+            android:fontFamily="serif" />
 
         <ImageView
             android:layout_width="300dp"
@@ -162,7 +171,9 @@
             android:padding="12dp"
             android:text="Create Account"
             android:onClick="registerUser"
-            android:background="@color/colorAccent" />
+            android:background="@color/colorAccent"
+            android:fontFamily="serif"
+            android:textStyle="normal|bold" />
 
         <TextView android:id="@+id/link_login"
             android:layout_width="fill_parent"
@@ -171,7 +182,10 @@
             android:text="Already a member? Login"
             android:gravity="center"
             android:textSize="16dip"
-            android:onClick="attemptLogin"/>
+            android:onClick="attemptLogin"
+            android:fontFamily="serif"
+            android:textStyle="normal|bold"
+            android:textAllCaps="true" />
 
     </LinearLayout>
 </ScrollView>

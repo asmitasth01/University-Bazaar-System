@@ -26,6 +26,7 @@
         android:text="FirstName LastName"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textAlignment="center"
-        android:id="@+id/display_profile_name" />
+        android:id="@+id/display_profile_name"
+        android:fontFamily="serif" />
 
 </LinearLayout>

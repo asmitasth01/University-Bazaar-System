@@ -21,7 +21,8 @@
         android:id="@+id/button2"
         android:background="@color/colorAccent"
         android:textStyle="normal|bold"
-        android:requiresFadingEdge="horizontal" />
+        android:requiresFadingEdge="horizontal"
+        android:fontFamily="serif" />
 
     <Button
         android:text="Button"
@@ -33,5 +34,6 @@
         android:layout_alignStart="@+id/button2"
         android:background="@color/colorAccent"
         android:textStyle="normal|bold"
-        android:requiresFadingEdge="horizontal"/>
+        android:requiresFadingEdge="horizontal"
+        android:fontFamily="serif" />
 </RelativeLayout>
