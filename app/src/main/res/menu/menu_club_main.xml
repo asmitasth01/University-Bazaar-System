@@ -1,0 +1,12 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="example.com.bazaar.ClubMain">
+    <item
+        android:id="@+id/createClub"
+        android:orderInCategory="100"
+        android:title="@string/addPost"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_add_white_24dp"
+        android:visible="false" />
+</menu>

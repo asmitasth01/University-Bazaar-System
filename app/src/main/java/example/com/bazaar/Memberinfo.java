@@ -5,18 +5,19 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.ListView;
 
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
+import com.firebase.client.Firebase;
+import com.firebase.client.FirebaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.GenericTypeIndicator;
-import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 
 import example.com.bazaar.bean.UserInfo;
 
@@ -27,9 +28,12 @@ public class Memberinfo extends Home {
     EditText input_address;
     EditText input_phone;
     Button save;
+    ImageView profile_image;
     DatabaseReference bazaar;
     ArrayList<UserInfo> users;
-    final SignInActivity login;
+    SignInActivity login;
+    Firebase usersData;
+    private Firebase mRef;
 
     private UserInfo user;
 
@@ -48,47 +52,51 @@ public class Memberinfo extends Home {
         View contentView = inflater.inflate(R.layout.activity_memberinfo, null, false);
         drawer.addView(contentView, 0);
 
+        bazaar = FirebaseDatabase.getInstance().getReference();
+
         save = (Button)findViewById(R.id.btn_save);
         input_name = (EditText)findViewById(R.id.display_name);
         input_email = (EditText)findViewById(R.id.display_email);
         input_address = (EditText)findViewById(R.id.display_address);
         input_phone = (EditText)findViewById(R.id.display_phone);
+        profile_image = (ImageView)findViewById(R.id.profile_pic);
 
-        bazaar = FirebaseDatabase.getInstance().getReference("Bazaar");
-        bazaar.addValueEventListener(new ValueEventListener() {
+        mRef = new Firebase("https://bazaar-7ee62.firebaseio.com/Bazaar/User");
+
+        mRef.addChildEventListener(new com.firebase.client.ChildEventListener() {
             @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                Iterable<DataSnapshot> snapshotIterator = dataSnapshot.getChildren();
-                Iterator<DataSnapshot> iterator = snapshotIterator.iterator();
-                System.out.println(dataSnapshot.getChildren().getClass().toString());
-                while (iterator.hasNext()) {
-                    GenericTypeIndicator<ArrayList<UserInfo>> t = new GenericTypeIndicator<ArrayList<UserInfo>>() {};
-                    users = iterator.next().getValue(t);
-                    for (int i=0;i<users.size();i++){
-                        if (users.get(i).getUserName().compareTo(login.getUsername())==0){
-                            setUser(users.get(i));
-                            input_name.setText(user.getName());
-                            input_email.setText(user.getEmail());
-                            input_address.setText(user.getAddress());
-                            input_phone.setText(user.getPhoneNumber());
-                            System.out.println("the user inside loop is: "+user.getUserName());
-                        }
-                    }
-
+            public void onChildAdded(com.firebase.client.DataSnapshot dataSnapshot, String s) {
+                UserInfo info = dataSnapshot.getValue(UserInfo.class);
+                if (info.getUserName().compareTo(login.getUsername())==0){
+                    input_name.setText(info.getName());
+                    input_email.setText(info.getEmail());
+                    input_address.setText(info.getAddress());
+                    input_phone.setText(info.getPhoneNumber());
+                    Picasso.with(getApplicationContext()).load(info.getProfilePic_imageURL()).into(profile_image);
                 }
+                users.add(info);
             }
 
             @Override
-            public void onCancelled(DatabaseError databaseError) {
+            public void onChildChanged(com.firebase.client.DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(com.firebase.client.DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(com.firebase.client.DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onCancelled(FirebaseError firebaseError) {
 
             }
         });
-
-        System.out.println("the user outside loop is: "+user.getUserName());
-
-
-
-
     }
 
     public void onClickName(View view){
@@ -125,31 +133,41 @@ public class Memberinfo extends Home {
 
     public void onSave(View view){
 
-        DatabaseReference usersData = bazaar.child("User");
+        usersData = mRef.child(login.getUsername());
+        usersData.push();
 
         for (int i=0;i<users.size();i++){
             if (users.get(i).getUserName().compareTo(login.getUsername())==0){
+                user = users.get(i);
+                //Firebase newChild = usersData.child("")
                 user.setName(input_name.getText().toString());
+                System.out.println("new names is: "+user.getName());
                 user.setEmail(input_email.getText().toString());
                 user.setAddress(input_address.getText().toString());
                 user.setPhoneNumber(input_phone.getText().toString());
                 users.set(i,user);
                 System.out.println("the user inside loop is: "+user.getUserName());
+
+                Firebase newChild = usersData.child("name");
+                newChild.push();
+                newChild.setValue(user.getName());
+                newChild = usersData.child("userName");
+                newChild.setValue(user.getUserName());
+                newChild = usersData.child("address");
+                newChild.setValue(user.getAddress());
+                newChild = usersData.child("email");
+                newChild.setValue(user.getEmail());
+                newChild = usersData.child("phoneNumber");
+                newChild.setValue(user.getPhoneNumber());
+                newChild = usersData.child("password");
+                newChild.setValue(user.getPassword());
+                newChild = usersData.child("profilePic_imageURL");
+                newChild.setValue(user.getProfilePic_imageURL());
             }
         }
 
-        usersData.setValue(users);
-
-        usersData.push();
         Intent intent = new Intent(this, Memberinfo.class);
         startActivity(intent);
     }
 
-    public UserInfo getUser() {
-        return user;
-    }
-
-    public void setUser(UserInfo user) {
-        this.user = user;
-    }
 }

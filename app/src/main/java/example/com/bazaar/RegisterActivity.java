@@ -19,6 +19,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.firebase.client.Firebase;
@@ -91,6 +92,14 @@ public class RegisterActivity extends AppCompatActivity {
         address = (EditText) findViewById(R.id.input_address);
         phoneNumber = (EditText) findViewById(R.id.input_mobile);
         Email = (EditText) findViewById(R.id.input_email);
+
+        TextView alreadyReg = (TextView) findViewById(R.id.link_login);
+        alreadyReg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(RegisterActivity.this, SignInActivity.class));
+            }
+        });
 
 
         username.addTextChangedListener(new TextWatcher()

@@ -3,7 +3,6 @@ package example.com.bazaar;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,9 +18,6 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 
 import example.com.bazaar.bean.ExchangeInfo;
-import example.com.bazaar.bean.ItemInfo;
-
-import static example.com.bazaar.Exchange_items.itemList;
 
 public class ExchangeSellerSideActivity extends Home {
 
@@ -45,12 +41,12 @@ public class ExchangeSellerSideActivity extends Home {
         LayoutInflater inflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
         //inflate your activity layout here!
-        View contentView = inflater.inflate(R.layout.activity_form_club, null, false);
+        View contentView = inflater.inflate(R.layout.activity_exchange_seller_side, null, false);
         drawer.addView(contentView, 0);
         fab.setVisibility(View.INVISIBLE);
         desc = (TextView) findViewById(R.id.exchange_desTextView);
         quan = (TextView) findViewById(R.id.exchange_quantity);
-        imageView = (ImageView) findViewById(R.id.full_image);
+        imageView = (ImageView) findViewById(R.id.profile_pic);
 
 
         mRef = new Firebase("https://bazaar-7ee62.firebaseio.com/Bazaar").child("Exchange_Offers");

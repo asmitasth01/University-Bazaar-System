@@ -18,7 +18,7 @@ public class BuyActivity extends Home {
         LayoutInflater inflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
         //inflate your activity layout here!
-        View contentView = inflater.inflate(R.layout.activity_form_club, null, false);
+        View contentView = inflater.inflate(R.layout.activity_buy, null, false);
         drawer.addView(contentView, 0);
         fab.setVisibility(View.INVISIBLE);
 

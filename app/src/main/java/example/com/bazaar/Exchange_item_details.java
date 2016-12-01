@@ -3,7 +3,6 @@ package example.com.bazaar;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,7 +23,7 @@ public class Exchange_item_details extends Home {
         LayoutInflater inflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
         //inflate your activity layout here!
-        View contentView = inflater.inflate(R.layout.activity_form_club, null, false);
+        View contentView = inflater.inflate(R.layout.activity_exchange_item_details, null, false);
         drawer.addView(contentView, 0);
         fab.setVisibility(View.INVISIBLE);
 
@@ -35,7 +34,7 @@ public class Exchange_item_details extends Home {
         TextView name = (TextView) findViewById(R.id.exchange_nameTextView);
 
         int position = getIntent().getExtras().getInt("id");
-        ImageView imageView = (ImageView) findViewById(R.id.full_image);
+        ImageView imageView = (ImageView) findViewById(R.id.profile_pic);
 
 
         //imageView.setImageResource(Buy_items.images[position]);

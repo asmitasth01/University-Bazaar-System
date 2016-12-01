@@ -135,6 +135,22 @@
 
         <activity android:name=".CreditThankyou"
             android:label="Confirmation"></activity>
+        <activity
+            android:name=".ClubActivity"
+            android:label="Clubs" />
+        <activity
+            android:name=".MyClubActivity"
+            android:label="My Clubs" />
+        <activity
+            android:name=".AllClubActivity"
+            android:label="Club Information" />
+        <activity
+            android:name=".ClubMain"
+            android:label="@string/title_activity_club_main"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".ClubHome" />
+        <activity android:name=".MyClubIformation"
+            android:label="Club Information"></activity>
     </application>
 
 </manifest>

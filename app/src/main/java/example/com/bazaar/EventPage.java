@@ -115,7 +115,12 @@ public class EventPage extends Home {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        //getMenuInflater().inflate(R.menu.home,menu);
+        getMenuInflater().inflate(R.menu.home, menu);
+        addItem = menu.findItem(R.id.addButton);
+        MenuItem settingsItem = menu.findItem(R.id.action_settings);
+
+        addItem.setVisible(true);
+        settingsItem.setVisible(true);
         return super.onCreateOptionsMenu(menu);
     }
 

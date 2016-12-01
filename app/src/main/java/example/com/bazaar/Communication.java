@@ -30,8 +30,11 @@ public class Communication extends Home implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         LayoutInflater inflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        setContentView(R.layout.activity_communication);
 
+        //inflate your activity layout here!
+        View contentView = inflater.inflate(R.layout.activity_communication, null, false);
+        drawer.addView(contentView, 0);
+        fab.setVisibility(View.INVISIBLE);
 
         //Initializing the views
         editTextEmail = (EditText) findViewById(R.id.editText5);
@@ -44,9 +47,7 @@ public class Communication extends Home implements View.OnClickListener {
 
         //Adding click listener
         buttonSend.setOnClickListener(this);
-        //inflate your activity layout here!
-        View contentView = inflater.inflate(R.layout.activity_communication, null, false);
-        drawer.addView(contentView, 0);
+
     }
     private void sendEmail() {
         //Getting content for email

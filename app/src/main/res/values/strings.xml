@@ -111,7 +111,7 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="trade">Trade</string>
     <string name="communication">Communication</string>
-    <string name="form_club">Form Club</string>
+    <string name="form_club">Clubs</string>
     <string name="profile">Profile</string>
     <string name="logout">Logout</string>
     <string-array name="itemQuantity">
@@ -225,5 +225,7 @@
         <item>Shrey</item>
         <item>Sosal</item>
     </string-array>
+    <string name="title_activity_club_main">ClubMain</string>
+    <string name="section_format">Hello World from section: %1$d</string>
 </resources>
 

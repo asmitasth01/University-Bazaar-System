@@ -31,7 +31,6 @@ import com.squareup.picasso.Picasso;
 
 public class CreateEventActivity extends Home {
     private static int RESULT_LOAD_IMG = 1;
-    String imgDecodableString;
     DatabaseReference bazaar;
     private Firebase mFire;
     private Button mButton;

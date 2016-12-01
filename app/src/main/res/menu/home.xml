@@ -7,12 +7,22 @@
         android:orderInCategory="100"
         android:title="@string/addPost"
         app:showAsAction="always"
-        android:icon="@drawable/ic_add_white_24dp" />
+        android:icon="@drawable/ic_add_white_24dp"
+        android:visible="false" />
+
+    <item
+        android:id="@+id/createClub"
+        android:orderInCategory="100"
+        android:title="@string/addPost"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_add_white_24dp"
+        android:visible="false" />
 
     <item
         android:id="@+id/action_settings"
         android:orderInCategory="100"
         android:title="@string/action_settings"
-        app:showAsAction="never" />
+        app:showAsAction="never"
+        android:visible="false" />
 
 </menu>

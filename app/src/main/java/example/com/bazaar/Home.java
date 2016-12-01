@@ -14,13 +14,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
 
 public class Home extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     protected DrawerLayout drawer;
     protected FloatingActionButton fab;
+    protected MenuItem addItem;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,9 +44,11 @@ public class Home extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         View hView =  navigationView.getHeaderView(0);
         TextView nav_user = (TextView)hView.findViewById(R.id.display_profile_name);
+        ImageView image_user = (ImageView)hView.findViewById(R.id.image_View);
+
         SignInActivity tempUser = new SignInActivity();
-        System.out.println("username is: "+tempUser.getUsername());
         nav_user.setText(tempUser.getUsername());
+
         navigationView.setNavigationItemSelectedListener(this);
     }
 
@@ -88,7 +94,7 @@ public class Home extends AppCompatActivity
         Intent intent;
 
         if (id == R.id.club) {
-            intent = new Intent(this, FormClubActivity.class);
+            intent = new Intent(this, ClubActivity.class);
             startActivity(intent);
         } else if (id == R.id.trade) {
             intent = new Intent(this, TradeTypeSelectionActivity.class);

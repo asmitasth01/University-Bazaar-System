@@ -14,26 +14,26 @@ import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.Toast;
 
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
+import com.firebase.client.Firebase;
+import com.firebase.client.FirebaseError;
 import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.GenericTypeIndicator;
-import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 
 import example.com.bazaar.bean.UserInfo;
 
 // This class extends te appbar from Home and filters the search results as the user types
 public class SearchActivity extends Home {
 
+    private Firebase mRef;
+    private ListView lv;
+
     // defining class attributes
     ArrayAdapter<String> adapter;
     DatabaseReference bazaar;
-    public ArrayList<UserInfo> users;
-    ListView lv;
+    private ArrayList<UserInfo> users;
+    //final ArrayAdapter<UserInfo> adapter;
+
     ArrayList<String> arrayNames;
     private static String selected;
     private static String username;
@@ -41,11 +41,14 @@ public class SearchActivity extends Home {
     private static String email;
     private static String address;
     private static String phone;
+    private static String profile_url;
+    private int position;
 
     // Constructor where local variables are initialized
     public SearchActivity(){
         arrayNames = new ArrayList<>();
         users = new ArrayList<>();
+        position = 0;
     }
 
     @Override
@@ -57,35 +60,70 @@ public class SearchActivity extends Home {
         View contentView = inflater.inflate(R.layout.activity_search, null, false);
         drawer.addView(contentView, 0);
 
-        lv = (ListView) findViewById(R.id.listView_search);
+        mRef = new Firebase("https://bazaar-7ee62.firebaseio.com/Bazaar/User");
+        lv = (ListView)findViewById(R.id.listView_search);
+        adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, arrayNames);
+        lv.setAdapter(adapter);
 
-        bazaar = FirebaseDatabase.getInstance().getReference("Bazaar");
-        bazaar.addValueEventListener(new ValueEventListener() {
+        mRef.addChildEventListener(new com.firebase.client.ChildEventListener() {
             @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                Iterable<DataSnapshot> snapshotIterator = dataSnapshot.getChildren();
-                Iterator<DataSnapshot> iterator = snapshotIterator.iterator();
-                System.out.println(dataSnapshot.getChildren().getClass().toString());
-                while (iterator.hasNext()) {
-                    GenericTypeIndicator<ArrayList<UserInfo>> t = new GenericTypeIndicator<ArrayList<UserInfo>>() {};
-                    users = iterator.next().getValue(t);
-                    for (int i = 0;i<users.size();i++){
-                        arrayNames.add(users.get(i).getUserName());
-                        System.out.println("array names :"+arrayNames.get(i));
-                    }
-                }
+            public void onChildAdded(com.firebase.client.DataSnapshot dataSnapshot, String s) {
+                UserInfo info = dataSnapshot.getValue(UserInfo.class);
+                users.add(info);
+                arrayNames.add(users.get(position).getUserName());
+                position++;
+                adapter.notifyDataSetChanged();
             }
 
             @Override
-            public void onCancelled(DatabaseError databaseError) {
+            public void onChildChanged(com.firebase.client.DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(com.firebase.client.DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(com.firebase.client.DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onCancelled(FirebaseError firebaseError) {
 
             }
         });
 
-        System.out.println("array size is : "+arrayNames.size());
 
-        adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, arrayNames);
-        lv.setAdapter(adapter);
+//        bazaar = FirebaseDatabase.getInstance().getReference("Bazaar");
+//        bazaar.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(DataSnapshot dataSnapshot) {
+//                Iterable<DataSnapshot> snapshotIterator = dataSnapshot.getChildren();
+//                Iterator<DataSnapshot> iterator = snapshotIterator.iterator();
+//                System.out.println(dataSnapshot.getChildren().getClass().toString());
+//                while (iterator.hasNext()) {
+//                    GenericTypeIndicator<ArrayList<UserInfo>> t = new GenericTypeIndicator<ArrayList<UserInfo>>() {};
+//                    users = iterator.next().getValue(t);
+//                    for (int i = 0;i<users.size();i++){
+//                        arrayNames.add(users.get(i).getUserName());
+//                        System.out.println("array names :"+arrayNames.get(i));
+//                    }
+//                }
+//            }
+//
+//            @Override
+//            public void onCancelled(DatabaseError databaseError) {
+//
+//            }
+//        });
+//
+//        System.out.println("array size is : "+arrayNames.size());
+//
+//        adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, arrayNames);
+//        lv.setAdapter(adapter);
     }
 
     @Override
@@ -126,6 +164,7 @@ public class SearchActivity extends Home {
                         setEmail(tempUser.getEmail());
                         setAddress(tempUser.getAddress());
                         setPhone(tempUser.getPhoneNumber());
+                        setProfile_url(tempUser.getProfilePic_imageURL());
                         Intent intent = new Intent(SearchActivity.this, SearchResultsMember.class);
                         startActivity(intent);
                     }
@@ -182,5 +221,17 @@ public class SearchActivity extends Home {
 
     public static void setPhone(String phone) {
         SearchActivity.phone = phone;
+    }
+
+    public static String getProfile_url() {
+        return profile_url;
+    }
+
+    public static void setProfile_url(String profile_url) {
+        SearchActivity.profile_url = profile_url;
+    }
+
+    public ArrayList<UserInfo> getUsers() {
+        return users;
     }
 }

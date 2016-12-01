@@ -15,7 +15,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/full_image"
+        android:layout_below="@+id/profile_pic"
         android:orientation="vertical" >
 
         <TableLayout
@@ -45,7 +45,7 @@
                     android:layout_height="wrap_content"
                     android:inputType="textPersonName"
                     android:textAlignment="viewStart"
-                    android:id="@+id/displayItemName"
+                    android:id="@+id/input_club_name"
                     android:textSize="14sp" />
             </TableRow>
 
@@ -110,7 +110,7 @@
         android:text="  Create Club  "
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/create_event_button"
+        android:id="@+id/create_club_button"
         android:onClick="openSendInvite"
         android:background="@color/colorAccent"
         android:textSize="14sp"

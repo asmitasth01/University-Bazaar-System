@@ -101,10 +101,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp">
+            android:layout_marginBottom="15dp">
             <EditText android:id="@+id/input_reEnterPassword"
                 android:layout_width="match_parent"
-                android:layout_height="83dp"
+                android:layout_height="wrap_content"
                 android:inputType="textPassword"
                 android:hint="Re-enter Password"/>
         </android.support.design.widget.TextInputLayout>
@@ -121,19 +121,19 @@
             android:layout_marginBottom="0dp"/>
 
         <Button
-            android:text="Upload from Gallery"
+            android:text="  Upload from Gallery  "
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/buttonSelectImage"
             android:background="@color/colorAccent"
             android:textColor="@android:color/background_light"
             android:textStyle="bold"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="10dp"
             android:layout_marginBottom="0dp"
             android:layout_weight="0.02" />
 
         <Button
-            android:text="Upload from Camera"
+            android:text="  Upload from Camera  "
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/buttonUploadFromCamera"
@@ -161,7 +161,8 @@
             android:layout_marginBottom="24dp"
             android:padding="12dp"
             android:text="Create Account"
-            android:onClick="registerUser"/>
+            android:onClick="registerUser"
+            android:background="@color/colorAccent" />
 
         <TextView android:id="@+id/link_login"
             android:layout_width="fill_parent"
