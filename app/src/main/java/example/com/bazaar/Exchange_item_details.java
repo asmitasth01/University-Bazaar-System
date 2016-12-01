@@ -10,18 +10,22 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
-import static example.com.bazaar.Buy_items.itemList;
+import static example.com.bazaar.Exchange_items.itemList;
 
 public class Exchange_item_details extends AppCompatActivity {
+
+    private static String userName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exchange_item_details);
 
-        TextView desc = (TextView) findViewById(R.id.desTextView);
-        TextView price = (TextView) findViewById(R.id.priceTextView);
-        TextView name = (TextView) findViewById(R.id.nameTextView);
+
+
+        TextView desc = (TextView) findViewById(R.id.exchange_desTextView);
+        TextView price = (TextView) findViewById(R.id.exchange_priceTextView);
+        TextView name = (TextView) findViewById(R.id.exchange_nameTextView);
 
         int position = getIntent().getExtras().getInt("id");
         ImageView imageView = (ImageView) findViewById(R.id.full_image);
@@ -37,12 +41,22 @@ public class Exchange_item_details extends AppCompatActivity {
 
         price.setText(itemList.get(position).getItemPrice());
         name.setText(itemList.get(position).getItemDescription());
-
+        setUserName(itemList.get(position).getUserName());
 
     }
     protected void openExchangeActivity(View view)
     {
         Intent intent = new Intent(this, ExchangeBuyerSideActivity.class);
         startActivity(intent);
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getUserName()
+    {
+        return userName;
+
     }
 }

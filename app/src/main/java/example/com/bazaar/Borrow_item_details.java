@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
-import static example.com.bazaar.Buy_items.itemList;
+import static example.com.bazaar.Borrow_items.itemList;
 
 
 public class Borrow_item_details extends AppCompatActivity {
@@ -22,12 +22,14 @@ public class Borrow_item_details extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_borrow_item_details);
 
-        TextView desc = (TextView) findViewById(R.id.desTextView);
-        TextView price = (TextView) findViewById(R.id.priceTextView);
-        TextView name = (TextView) findViewById(R.id.nameTextView);
+        TextView desc = (TextView) findViewById(R.id.borrow_desTextView);
+        TextView price = (TextView) findViewById(R.id.borrow_priceTextView);
+        TextView name = (TextView) findViewById(R.id.borrow_nameTextView);
 
         int position = getIntent().getExtras().getInt("id");
         ImageView imageView = (ImageView) findViewById(R.id.full_image);
+
+//        System.out.println("The size of itemList is:"+itemList.size()+"\n\n\n");
 
         String imageUrl =   itemList.get(position).getSellItem_imageURL();
         Uri myImageUri = Uri.parse(imageUrl);
@@ -36,6 +38,7 @@ public class Borrow_item_details extends AppCompatActivity {
 
         desc.setText(itemList.get(position).getItemDes());
 
+//        System.out.println("Item Price: "+ itemList.get(position).getItemPrice());
         price.setText(itemList.get(position).getItemPrice());
         name.setText(itemList.get(position).getItemDescription());
 

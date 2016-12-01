@@ -13,6 +13,13 @@ public class TradeTypeSelectionActivity extends AppCompatActivity {
         setContentView(R.layout.activity_trade_type_selection);
     }
 
+
+    public void goExSellSide(View view)
+    {
+        Intent intent = new Intent(this, ExchangeSellerSideActivity.class);
+        startActivity(intent);
+    }
+
     /*
         Function: selectTrade
         Input: This method takes View object as input

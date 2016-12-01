@@ -11,15 +11,21 @@ public class ItemInfo {
     private String itemPrice;
     private String sellType;
     private String sellItem_imageURL;
+    private String userName;
 
 
-    public ItemInfo(String itemDescription, String itemQuantity, String itemDes, String itemPrice, String sellType, String sellItem_imageURL) {
+    public ItemInfo(String itemDescription, String itemQuantity, String itemDes, String itemPrice, String sellType, String sellItem_imageURL, String userName) {
         this.itemDescription = itemDescription;
         this.itemDes = itemDes;
         this.itemQuantity = itemQuantity;
         this.itemPrice = itemPrice;
         this.sellType = sellType;
         this.sellItem_imageURL = sellItem_imageURL;
+        this.userName = userName;
+    }
+
+    public String getUserName() {
+        return userName;
     }
 
     public String getItemDes() {

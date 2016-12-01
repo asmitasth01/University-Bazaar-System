@@ -56,6 +56,8 @@ public class sellActivity extends AppCompatActivity {
     private Button mSelectImage;
     private StorageReference mStorage;
 
+
+
     private String userName;
 
     private Uri downloadUri;
@@ -81,6 +83,8 @@ public class sellActivity extends AppCompatActivity {
     public sellActivity() {
 
         sellItems = new ArrayList<>();
+
+
     }
 
     @Override
@@ -213,6 +217,8 @@ public class sellActivity extends AppCompatActivity {
         iQuantity = itemQuantity.getText().toString();
         sType = sellType.getSelectedItem().toString();
 
+        final String userName = new SignInActivity().getUsername();
+
 
         imagePath = downloadUri.toString();
 
@@ -247,6 +253,8 @@ public class sellActivity extends AppCompatActivity {
         newChild.setValue(imagePath);
         newChild = mRefChild.child("itemDes");
         newChild.setValue(iDes);
+        newChild = mRefChild.child("userName");
+        newChild.setValue(userName);
 
 
 
@@ -294,7 +302,7 @@ public class sellActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
-        String userName = new SignInActivity().getUsername();
+        final String userName = new SignInActivity().getUsername();
 
         StorageReference sellItemPicture = mStorage.child(userName);
         StorageReference itemPicture = sellItemPicture.child("Sell Items");
@@ -317,7 +325,7 @@ public class sellActivity extends AppCompatActivity {
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
 
                     downloadUri = taskSnapshot.getDownloadUrl();
-                    ItemInfo item = new ItemInfo(iDescription,iDes, iQuantity, iPrice, sType,imagePath);
+                    ItemInfo item = new ItemInfo(iDescription,iDes, iQuantity, iPrice, sType,imagePath, userName);
                     Picasso.with(sellActivity.this).load(downloadUri).fit().centerCrop().into(myImageView);
                     Toast.makeText(sellActivity.this, "Upload Done.", Toast.LENGTH_SHORT).show();
                 }
@@ -348,7 +356,7 @@ public class sellActivity extends AppCompatActivity {
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                     downloadUri = taskSnapshot.getDownloadUrl();
-                    ItemInfo item = new ItemInfo(iDescription,iDes, iQuantity, iPrice, sType,imagePath);
+                    ItemInfo item = new ItemInfo(iDescription,iDes, iQuantity, iPrice, sType,imagePath,userName);
                     Picasso.with(sellActivity.this).load(downloadUri).fit().centerCrop().into(myImageView);
                     Toast.makeText(sellActivity.this, "Upload Done.", Toast.LENGTH_SHORT).show();
                 }

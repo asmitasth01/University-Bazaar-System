@@ -76,7 +76,7 @@
                 android:text="TextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView36" />
+                android:id="@+id/borrow_nameTextView" />
 
         </TableRow>
 
@@ -100,7 +100,7 @@
                 android:text="TextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView35" />
+                android:id="@+id/borrow_priceTextView" />
 
         </TableRow>
 
@@ -124,7 +124,7 @@
                 android:text="TextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/desTextView" />
+                android:id="@+id/borrow_desTextView" />
 
         </TableRow>
 

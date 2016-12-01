@@ -27,9 +27,9 @@ public class Buy_item_details extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_buy_item_details);
 
-        TextView desc = (TextView) findViewById(R.id.desTextView);
-        TextView price = (TextView) findViewById(R.id.priceTextView);
-        TextView name = (TextView) findViewById(R.id.nameTextView);
+        TextView desc = (TextView) findViewById(R.id.buy_desTextView);
+        TextView price = (TextView) findViewById(R.id.buy_priceTextView);
+        TextView name = (TextView) findViewById(R.id.buy_nameTextView);
 
         int position = getIntent().getExtras().getInt("id");
         ImageView imageView = (ImageView) findViewById(R.id.full_image);

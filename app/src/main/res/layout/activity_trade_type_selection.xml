@@ -13,54 +13,19 @@
     android:background="@color/colorPrimaryDark">
 
     <Button
-        android:text="Sell"
-        android:layout_height="150dp"
-        android:id="@+id/sell_button"
-        android:background="@color/colorAccent"
-        android:textStyle="normal|bold"
-        android:fontFamily="serif"
-        android:textColor="@android:color/background_light"
-        android:layout_marginLeft="17dp"
-        android:layout_marginStart="17dp"
-        android:layout_alignBottom="@+id/buy_button"
-        android:layout_toRightOf="@+id/buy_button"
-        android:layout_toEndOf="@+id/buy_button"
-        android:layout_alignTop="@+id/buy_button"
-        android:layout_width="150dp"
-        android:onClick="selectTrade"
-        android:textSize="14sp" />
-
-    <Button
-        android:text="Borrow"
-        android:layout_height="150dp"
-        android:id="@+id/borrow_button"
-        android:background="@color/colorAccent"
-        android:textStyle="normal|bold"
-        android:fontFamily="serif"
-        android:textColor="@android:color/background_light"
-        android:layout_alignBottom="@+id/exchange_button"
-        android:layout_alignLeft="@+id/buy_button"
-        android:layout_alignStart="@+id/buy_button"
-        android:layout_alignTop="@+id/exchange_button"
-        android:layout_width="150dp"
-        android:onClick="selectTrade"
-        android:textSize="14sp" />
-
-    <Button
         android:text="Exchange"
-        android:layout_height="150dp"
         android:id="@+id/exchange_button"
         android:background="@color/colorAccent"
         android:textStyle="normal|bold"
         android:fontFamily="serif"
         android:textColor="@android:color/background_light"
-        android:layout_marginTop="23dp"
-        android:layout_below="@+id/sell_button"
-        android:layout_alignLeft="@+id/sell_button"
-        android:layout_alignStart="@+id/sell_button"
-        android:layout_width="150dp"
+        android:layout_marginTop="11dp"
         android:onClick="selectTrade"
-        android:textSize="14sp" />
+        android:textSize="14sp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/buy_button"
+        android:layout_alignStart="@+id/sell_button" />
 
     <TextView
         android:text="Please select Trade Type:"
@@ -77,18 +42,63 @@
 
     <Button
         android:text="Buy"
-        android:layout_height="150dp"
         android:id="@+id/buy_button"
         android:background="@color/colorAccent"
         android:textStyle="normal|bold"
         android:fontFamily="serif"
         android:textColor="@android:color/background_light"
-        android:layout_marginTop="24dp"
-        android:layout_width="150dp"
+        android:layout_marginTop="11dp"
         android:layout_marginLeft="30dp"
         android:onClick="selectTrade"
         android:textSize="14sp"
-        android:layout_marginStart="12dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginEnd="13dp"
         android:layout_below="@+id/textView27"
-        android:layout_alignParentStart="true" />
+        android:layout_toStartOf="@+id/sell_button" />
+
+    <Button
+        android:text="Exchange_Offer"
+        android:id="@+id/myexchange_button"
+        android:background="@color/colorAccent"
+        android:textStyle="normal|bold"
+        android:fontFamily="serif"
+        android:textColor="@android:color/background_light"
+        android:textSize="14sp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="22dp"
+        android:onClick="goExSellSide" />
+
+    <Button
+        android:text="Sell"
+        android:id="@+id/sell_button"
+        android:background="@color/colorAccent"
+        android:textStyle="normal|bold"
+        android:fontFamily="serif"
+        android:textColor="@android:color/background_light"
+        android:layout_marginLeft="17dp"
+        android:layout_width="100dp"
+        android:onClick="selectTrade"
+        android:textSize="14sp"
+        android:layout_height="100dp"
+        android:layout_above="@+id/exchange_button"
+        android:layout_alignEnd="@+id/textView27" />
+
+    <Button
+        android:text="Borrow"
+        android:id="@+id/borrow_button"
+        android:background="@color/colorAccent"
+        android:textStyle="normal|bold"
+        android:fontFamily="serif"
+        android:textColor="@android:color/background_light"
+        android:onClick="selectTrade"
+        android:textSize="14sp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignBaseline="@+id/exchange_button"
+        android:layout_alignBottom="@+id/exchange_button"
+        android:layout_toStartOf="@+id/sell_button" />
 </RelativeLayout>

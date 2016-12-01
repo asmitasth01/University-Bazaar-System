@@ -49,10 +49,9 @@
         android:layout_width="398dp"
         android:layout_height="287dp"
         android:padding="4dp"
-        android:layout_marginTop="183dp"
-        android:layout_alignTop="@+id/full_image"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="16dp">
+        android:layout_marginBottom="11dp">
 
         <TableRow
             android:layout_marginTop="30dp"
@@ -75,7 +74,7 @@
                 android:text="TextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView36" />
+                android:id="@+id/exchange_nameTextView" />
 
         </TableRow>
 
@@ -99,7 +98,7 @@
                 android:text="TextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView35" />
+                android:id="@+id/exchange_priceTextView" />
 
         </TableRow>
 
@@ -123,7 +122,7 @@
                 android:text="TextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView31" />
+                android:id="@+id/exchange_desTextView" />
 
         </TableRow>
 
