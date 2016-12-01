@@ -150,7 +150,7 @@
             android:layout_above="@+id/SellButton"
             android:layout_weight="0.05"
             android:layout_height="300dp"
-            android:rotation="90"/>
+            />
 
         <!-- Signup Button -->
         <android.support.v7.widget.AppCompatButton

@@ -1,4 +1,5 @@
 package example.com.bazaar;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -55,18 +56,15 @@ public class Communication extends Home implements View.OnClickListener {
         SignInActivity login = new SignInActivity();
         String email = editTextEmail.getText().toString().trim();
         String subject = editTextSubject.getText().toString().trim();
-        String message = "From: " +login.getUsername()+"\n"+"\n"+ editTextMessage.getText().toString().trim();
-        //String sender = editTextSender.getText().toString().trim();
-
-        //Creating SendMail object
+        String message = "University Bazaar"+"\n"+"From: " +login.getUsername()+"\n"+"\n"+ editTextMessage.getText().toString().trim();
         SendMail sm = new SendMail(this, email,  subject, message);
-
-        //Executing sendmail to send email
         sm.execute();
     }
 
     @Override
     public void onClick(View v) {
         sendEmail();
+        Intent intent = new Intent(this, Home.class);
+        startActivity(intent);
     }
 }
