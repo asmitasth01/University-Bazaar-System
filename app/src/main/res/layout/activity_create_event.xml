@@ -184,7 +184,7 @@
         android:text="Upload Image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/textView15"
+        android:id="@+id/price"
         android:layout_below="@+id/desc_layout"
         android:layout_alignLeft="@+id/textView6"
         android:layout_alignStart="@+id/textView6"
@@ -215,8 +215,8 @@
         android:onClick="loadImagefromGallery"
         android:textSize="14sp"
         android:layout_marginStart="47dp"
-        android:layout_alignBaseline="@+id/textView15"
-        android:layout_alignBottom="@+id/textView15"
-        android:layout_toEndOf="@+id/textView15" />
+        android:layout_alignBaseline="@+id/price"
+        android:layout_alignBottom="@+id/price"
+        android:layout_toEndOf="@+id/price" />
 
 </RelativeLayout>

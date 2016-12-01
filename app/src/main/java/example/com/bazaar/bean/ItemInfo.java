@@ -23,6 +23,11 @@ public class ItemInfo {
         this.sellItem_imageURL = sellItem_imageURL;
         this.userName = userName;
     }
+    public  ItemInfo()
+
+    {
+
+    }
 
     public String getUserName() {
         return userName;
@@ -36,11 +41,7 @@ public class ItemInfo {
         this.itemDes = itemDes;
     }
 
-    public  ItemInfo()
 
-    {
-
-    }
 
     public String getSellItem_imageURL() {
         return sellItem_imageURL;

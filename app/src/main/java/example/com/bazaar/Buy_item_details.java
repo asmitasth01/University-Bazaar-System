@@ -39,7 +39,7 @@ public class Buy_item_details extends Home {
         TextView name = (TextView) findViewById(R.id.buy_nameTextView);
 
         int position = getIntent().getExtras().getInt("id");
-        ImageView imageView = (ImageView) findViewById(R.id.full_image);
+        ImageView imageView = (ImageView) findViewById(R.id.profile_pic);
 
 
         //imageView.setImageResource(Buy_items.images[position]);

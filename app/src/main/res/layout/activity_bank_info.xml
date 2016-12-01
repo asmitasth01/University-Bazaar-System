@@ -51,17 +51,8 @@
         android:layout_marginRight="9dp"
         android:layout_marginEnd="9dp"
         android:layout_marginBottom="66dp"
-        android:id="@+id/editText" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="10"
-        android:layout_alignTop="@+id/textView8"
-        android:layout_alignRight="@+id/editText"
-        android:layout_alignEnd="@+id/editText"
-        android:id="@+id/editText2" />
+        android:id="@+id/editText"
+        android:textSize="14sp" />
 
     <Button
         android:text="Add Bank Information"
@@ -91,5 +82,16 @@
         android:textSize="24sp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/editText2"
+        android:textSize="14sp"
+        android:layout_alignBaseline="@+id/textView8"
+        android:layout_alignBottom="@+id/textView8"
+        android:layout_alignStart="@+id/editText" />
 
 </RelativeLayout>
