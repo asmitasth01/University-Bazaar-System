@@ -78,7 +78,6 @@
     <ImageView
         app:srcCompat="@mipmap/ic_launcher"
         android:id="@+id/SellItemImage"
-        android:rotation="90"
         android:layout_height="100dp"
         android:layout_width="150dp"
         android:layout_above="@+id/SellButton"
