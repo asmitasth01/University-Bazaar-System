@@ -1,9 +1,11 @@
 package example.com.bazaar;
 
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -12,14 +14,19 @@ import com.squareup.picasso.Picasso;
 
 import static example.com.bazaar.Exchange_items.itemList;
 
-public class Exchange_item_details extends AppCompatActivity {
+public class Exchange_item_details extends Home {
 
     private static String userName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_exchange_item_details);
+        LayoutInflater inflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
+        //inflate your activity layout here!
+        View contentView = inflater.inflate(R.layout.activity_form_club, null, false);
+        drawer.addView(contentView, 0);
+        fab.setVisibility(View.INVISIBLE);
 
 
 

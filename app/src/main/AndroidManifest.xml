@@ -51,34 +51,53 @@
             android:name=".FormClubActivity"
             android:label="Form Club"
             android:theme="@style/AppTheme" />
-        <activity android:name=".BankInfoActivity" />
-        <activity android:name=".BankInfoAddedSuccessActivity" />
-        <activity android:name=".BorrowActivity" />
-        <activity android:name=".BuyActivity" />
-        <activity android:name=".Cash" />
+        <activity android:name=".BankInfoActivity"
+            android:label="Bank Information"/>
+        <activity android:name=".BankInfoAddedSuccessActivity"
+            android:label="Confirmation"/>
+        <activity android:name=".BorrowActivity"
+            android:label="Borrow"/>
+        <activity android:name=".BuyActivity"
+            android:label="Buy"/>
+        <activity android:name=".Cash"
+            android:label="Cash"/>
         <activity
             android:name=".Communication"
             android:label="Communication"
             android:theme="@style/AppTheme" />
-        <activity android:name=".CreateEventActivity" />
-        <activity android:name=".Credit" />
+        <activity android:name=".CreateEventActivity"
+            android:label="Create Event"/>
+        <activity android:name=".Credit"
+            android:label="Credit Card"/>
         <activity android:name=".Event_Functionality" />
-        <activity android:name=".ExchangeBuyerSideActivity" />
-        <activity android:name=".ExchangeOfferSubmittedActivity" />
-        <activity android:name=".ExchangeSellerSideActivity" />
-        <activity android:name=".ExchangeSellerConformation" />
-        <activity android:name=".InviteConformationDialogueActivity" />
+        <activity android:name=".ExchangeBuyerSideActivity"
+            android:label="Exchange Offer"/>
+        <activity android:name=".ExchangeOfferSubmittedActivity"
+            android:label="Submission"/>
+        <activity android:name=".ExchangeSellerSideActivity"
+            android:label="Your Offers"/>
+        <activity android:name=".ExchangeSellerConformation"
+            android:label="Submission"/>
+        <activity android:name=".InviteConformationDialogueActivity"
+            android:label="Confirmation"/>
         <activity
             android:name=".Memberinfo"
             android:label="Your Profile"
             android:theme="@style/AppTheme" />
-        <activity android:name=".PasswordResetLinkSentConformationActivity" />
-        <activity android:name=".PasswordRetrivalActivity" />
-        <activity android:name=".PaymentMainActivity" />
-        <activity android:name=".sellActivity" />
-        <activity android:name=".TradeTypeSelectionActivity" />
-        <activity android:name=".setting" />
-        <activity android:name=".SendGroupInvitationActivity" />
+        <activity android:name=".PasswordResetLinkSentConformationActivity"
+            android:label="Confirmation"/>
+        <activity android:name=".PasswordRetrivalActivity"
+            android:label="Retrieve Password"/>
+        <activity android:name=".PaymentMainActivity"
+            android:label="Select Payment Option"/>
+        <activity android:name=".sellActivity"
+            android:label="Sell"/>
+        <activity android:name=".TradeTypeSelectionActivity"
+            android:label="Select Trade Type"/>
+        <activity android:name=".setting"
+            android:label="Settings"/>
+        <activity android:name=".SendGroupInvitationActivity"
+            android:label="Send Invites"/>
         <activity android:name=".recipient_communication" />
         <activity
             android:name=".SettingsActivity"
@@ -97,22 +116,25 @@
         <activity
             android:name=".SearchResultsMember"
             android:label="Member" />
-        <activity
-            android:name=".HomePageActivity"
-            android:label="Home" />
+
         <activity android:name=".EventPage"
             android:label="Home">
         </activity>
-        <activity android:name=".Buy_item_details" />
-        <activity android:name=".Borrow_item_details" />
-        <activity android:name=".Exchange_item_details" />
-        <activity android:name=".Buy_items" />
-        <activity android:name=".Exchange_items" />
-        <activity android:name=".Borrow_items"></activity>
-        <activity
-            android:name=".SearchResultsMember"
-            android:label="Member" />
-        <activity android:name=".CreditThankyou"></activity>
+        <activity android:name=".Buy_item_details"
+            android:label="Item Details"/>
+        <activity android:name=".Borrow_item_details"
+            android:label="Item Details"/>
+        <activity android:name=".Exchange_item_details"
+            android:label="Item Details"/>
+        <activity android:name=".Buy_items"
+            android:label="Buy"/>
+        <activity android:name=".Exchange_items"
+            android:label="Exchange"/>
+        <activity android:name=".Borrow_items"
+            android:label="Borrow"></activity>
+
+        <activity android:name=".CreditThankyou"
+            android:label="Confirmation"></activity>
     </application>
 
 </manifest>

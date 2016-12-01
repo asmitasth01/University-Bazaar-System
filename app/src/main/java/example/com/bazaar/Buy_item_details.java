@@ -1,11 +1,13 @@
 package example.com.bazaar;
 
 
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -17,7 +19,7 @@ import static example.com.bazaar.Buy_items.itemList;
 
 
 
-public class Buy_item_details extends AppCompatActivity {
+public class Buy_item_details extends Home {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +27,12 @@ public class Buy_item_details extends AppCompatActivity {
 
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_buy_item_details);
+        LayoutInflater inflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
+        //inflate your activity layout here!
+        View contentView = inflater.inflate(R.layout.activity_form_club, null, false);
+        drawer.addView(contentView, 0);
+        fab.setVisibility(View.INVISIBLE);
 
         TextView desc = (TextView) findViewById(R.id.buy_desTextView);
         TextView price = (TextView) findViewById(R.id.buy_priceTextView);

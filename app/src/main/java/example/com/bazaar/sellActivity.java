@@ -1,5 +1,6 @@
 package example.com.bazaar;
 
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -8,6 +9,7 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -36,7 +38,7 @@ import example.com.bazaar.bean.ItemInfo;
 import example.com.bazaar.bean.UserInfo;
 
 
-public class sellActivity extends AppCompatActivity {
+public class sellActivity extends Home {
 
     public android.content.Context context;
     DatabaseReference bazaar;
@@ -90,7 +92,12 @@ public class sellActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sell);
+        LayoutInflater inflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
+        //inflate your activity layout here!
+        View contentView = inflater.inflate(R.layout.activity_form_club, null, false);
+        drawer.addView(contentView, 0);
+        fab.setVisibility(View.INVISIBLE);
         Firebase.setAndroidContext(this);
 
         itemDescription = (EditText)findViewById(R.id.itemDescription);

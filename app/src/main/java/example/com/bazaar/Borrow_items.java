@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -24,7 +25,7 @@ import java.util.ArrayList;
 import example.com.bazaar.bean.ItemInfo;
 
 
-public class Borrow_items extends AppCompatActivity {
+public class Borrow_items extends Home {
 
     private Firebase mRef;
     public static ArrayList<ItemInfo> itemList;
@@ -37,7 +38,12 @@ public class Borrow_items extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_borrow_items);
+        LayoutInflater inflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
+        //inflate your activity layout here!
+        View contentView = inflater.inflate(R.layout.activity_form_club, null, false);
+        drawer.addView(contentView, 0);
+        fab.setVisibility(View.INVISIBLE);
 
 
         mRef = new Firebase("https://bazaar-7ee62.firebaseio.com/Bazaar/Borrow_Items");

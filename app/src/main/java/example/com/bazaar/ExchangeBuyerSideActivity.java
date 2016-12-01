@@ -1,5 +1,6 @@
 package example.com.bazaar;
 
+import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.BitmapFactory;
@@ -8,6 +9,7 @@ import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -27,7 +29,7 @@ import com.squareup.picasso.Picasso;
 import example.com.bazaar.bean.ItemInfo;
 import example.com.bazaar.bean.UserInfo;
 
-public class ExchangeBuyerSideActivity extends AppCompatActivity {
+public class ExchangeBuyerSideActivity extends Home {
 
     public android.content.Context context;
     DatabaseReference bazaar;
@@ -70,7 +72,12 @@ public class ExchangeBuyerSideActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_exchange_buyer_side);
+        LayoutInflater inflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
+        //inflate your activity layout here!
+        View contentView = inflater.inflate(R.layout.activity_form_club, null, false);
+        drawer.addView(contentView, 0);
+        fab.setVisibility(View.INVISIBLE);
         //Firebase.setAndroidContext(this);
 
         itemDescription = (EditText)findViewById(R.id.exchange_buyer_itemDes);
@@ -115,7 +122,7 @@ public class ExchangeBuyerSideActivity extends AppCompatActivity {
 
         imagePath = downloadUri.toString();
 
-        Firebase mRefChild = mFire.child(itemDes);
+        Firebase mRefChild = mFire.child(" "+i);
         mRefChild.push();
 
         Firebase newChild = mRefChild.child("itemDescription");
