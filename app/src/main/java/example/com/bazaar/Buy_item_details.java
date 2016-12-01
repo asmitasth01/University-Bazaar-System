@@ -4,6 +4,7 @@ package example.com.bazaar;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import android.view.LayoutInflater;
@@ -38,7 +39,7 @@ public class Buy_item_details extends Home {
         TextView name = (TextView) findViewById(R.id.buy_nameTextView);
 
         int position = getIntent().getExtras().getInt("id");
-        ImageView imageView = (ImageView) findViewById(R.id.profile_pic);
+        ImageView imageView = (ImageView) findViewById(R.id.full_image);
 
 
         //imageView.setImageResource(Buy_items.images[position]);
