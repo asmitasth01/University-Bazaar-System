@@ -5,11 +5,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.ListView;
 
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
@@ -22,7 +20,6 @@ import java.util.ArrayList;
 import example.com.bazaar.bean.UserInfo;
 
 public class Memberinfo extends Home {
-
     EditText input_name;
     EditText input_email;
     EditText input_address;
@@ -34,10 +31,8 @@ public class Memberinfo extends Home {
     SignInActivity login;
     Firebase usersData;
     private Firebase mRef;
-
     private UserInfo user;
-
-    public Memberinfo(){
+    public Memberinfo() {
         user = new UserInfo();
         users = new ArrayList<>();
         login = new SignInActivity();
@@ -47,27 +42,22 @@ public class Memberinfo extends Home {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         LayoutInflater inflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-
         //inflate your activity layout here!
         View contentView = inflater.inflate(R.layout.activity_memberinfo, null, false);
         drawer.addView(contentView, 0);
-
         bazaar = FirebaseDatabase.getInstance().getReference();
-
-        save = (Button)findViewById(R.id.btn_save);
-        input_name = (EditText)findViewById(R.id.display_name);
-        input_email = (EditText)findViewById(R.id.display_email);
-        input_address = (EditText)findViewById(R.id.display_address);
-        input_phone = (EditText)findViewById(R.id.display_phone);
-        profile_image = (ImageView)findViewById(R.id.profile_pic);
-
+        save = (Button) findViewById(R.id.btn_save);
+        input_name = (EditText) findViewById(R.id.display_name);
+        input_email = (EditText) findViewById(R.id.display_email);
+        input_address = (EditText) findViewById(R.id.display_address);
+        input_phone = (EditText) findViewById(R.id.display_phone);
+        profile_image = (ImageView) findViewById(R.id.profile_pic);
         mRef = new Firebase("https://bazaar-7ee62.firebaseio.com/Bazaar/User");
-
         mRef.addChildEventListener(new com.firebase.client.ChildEventListener() {
             @Override
             public void onChildAdded(com.firebase.client.DataSnapshot dataSnapshot, String s) {
                 UserInfo info = dataSnapshot.getValue(UserInfo.class);
-                if (info.getUserName().compareTo(login.getUsername())==0){
+                if (info.getUserName().compareTo(login.getUsername()) == 0) {
                     input_name.setText(info.getName());
                     input_email.setText(info.getEmail());
                     input_address.setText(info.getAddress());
@@ -99,7 +89,7 @@ public class Memberinfo extends Home {
         });
     }
 
-    public void onClickName(View view){
+    public void onClickName(View view) {
         save.setVisibility(view.VISIBLE);
         input_name.setCursorVisible(true);
         input_name.setEnabled(true);
@@ -107,7 +97,7 @@ public class Memberinfo extends Home {
         input_name.requestFocus();
     }
 
-    public void onClickEmail(View view){
+    public void onClickEmail(View view) {
         save.setVisibility(view.VISIBLE);
         input_email.setCursorVisible(true);
         input_email.setEnabled(true);
@@ -115,7 +105,7 @@ public class Memberinfo extends Home {
         input_email.requestFocus();
     }
 
-    public void onClickAddress(View view){
+    public void onClickAddress(View view) {
         save.setVisibility(view.VISIBLE);
         input_address.setCursorVisible(true);
         input_address.setEnabled(true);
@@ -123,7 +113,7 @@ public class Memberinfo extends Home {
         input_address.requestFocus();
     }
 
-    public void onClickPhone(View view){
+    public void onClickPhone(View view) {
         save.setVisibility(view.VISIBLE);
         input_phone.setCursorVisible(true);
         input_phone.setEnabled(true);
@@ -131,23 +121,19 @@ public class Memberinfo extends Home {
         input_phone.requestFocus();
     }
 
-    public void onSave(View view){
-
+    public void onSave(View view) {
         usersData = mRef.child(login.getUsername());
         usersData.push();
-
-        for (int i=0;i<users.size();i++){
-            if (users.get(i).getUserName().compareTo(login.getUsername())==0){
+        for (int i = 0; i < users.size(); i++) {
+            if (users.get(i).getUserName().compareTo(login.getUsername()) == 0) {
                 user = users.get(i);
-                //Firebase newChild = usersData.child("")
                 user.setName(input_name.getText().toString());
-                System.out.println("new names is: "+user.getName());
+                System.out.println("new names is: " + user.getName());
                 user.setEmail(input_email.getText().toString());
                 user.setAddress(input_address.getText().toString());
                 user.setPhoneNumber(input_phone.getText().toString());
-                users.set(i,user);
-                System.out.println("the user inside loop is: "+user.getUserName());
-
+                users.set(i, user);
+                System.out.println("the user inside loop is: " + user.getUserName());
                 Firebase newChild = usersData.child("name");
                 newChild.push();
                 newChild.setValue(user.getName());
@@ -165,7 +151,6 @@ public class Memberinfo extends Home {
                 newChild.setValue(user.getProfilePic_imageURL());
             }
         }
-
         Intent intent = new Intent(this, Memberinfo.class);
         startActivity(intent);
     }

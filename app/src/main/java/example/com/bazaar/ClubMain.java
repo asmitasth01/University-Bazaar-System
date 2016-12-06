@@ -2,30 +2,28 @@ package example.com.bazaar;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.design.widget.TabLayout;
+import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.ViewPager;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import java.util.ArrayList;
 
-import com.firebase.client.ChildEventListener;
-import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
+
+import java.util.ArrayList;
 
 import example.com.bazaar.bean.ClubInfo;
 
@@ -51,11 +49,10 @@ public class ClubMain extends Home implements ActionBar.TabListener {
     private Firebase mRef;
     private static ArrayList<ClubInfo> clubList;
 
-    public ClubMain(){
+    public ClubMain() {
         clubList = new ArrayList<>();
         adapter = new RecyclerAdapter();
     }
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -94,44 +91,28 @@ public class ClubMain extends Home implements ActionBar.TabListener {
             @Override
             public void onChildAdded(com.firebase.client.DataSnapshot dataSnapshot, String s) {
                 ClubInfo clubInfo = dataSnapshot.getValue(ClubInfo.class);
-                System.out.println("club anme is: "+clubInfo.getClubName());
+                System.out.println("club anme is: " + clubInfo.getClubName());
                 clubList.add(clubInfo);
-                System.out.println("club second is: "+clubList.get(0).getClubName());
-                //adapter.notifyDataSetChanged();
+                System.out.println("club second is: " + clubList.get(0).getClubName());
             }
 
             @Override
             public void onChildChanged(com.firebase.client.DataSnapshot dataSnapshot, String s) {
-
             }
 
             @Override
             public void onChildRemoved(com.firebase.client.DataSnapshot dataSnapshot) {
-
             }
 
             @Override
             public void onChildMoved(com.firebase.client.DataSnapshot dataSnapshot, String s) {
-
             }
 
             @Override
             public void onCancelled(FirebaseError firebaseError) {
-
             }
         });
-
-//        recyclerView =
-//                (RecyclerView) rootView.findViewById(R.id.recycler_view);
-//
-//        layoutManager = new LinearLayoutManager(getContext());
-//        recyclerView.setLayoutManager(layoutManager);
-//        adapter = new RecyclerAdapter();
-//        recyclerView.setAdapter(adapter);
-
     }
-
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -145,11 +126,10 @@ public class ClubMain extends Home implements ActionBar.TabListener {
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        //int id = item.getItemId();
+        // as you specify a parent activity in AndroidManifest.xml
 
         //noinspection SimplifiableIfStatement
-        if(item.getItemId()==R.id.createClub){
+        if (item.getItemId() == R.id.createClub) {
             startActivity(new Intent(this, FormClubActivity.class));
         }
 
@@ -158,33 +138,12 @@ public class ClubMain extends Home implements ActionBar.TabListener {
 
     @Override
     public void onTabSelected(ActionBar.Tab tab, FragmentTransaction ft) {
-//        Fragment f = null;
-//        TabFragment tf = null;
-//
-//        if (fragList.size() > tab.getPosition())
-//            fragList.get(tab.getPosition());
-//
-//        if (f == null) {
-//            tf = new TabFragment();
-//            Bundle data = new Bundle();
-//            data.putInt("idx",  tab.getPosition());
-//            tf.setArguments(data);
-//            fragList.add(tf);
-//        }
-//        else
-//            tf = (TabFragment) f;
-//
-//        ft.replace(android.R.id., tf);
     }
-
     @Override
     public void onTabUnselected(ActionBar.Tab tab, FragmentTransaction ft) {
-
     }
-
     @Override
     public void onTabReselected(ActionBar.Tab tab, FragmentTransaction ft) {
-
     }
 
     /**
@@ -227,44 +186,8 @@ public class ClubMain extends Home implements ActionBar.TabListener {
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_club_main, container, false);
-//            TextView textView = (TextView) rootView.findViewById(R.id.section_label);
-//            textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
-//            startActivity(new Intent(getContext(), AllClubActivity.class));
-//            mRef = new Firebase("https://bazaar-7ee62.firebaseio.com/Bazaar/Clubs");
-//
-//            mRef.addChildEventListener(new ChildEventListener() {
-//                @Override
-//                public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-//                    ClubInfo clubInfo = dataSnapshot.getValue(ClubInfo.class);
-//                    System.out.println("club anme is: "+clubInfo.getClubName());
-//                    clubList.add(clubInfo);
-//                    adapter.notifyDataSetChanged();
-//                }
-//
-//                @Override
-//                public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-//
-//                }
-//
-//                @Override
-//                public void onChildRemoved(DataSnapshot dataSnapshot) {
-//
-//                }
-//
-//                @Override
-//                public void onChildMoved(DataSnapshot dataSnapshot, String s) {
-//
-//                }
-//
-//                @Override
-//                public void onCancelled(FirebaseError firebaseError) {
-//
-//                }
-//            });
-//
             recyclerView =
                     (RecyclerView) rootView.findViewById(R.id.recycler_view);
-
             layoutManager = new LinearLayoutManager(getContext());
             recyclerView.setLayoutManager(layoutManager);
             adapter = new RecyclerAdapter();
@@ -289,13 +212,11 @@ public class ClubMain extends Home implements ActionBar.TabListener {
             // Return a PlaceholderFragment (defined as a static inner class below).
             return PlaceholderFragment.newInstance(position + 1);
         }
-
         @Override
         public int getCount() {
             // Show 2 total pages.
             return 2;
         }
-
         @Override
         public CharSequence getPageTitle(int position) {
             switch (position) {

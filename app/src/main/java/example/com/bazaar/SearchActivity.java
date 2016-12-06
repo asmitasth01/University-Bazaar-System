@@ -27,13 +27,10 @@ public class SearchActivity extends Home {
 
     private Firebase mRef;
     private ListView lv;
-
     // defining class attributes
     ArrayAdapter<String> adapter;
     DatabaseReference bazaar;
     private ArrayList<UserInfo> users;
-    //final ArrayAdapter<UserInfo> adapter;
-
     ArrayList<String> arrayNames;
     private static String selected;
     private static String username;
@@ -43,28 +40,23 @@ public class SearchActivity extends Home {
     private static String phone;
     private static String profile_url;
     private int position;
-
     // Constructor where local variables are initialized
-    public SearchActivity(){
+    public SearchActivity() {
         arrayNames = new ArrayList<>();
         users = new ArrayList<>();
         position = 0;
     }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         LayoutInflater inflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-
         //inflate your activity layout here!
         View contentView = inflater.inflate(R.layout.activity_search, null, false);
         drawer.addView(contentView, 0);
-
         mRef = new Firebase("https://bazaar-7ee62.firebaseio.com/Bazaar/User");
-        lv = (ListView)findViewById(R.id.listView_search);
+        lv = (ListView) findViewById(R.id.listView_search);
         adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, arrayNames);
         lv.setAdapter(adapter);
-
         mRef.addChildEventListener(new com.firebase.client.ChildEventListener() {
             @Override
             public void onChildAdded(com.firebase.client.DataSnapshot dataSnapshot, String s) {
@@ -74,56 +66,22 @@ public class SearchActivity extends Home {
                 position++;
                 adapter.notifyDataSetChanged();
             }
-
             @Override
             public void onChildChanged(com.firebase.client.DataSnapshot dataSnapshot, String s) {
-
             }
 
             @Override
             public void onChildRemoved(com.firebase.client.DataSnapshot dataSnapshot) {
-
             }
 
             @Override
             public void onChildMoved(com.firebase.client.DataSnapshot dataSnapshot, String s) {
-
             }
 
             @Override
             public void onCancelled(FirebaseError firebaseError) {
-
             }
         });
-
-
-//        bazaar = FirebaseDatabase.getInstance().getReference("Bazaar");
-//        bazaar.addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(DataSnapshot dataSnapshot) {
-//                Iterable<DataSnapshot> snapshotIterator = dataSnapshot.getChildren();
-//                Iterator<DataSnapshot> iterator = snapshotIterator.iterator();
-//                System.out.println(dataSnapshot.getChildren().getClass().toString());
-//                while (iterator.hasNext()) {
-//                    GenericTypeIndicator<ArrayList<UserInfo>> t = new GenericTypeIndicator<ArrayList<UserInfo>>() {};
-//                    users = iterator.next().getValue(t);
-//                    for (int i = 0;i<users.size();i++){
-//                        arrayNames.add(users.get(i).getUserName());
-//                        System.out.println("array names :"+arrayNames.get(i));
-//                    }
-//                }
-//            }
-//
-//            @Override
-//            public void onCancelled(DatabaseError databaseError) {
-//
-//            }
-//        });
-//
-//        System.out.println("array size is : "+arrayNames.size());
-//
-//        adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, arrayNames);
-//        lv.setAdapter(adapter);
     }
 
     @Override
@@ -131,10 +89,8 @@ public class SearchActivity extends Home {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_search, menu);
         MenuItem item = menu.findItem(R.id.menuSearch);
-        final SearchView searchView = (SearchView)item.getActionView();
-
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener(){
-
+        final SearchView searchView = (SearchView) item.getActionView();
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
                 return false;
@@ -151,14 +107,11 @@ public class SearchActivity extends Home {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 setSelected(adapterView.getItemAtPosition(i).toString());
-                System.out.println("selected is: "+selected);
-                Toast.makeText(SearchActivity.this, adapterView.getItemAtPosition(i).toString()+" is selected", Toast.LENGTH_SHORT).show();
-
-                System.out.println("this is the array size; "+users.size());
-                for (int j=0;j<users.size();j++){
+                Toast.makeText(SearchActivity.this, adapterView.getItemAtPosition(i).toString() + " is selected", Toast.LENGTH_SHORT).show();
+                for (int j = 0; j < users.size(); j++) {
                     UserInfo tempUser = users.get(j);
-                    System.out.println("here are: "+users.get(j).getUserName());;
-                    if(tempUser.getUserName().compareTo(selected)==0){
+                    ;
+                    if (tempUser.getUserName().compareTo(selected) == 0) {
                         setUsername(selected);
                         setName(tempUser.getName());
                         setEmail(tempUser.getEmail());

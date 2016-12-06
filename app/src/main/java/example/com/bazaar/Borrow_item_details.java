@@ -31,31 +31,18 @@ public class Borrow_item_details extends Home {
         TextView desc = (TextView) findViewById(R.id.borrow_desTextView);
         TextView price = (TextView) findViewById(R.id.borrow_priceTextView);
         TextView name = (TextView) findViewById(R.id.borrow_nameTextView);
-
         int position = getIntent().getExtras().getInt("id");
         ImageView imageView = (ImageView) findViewById(R.id.profile_pic);
-
-//        System.out.println("The size of itemList is:"+itemList.size()+"\n\n\n");
-
-        String imageUrl =   itemList.get(position).getSellItem_imageURL();
+        String imageUrl = itemList.get(position).getSellItem_imageURL();
         Uri myImageUri = Uri.parse(imageUrl);
-
-        Picasso.with(Borrow_item_details.this).load(myImageUri).fit().centerCrop().into(imageView);
-
+        Picasso.with(Borrow_item_details.this).load(myImageUri).into(imageView);
         desc.setText(itemList.get(position).getItemDes());
-
-//        System.out.println("Item Price: "+ itemList.get(position).getItemPrice());
         price.setText(itemList.get(position).getItemPrice());
         name.setText(itemList.get(position).getItemDescription());
-
     }
 
-    public void openPayment(View view)
-    {
-        Intent intent = new Intent(this,BorrowActivity.class);
+    public void openPayment(View view) {
+        Intent intent = new Intent(this, BorrowActivity.class);
         startActivity(intent);
     }
-
-
-
 }

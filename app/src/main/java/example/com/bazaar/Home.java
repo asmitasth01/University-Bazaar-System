@@ -2,10 +2,7 @@ package example.com.bazaar;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.provider.Settings;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -14,10 +11,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import com.squareup.picasso.Picasso;
 
 public class Home extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -25,7 +21,6 @@ public class Home extends AppCompatActivity
     protected DrawerLayout drawer;
     protected FloatingActionButton fab;
     protected MenuItem addItem;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,9 +37,9 @@ public class Home extends AppCompatActivity
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        View hView =  navigationView.getHeaderView(0);
-        TextView nav_user = (TextView)hView.findViewById(R.id.display_profile_name);
-        ImageView image_user = (ImageView)hView.findViewById(R.id.image_View);
+        View hView = navigationView.getHeaderView(0);
+        TextView nav_user = (TextView) hView.findViewById(R.id.display_profile_name);
+        ImageView image_user = (ImageView) hView.findViewById(R.id.image_View);
 
         SignInActivity tempUser = new SignInActivity();
         nav_user.setText(tempUser.getUsername());
@@ -75,14 +70,12 @@ public class Home extends AppCompatActivity
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             Intent intent = new Intent(this, SettingsActivity.class);
             startActivity(intent);
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 
@@ -105,17 +98,16 @@ public class Home extends AppCompatActivity
         } else if (id == R.id.profile) {
             intent = new Intent(this, Memberinfo.class);
             startActivity(intent);
-        }else if (id == R.id.search) {
+        } else if (id == R.id.search) {
             intent = new Intent(this, SearchActivity.class);
             startActivity(intent);
         } else if (id == R.id.logout) {
             intent = new Intent(this, MainActivity.class);
             startActivity(intent);
-        }else if (id == R.id.home_page) {
+        } else if (id == R.id.home_page) {
             intent = new Intent(this, EventPage.class);
             startActivity(intent);
         }
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;

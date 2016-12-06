@@ -1,41 +1,31 @@
 package example.com.bazaar;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ListView;
 
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
-import com.firebase.client.core.view.filter.IndexedFilter;
 import com.google.firebase.database.DatabaseReference;
 
 import java.util.ArrayList;
 
-import example.com.bazaar.bean.ClubInfo;
 import example.com.bazaar.bean.MyClubInfo;
 
 public class MyClubActivity extends Home {
-
     private Firebase mRef;
     private ListView lv;
-
     // defining class attributes
     ArrayAdapter<String> adapter;
     DatabaseReference bazaar;
     private ArrayList<MyClubInfo> users;
-    //final ArrayAdapter<UserInfo> adapter;
-
     ArrayList<String> arrayNames;
     private static String selected;
     private static String club_name;
@@ -44,15 +34,13 @@ public class MyClubActivity extends Home {
     private static String club_category;
     private int position;
     SignInActivity sign;
-
     // Constructor where local variables are initialized
-    public MyClubActivity(){
+    public MyClubActivity() {
         arrayNames = new ArrayList<>();
         users = new ArrayList<>();
         position = 0;
         sign = new SignInActivity();
     }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,65 +49,53 @@ public class MyClubActivity extends Home {
         //inflate your activity layout here!
         View contentView = inflater.inflate(R.layout.activity_my_club, null, false);
         drawer.addView(contentView, 0);
-
         mRef = new Firebase("https://bazaar-7ee62.firebaseio.com/Bazaar/MyClubs");
         sign = new SignInActivity();
-        //mRef = mRef.child(sign.getUsername());
         lv = (ListView) findViewById(R.id.listView_myClubs);
         adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, arrayNames);
         lv.setAdapter(adapter);
-
         mRef.addChildEventListener(new com.firebase.client.ChildEventListener() {
             @Override
             public void onChildAdded(com.firebase.client.DataSnapshot dataSnapshot, String s) {
                 MyClubInfo info = dataSnapshot.getValue(MyClubInfo.class);
-
-                if(info.getUsername().compareTo(sign.getUsername())==0){
+                if (info.getUsername().compareTo(sign.getUsername()) == 0) {
                     users.add(info);
                     arrayNames.add(users.get(position).getClubName());
                     adapter.notifyDataSetChanged();
                     position++;
                 }
-
             }
 
             @Override
             public void onChildChanged(com.firebase.client.DataSnapshot dataSnapshot, String s) {
-
             }
 
             @Override
             public void onChildRemoved(com.firebase.client.DataSnapshot dataSnapshot) {
-
             }
 
             @Override
             public void onChildMoved(com.firebase.client.DataSnapshot dataSnapshot, String s) {
-
             }
 
             @Override
             public void onCancelled(FirebaseError firebaseError) {
-
             }
         });
-
-
-
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
-
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 setSelected(adapterView.getItemAtPosition(i).toString());
-                for (int j=0;j<users.size();j++){
+                for (int j = 0; j < users.size(); j++) {
                     MyClubInfo tempUser = users.get(j);
-                    System.out.println("here are: "+users.get(j).getClubName());;
-                    if(tempUser.getClubName().compareTo(selected)==0){
+                    System.out.println("here are: " + users.get(j).getClubName());
+                    ;
+                    if (tempUser.getClubName().compareTo(selected) == 0) {
                         setClub_name(selected);
                         setClub_admin(tempUser.getClubAdmin());
                         setClub_desc(tempUser.getClubDescription());

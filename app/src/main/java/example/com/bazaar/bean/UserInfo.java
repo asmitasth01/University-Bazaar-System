@@ -75,9 +75,7 @@ public class UserInfo {
         this.profilePic_imageURL = profilePic_imageURL;
     }
 
-
-    public UserInfo(String name, String userName, String email, String phoneNumber, String password, String address, String profilePic_imageURL)
-    {
+    public UserInfo(String name, String userName, String email, String phoneNumber, String password, String address, String profilePic_imageURL) {
         this.name = name;
         this.userName = userName;
         this.email = email;
@@ -86,15 +84,8 @@ public class UserInfo {
         this.address = address;
         this.profilePic_imageURL = profilePic_imageURL;
 
+    }
+    public UserInfo() {
 
     }
-
-    public UserInfo()
-    {
-
-
-    }
-
-
-
 }

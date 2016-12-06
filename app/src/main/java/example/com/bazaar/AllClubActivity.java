@@ -3,29 +3,14 @@ package example.com.bazaar;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.firebase.client.ChildEventListener;
-import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
-import com.firebase.client.FirebaseError;
-import com.google.firebase.storage.FirebaseStorage;
-import com.squareup.picasso.Picasso;
-
-import java.util.ArrayList;
-
-import example.com.bazaar.bean.ClubInfo;
 
 public class AllClubActivity extends Home {
-
     private Firebase mFire;
     private Button join;
 
@@ -39,34 +24,29 @@ public class AllClubActivity extends Home {
         drawer.addView(contentView, 0);
 
         // initializing the TextView attributes in activity_search_results_member xml file
-        TextView clubName = (TextView)findViewById(R.id.display_club_name);
-        TextView clubCategory = (TextView)findViewById(R.id.display_category);
-        TextView clubDesc = (TextView)findViewById(R.id.display_club_desc);
-        TextView clubAdmin = (TextView)findViewById(R.id.display_club_admin);
-
+        TextView clubName = (TextView) findViewById(R.id.display_club_name);
+        TextView clubCategory = (TextView) findViewById(R.id.display_category);
+        TextView clubDesc = (TextView) findViewById(R.id.display_club_desc);
+        TextView clubAdmin = (TextView) findViewById(R.id.display_club_admin);
 
         //setting the member details to display in its corresponding TextView
         clubName.setText(ClubActivity.getClub_name());
         clubCategory.setText(ClubActivity.getClub_category());
         clubDesc.setText(ClubActivity.getClub_desc());
         clubAdmin.setText(ClubActivity.getClub_admin());
-
     }
 
-    public void joinClub(View view){
+    public void joinClub(View view) {
         mFire = new Firebase("https://bazaar-7ee62.firebaseio.com/Bazaar/MyClubs");
-        join = (Button)findViewById(R.id.join_club);
+        join = (Button) findViewById(R.id.join_club);
 
         final SignInActivity sign = new SignInActivity();
 
         join.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                mFire.push();
-
                 Firebase mRefChild = mFire.push();
                 mRefChild.push();
-
                 Firebase newChild = mRefChild.child("username");
                 newChild.setValue(sign.getUsername());
                 newChild = mRefChild.child("clubName");
@@ -77,13 +57,10 @@ public class AllClubActivity extends Home {
                 newChild.setValue(ClubActivity.getClub_desc());
                 newChild = mRefChild.child("clubAdmin");
                 newChild.setValue(ClubActivity.getClub_admin());
-
-
                 startActivity(new Intent(AllClubActivity.this, ClubActivity.class));
             }
         });
     }
-
     public Button getJoin() {
         return join;
     }

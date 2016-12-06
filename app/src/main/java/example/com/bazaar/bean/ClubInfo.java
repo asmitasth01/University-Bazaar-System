@@ -17,7 +17,7 @@ public class ClubInfo {
         this.clubAdmin = clubAdmin;
     }
 
-    public ClubInfo(){
+    public ClubInfo() {
 
     }
 

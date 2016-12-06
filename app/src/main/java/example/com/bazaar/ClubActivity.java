@@ -1,24 +1,15 @@
 package example.com.bazaar;
 
-import android.app.TabActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.SearchView;
-import android.widget.TabHost;
-import android.widget.TabHost.TabSpec;
-import android.widget.Toast;
 
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
@@ -26,23 +17,17 @@ import com.google.firebase.database.DatabaseReference;
 
 import java.util.ArrayList;
 
-import example.com.bazaar.Home;
 import example.com.bazaar.bean.ClubInfo;
-import example.com.bazaar.bean.UserInfo;
 
 
-@SuppressWarnings({ "deprecation" })
+@SuppressWarnings({"deprecation"})
 public class ClubActivity extends Home {
-
     private Firebase mRef;
     private ListView lv;
-
     // defining class attributes
     ArrayAdapter<String> adapter;
     DatabaseReference bazaar;
     private ArrayList<ClubInfo> users;
-    //final ArrayAdapter<UserInfo> adapter;
-
     ArrayList<String> arrayNames;
     private static String selected;
     private static String club_name;
@@ -52,7 +37,7 @@ public class ClubActivity extends Home {
     private int position;
 
     // Constructor where local variables are initialized
-    public ClubActivity(){
+    public ClubActivity() {
         arrayNames = new ArrayList<>();
         users = new ArrayList<>();
         position = 0;
@@ -103,36 +88,32 @@ public class ClubActivity extends Home {
             }
         });
 
-        Button myClub = (Button)findViewById(R.id.myClubs);
-        Button createClub = (Button)findViewById(R.id.createClub);
-
+        Button myClub = (Button) findViewById(R.id.myClubs);
+        Button createClub = (Button) findViewById(R.id.createClub);
         myClub.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(ClubActivity.this, MyClubActivity.class));
             }
         });
-
         createClub.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(ClubActivity.this, FormClubActivity.class));
             }
         });
-
     }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 setSelected(adapterView.getItemAtPosition(i).toString());
-                for (int j=0;j<users.size();j++){
+                for (int j = 0; j < users.size(); j++) {
                     ClubInfo tempUser = users.get(j);
-                    System.out.println("here are: "+users.get(j).getClubName());;
-                    if(tempUser.getClubName().compareTo(selected)==0){
+                    System.out.println("here are: " + users.get(j).getClubName());
+                    ;
+                    if (tempUser.getClubName().compareTo(selected) == 0) {
                         setClub_name(selected);
                         setClub_admin(tempUser.getClubAdmin());
                         setClub_desc(tempUser.getClubDescription());

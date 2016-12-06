@@ -23,7 +23,8 @@ public class ItemInfo {
         this.sellItem_imageURL = sellItem_imageURL;
         this.userName = userName;
     }
-    public  ItemInfo()
+
+    public ItemInfo()
 
     {
 
@@ -40,7 +41,6 @@ public class ItemInfo {
     public void setItemDes(String itemDes) {
         this.itemDes = itemDes;
     }
-
 
 
     public String getSellItem_imageURL() {
