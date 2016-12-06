@@ -45,6 +45,14 @@ public class Memberinfo extends Home {
         //inflate your activity layout here!
         View contentView = inflater.inflate(R.layout.activity_memberinfo, null, false);
         drawer.addView(contentView, 0);
+
+        Button change = (Button)findViewById(R.id.change_password) ;
+        change.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Memberinfo.this, ChangePasswordActivity.class));
+            }
+        });
         bazaar = FirebaseDatabase.getInstance().getReference();
         save = (Button) findViewById(R.id.btn_save);
         input_name = (EditText) findViewById(R.id.display_name);

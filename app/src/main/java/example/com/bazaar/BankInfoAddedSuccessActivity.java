@@ -13,7 +13,7 @@ public class BankInfoAddedSuccessActivity extends AppCompatActivity {
         setContentView(R.layout.activity_bank_info_added_success);
     }
     public void goHome(View view) {
-        Intent intent = new Intent(this, Home.class);
+        Intent intent = new Intent(this, EventPage.class);
         startActivity(intent);
     }
 }

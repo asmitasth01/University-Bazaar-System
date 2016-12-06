@@ -37,7 +37,7 @@ public class Borrow_item_details extends Home {
         Uri myImageUri = Uri.parse(imageUrl);
         Picasso.with(Borrow_item_details.this).load(myImageUri).into(imageView);
         desc.setText(itemList.get(position).getItemDes());
-        price.setText(itemList.get(position).getItemPrice());
+        price.setText("$"+itemList.get(position).getItemPrice());
         name.setText(itemList.get(position).getItemDescription());
     }
 

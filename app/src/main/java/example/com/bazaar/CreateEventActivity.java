@@ -57,7 +57,6 @@ public class CreateEventActivity extends Home {
         EditText eDesc = (EditText) findViewById(R.id.input_event_description);
         EditText eLocation = (EditText) findViewById(R.id.input_location);
 
-
         eName.addTextChangedListener(new TextWatcher() {
             @Override
             public void afterTextChanged(Editable mEdit) {

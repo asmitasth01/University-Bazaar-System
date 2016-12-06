@@ -16,7 +16,7 @@ public class SendGroupInvitationActivity extends AppCompatActivity {
         startActivity(intent);
     }
     public void goHome(View view) {
-        Intent intent = new Intent(this, Home.class);
+        Intent intent = new Intent(this, EventPage.class);
         startActivity(intent);
     }
 }

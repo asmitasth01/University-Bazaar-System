@@ -17,15 +17,16 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".FireApp"
         android:allowBackup="true"
+        android:hardwareAccelerated="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:supportsRtl="true"
-        android:hardwareAccelerated="false"
         android:largeHeap="true"
+        android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -51,53 +52,73 @@
             android:name=".FormClubActivity"
             android:label="Form Club"
             android:theme="@style/AppTheme" />
-        <activity android:name=".BankInfoActivity"
-            android:label="Bank Information"/>
-        <activity android:name=".BankInfoAddedSuccessActivity"
-            android:label="Confirmation"/>
-        <activity android:name=".BorrowActivity"
-            android:label="Borrow"/>
-        <activity android:name=".BuyActivity"
-            android:label="Buy"/>
-        <activity android:name=".Cash"
-            android:label="Cash"/>
+        <activity
+            android:name=".BankInfoActivity"
+            android:label="Bank Information" />
+        <activity
+            android:name=".BankInfoAddedSuccessActivity"
+            android:label="Confirmation" />
+        <activity
+            android:name=".BorrowActivity"
+            android:label="Borrow" />
+        <activity
+            android:name=".BuyActivity"
+            android:label="Buy" />
+        <activity
+            android:name=".Cash"
+            android:label="Cash" />
         <activity
             android:name=".Communication"
             android:label="Communication"
             android:theme="@style/AppTheme" />
-        <activity android:name=".CreateEventActivity"
-            android:label="Create Event"/>
-        <activity android:name=".Credit"
-            android:label="Credit Card"/>
+        <activity
+            android:name=".CreateEventActivity"
+            android:label="Create Event" />
+        <activity
+            android:name=".Credit"
+            android:label="Credit Card" />
         <activity android:name=".Event_Functionality" />
-        <activity android:name=".ExchangeBuyerSideActivity"
-            android:label="Exchange Offer"/>
-        <activity android:name=".ExchangeOfferSubmittedActivity"
-            android:label="Submission"/>
-        <activity android:name=".ExchangeSellerSideActivity"
-            android:label="Your Offers"/>
-        <activity android:name=".ExchangeSellerConformation"
-            android:label="Submission"/>
-        <activity android:name=".InviteConformationDialogueActivity"
-            android:label="Confirmation"/>
+        <activity
+            android:name=".ExchangeBuyerSideActivity"
+            android:label="Exchange Offer" />
+        <activity
+            android:name=".ExchangeOfferSubmittedActivity"
+            android:label="Submission" />
+        <activity
+            android:name=".ExchangeSellerSideActivity"
+            android:label="Your Offers" />
+        <activity
+            android:name=".ExchangeSellerConformation"
+            android:label="Submission" />
+        <activity
+            android:name=".InviteConformationDialogueActivity"
+            android:label="Confirmation" />
         <activity
             android:name=".Memberinfo"
             android:label="Your Profile"
             android:theme="@style/AppTheme" />
-        <activity android:name=".PasswordResetLinkSentConformationActivity"
-            android:label="Confirmation"/>
-        <activity android:name=".PasswordRetrivalActivity"
-            android:label="Retrieve Password"/>
-        <activity android:name=".PaymentMainActivity"
-            android:label="Select Payment Option"/>
-        <activity android:name=".sellActivity"
-            android:label="Sell"/>
-        <activity android:name=".TradeTypeSelectionActivity"
-            android:label="Select Trade Type"/>
-        <activity android:name=".setting"
-            android:label="Settings"/>
-        <activity android:name=".SendGroupInvitationActivity"
-            android:label="Send Invites"/>
+        <activity
+            android:name=".PasswordResetLinkSentConformationActivity"
+            android:label="Confirmation" />
+        <activity
+            android:name=".PasswordRetrivalActivity"
+            android:label="Retrieve Password"
+            android:windowSoftInputMode="stateHidden"/>
+        <activity
+            android:name=".PaymentMainActivity"
+            android:label="Select Payment Option" />
+        <activity
+            android:name=".sellActivity"
+            android:label="Sell" />
+        <activity
+            android:name=".TradeTypeSelectionActivity"
+            android:label="Select Trade Type" />
+        <activity
+            android:name=".setting"
+            android:label="Settings" />
+        <activity
+            android:name=".SendGroupInvitationActivity"
+            android:label="Send Invites" />
         <activity android:name=".recipient_communication" />
         <activity
             android:name=".SettingsActivity"
@@ -108,33 +129,38 @@
             <meta-data
                 android:name="android.app.searchable"
                 android:resource="@xml/searchable" />
+
             <intent-filter>
                 <action android:name="android.intent.action.SEARCH" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".SearchResultsMember"
             android:label="Member" />
-
-        <activity android:name=".EventPage"
-            android:label="Home">
-        </activity>
-        <activity android:name=".Buy_item_details"
-            android:label="Item Details"/>
-        <activity android:name=".Borrow_item_details"
-            android:label="Item Details"/>
-        <activity android:name=".Exchange_item_details"
-            android:label="Item Details"/>
-        <activity android:name=".Buy_items"
-            android:label="Buy"/>
-        <activity android:name=".Exchange_items"
-            android:label="Exchange"/>
-        <activity android:name=".Borrow_items"
-            android:label="Borrow"></activity>
-
-        <activity android:name=".CreditThankyou"
-            android:label="Confirmation"></activity>
+        <activity
+            android:name=".EventPage"
+            android:label="Home"></activity>
+        <activity
+            android:name=".Buy_item_details"
+            android:label="Item Details" />
+        <activity
+            android:name=".Borrow_item_details"
+            android:label="Item Details" />
+        <activity
+            android:name=".Exchange_item_details"
+            android:label="Item Details" />
+        <activity
+            android:name=".Buy_items"
+            android:label="Buy" />
+        <activity
+            android:name=".Exchange_items"
+            android:label="Exchange" />
+        <activity
+            android:name=".Borrow_items"
+            android:label="Borrow" />
+        <activity
+            android:name=".CreditThankyou"
+            android:label="Confirmation" />
         <activity
             android:name=".ClubActivity"
             android:label="Clubs" />
@@ -149,8 +175,12 @@
             android:label="@string/title_activity_club_main"
             android:theme="@style/AppTheme" />
         <activity android:name=".ClubHome" />
-        <activity android:name=".MyClubIformation"
-            android:label="Club Information"></activity>
+        <activity
+            android:name=".MyClubIformation"
+            android:label="Club Information" />
+        <activity android:name=".ChangePasswordActivity"
+            android:label="Change Password"
+            android:windowSoftInputMode="stateHidden"></activity>
     </application>
 
 </manifest>

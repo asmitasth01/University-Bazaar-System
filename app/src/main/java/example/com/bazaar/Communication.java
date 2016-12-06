@@ -46,7 +46,7 @@ public class Communication extends Home implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         sendEmail();
-        Intent intent = new Intent(this, Home.class);
+        Intent intent = new Intent(this, EventPage.class);
         startActivity(intent);
     }
 }

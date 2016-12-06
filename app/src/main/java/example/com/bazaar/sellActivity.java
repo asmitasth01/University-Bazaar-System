@@ -288,8 +288,6 @@ public class sellActivity extends Home {
             }
         }
     }
-
-
 }
 
 

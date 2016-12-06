@@ -33,12 +33,12 @@ public class Exchange_item_details extends Home {
         Uri myImageUri = Uri.parse(imageUrl);
         Picasso.with(Exchange_item_details.this).load(myImageUri).fit().centerCrop().into(imageView);
         desc.setText(itemList.get(position).getItemDes());
-        price.setText(itemList.get(position).getItemPrice());
+        price.setText("$"+itemList.get(position).getItemPrice());
         name.setText(itemList.get(position).getItemDescription());
         setUserName(itemList.get(position).getUserName());
     }
 
-    protected void openExchangeActivity(View view) {
+    public void openExchangeActivity(View view) {
         Intent intent = new Intent(this, ExchangeBuyerSideActivity.class);
         startActivity(intent);
     }
